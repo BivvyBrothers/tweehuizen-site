@@ -6,7 +6,9 @@
 <title>Algemene Voorwaarden — TweeHuizen</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #24323F; background: #F8F7F4; padding: 24px; max-width: 720px; margin: 0 auto; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #24323F; background: #F8F7F4; padding: 24px; max-width: 720px; margin: 0 auto; position: relative; }
+  body::before { content: ''; position: fixed; top: 50%; left: 50%; width: 600px; height: 600px; transform: translate(-50%, -50%); background: url('logo.png') no-repeat center; background-size: contain; opacity: 0.04; pointer-events: none; z-index: 0; }
+  h1, h2, p, ul, ol, li { position: relative; z-index: 1; }
   h1 { font-size: 28px; margin-bottom: 8px; color: #2F5F8F; }
   h2 { font-size: 20px; margin: 32px 0 12px; color: #2F5F8F; }
   p, li { font-size: 16px; margin-bottom: 12px; }
@@ -76,8 +78,7 @@
 <p>Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in Nederland.</p>
 
 <h2>12. Contact</h2>
-<p>TweeHuizen<br>
-Handelsnaam van Patrick Kemble<br>
+<p>TweeHuizen — een product van KemblincK<br>
 KvK: [volgt na inschrijving]<br>
 E-mail: <a href="mailto:info@tweehuizen.com">info@tweehuizen.com</a></p>
 
