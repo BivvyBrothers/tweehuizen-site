@@ -8,7 +8,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #24323F; background: #F0EDE8; padding: 24px; max-width: 720px; margin: 0 auto; position: relative; }
   body::before { content: ''; position: fixed; top: 50%; left: 50%; width: 600px; height: 600px; transform: translate(-50%, -50%); background: url('logo.png') no-repeat center; background-size: contain; opacity: 0.04; pointer-events: none; z-index: 0; }
-  h1, h2, h3, p, ul, li, .contact-box, .faq { position: relative; z-index: 1; }
+  h1, h2, h3, p, ul, li, .contact-box, .faq, .category-header { position: relative; z-index: 1; }
   h1 { font-size: 28px; margin-bottom: 8px; color: #2F5F8F; }
   h2 { font-size: 20px; margin: 32px 0 12px; color: #2F5F8F; }
   h3 { font-size: 17px; margin: 20px 0 8px; color: #24323F; }
@@ -23,6 +23,8 @@
   .faq { background: #FFFFFF; border-radius: 12px; padding: 20px; margin-bottom: 12px; border: 1px solid #F0EDE8; }
   .faq h3 { margin: 0 0 8px; }
   .faq p { margin-bottom: 0; }
+  .faq p + p { margin-top: 8px; }
+  .category-header { font-size: 14px; text-transform: uppercase; letter-spacing: 0.8px; color: #667381; margin: 28px 0 10px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -45,15 +47,84 @@
 
 <h2>Veelgestelde vragen</h2>
 
+<div class="category-header">Beginnen met TweeHuizen</div>
+
 <div class="faq">
   <h3>Hoe maak ik een gezin aan?</h3>
-  <p>Na registratie word je door de onboarding geleid. Je maakt een gezin aan, voegt kinderen toe en stelt het basisrooster in. Daarna kun je de andere ouder uitnodigen.</p>
+  <p>Na registratie word je door de onboarding geleid. Je maakt een gezin aan, voegt kinderen toe en stelt het basisrooster in. Daarna kun je de andere ouder uitnodigen via het tabblad Gezin.</p>
 </div>
 
 <div class="faq">
   <h3>Hoe nodig ik de andere ouder uit?</h3>
-  <p>Ga naar het tabblad Gezin en tik op "Betrokkene uitnodigen". De andere ouder ontvangt een uitnodiging om lid te worden van jullie gezin.</p>
+  <p>Ga naar het tabblad <strong>Gezin</strong> en tik op <strong>"Iemand uitnodigen"</strong>. Je krijgt een uitnodigingscode die je kunt delen via WhatsApp, e-mail of een andere app. De andere ouder voert deze code in bij het aanmaken van een eigen account.</p>
 </div>
+
+<div class="faq">
+  <h3>Hoe werkt een uitnodigingscode?</h3>
+  <p>Een uitnodigingscode is een unieke code waarmee iemand zich bij jullie gezin kan aansluiten. Na het invoeren tijdens registratie wordt de persoon automatisch aan jullie gezin gekoppeld, met de rol en rechten die je hebt ingesteld.</p>
+  <p>Codes verlopen na 7 dagen. Je kunt een nieuwe code genereren via het profiel van de uitgenodigde persoon in het tabblad Gezin.</p>
+</div>
+
+<div class="faq">
+  <h3>Wat is het basisrooster?</h3>
+  <p>Het basisrooster is de vaste zorgverdeling die zich herhaalt. Bijvoorbeeld: "om de week" of "een vast weekschema". Je stelt dit in via <strong>Afstemmen &gt; Basisregeling</strong>. Als de verdeling verandert, kun je voor specifieke dagen of periodes een voorstel doen.</p>
+</div>
+
+<div class="category-header">Gezin en rollen</div>
+
+<div class="faq">
+  <h3>Wat zijn de verschillende rollen in een gezin?</h3>
+  <p>TweeHuizen kent drie hoofdrollen:</p>
+  <ul>
+    <li><strong>Ouder (hoofdouder):</strong> volledige rechten — plannen, voorstellen doen en goedkeuren.</li>
+    <li><strong>Betrokkene</strong> (stiefouder, opa/oma, verzorger): mag meekijken en voorstellen doen, eventueel ook goedkeuren (instelbaar per persoon).</li>
+    <li><strong>Kind:</strong> eigen profiel zonder account, beheerd door de ouders. Oudere kinderen kunnen optioneel een eigen login krijgen met beperkte rechten.</li>
+  </ul>
+</div>
+
+<div class="faq">
+  <h3>Kan een grootouder of stiefouder ook voorstellen goedkeuren?</h3>
+  <p>Standaard mogen alleen ouders voorstellen goedkeuren. Ouders kunnen dit via <strong>Gezin &gt; Rechteninstellingen</strong> wijzigen: zet "Niet-ouders mogen goedkeuren" aan, en stel daarna per persoon in wie dat recht krijgt. Deze wijziging moet door beide ouders goedgekeurd worden.</p>
+</div>
+
+<div class="faq">
+  <h3>Kan mijn kind de app zelf gebruiken?</h3>
+  <p>Ja, oudere kinderen kunnen een eigen login krijgen met beperkte rechten. Je maakt eerst een kindprofiel aan in de app en genereert dan een koppelcode. Het kind kan daarmee inloggen op een eigen telefoon en het rooster meekijken — zonder dat je gezinsgegevens kunt wijzigen.</p>
+</div>
+
+<div class="category-header">Planning en voorstellen</div>
+
+<div class="faq">
+  <h3>Wat is een "voorstel" in de app?</h3>
+  <p>Een voorstel is een verzoek om af te wijken van het basisrooster. Bijvoorbeeld: "ik wil zaterdag ruilen" of "de kinderen zijn volgende week allemaal bij mij". De andere ouder ontvangt een melding en kan goedkeuren of afkeuren. Pas na goedkeuring wordt het rooster aangepast.</p>
+</div>
+
+<div class="faq">
+  <h3>Hoe doe ik een voorstel?</h3>
+  <p>Ga naar het tabblad <strong>Agenda</strong> of <strong>Afstemmen</strong> en tik op <strong>"Nieuw voorstel"</strong>. Kies een datum, geef aan wat je wilt wijzigen en voeg eventueel een toelichting toe. De andere ouder krijgt een melding.</p>
+</div>
+
+<div class="faq">
+  <h3>Wat gebeurt er als een voorstel niet wordt beantwoord?</h3>
+  <p>Voorstellen blijven open staan totdat de andere ouder reageert. Je krijgt geen automatische goedkeuring — elke wijziging vereist expliciete toestemming. Via meldingen blijf je op de hoogte.</p>
+</div>
+
+<div class="faq">
+  <h3>Hoe verdeel ik schoolvakanties en feestdagen?</h3>
+  <p>Ga naar <strong>Afstemmen &gt; Vakanties en feestdagen</strong>. Je ziet alle Nederlandse schoolvakanties en erkende feestdagen. Voor elke vakantieperiode of feestdag kun je aangeven bij wie de kinderen zijn, of een afwijkende verdeling voorstellen.</p>
+</div>
+
+<div class="faq">
+  <h3>Kan ik activiteiten van mijn kind bijhouden?</h3>
+  <p>Ja. Via <strong>Afstemmen &gt; Activiteiten</strong> voeg je sport, feestjes, hobby's en andere vaste bezigheden toe. Dit helpt om te zien wie het kind naar welke activiteit brengt en voorkomt dubbele afspraken.</p>
+</div>
+
+<div class="faq">
+  <h3>Wat zie ik in het tabblad Zorgverdeling?</h3>
+  <p>Zorgverdeling toont statistieken over de verdeling van de zorg: hoeveel dagen, weekenden en vakanties elk gezinslid heeft gehad. Handig om periodiek te bespreken of de verdeling nog eerlijk voelt.</p>
+</div>
+
+<div class="category-header">Abonnement en betaling</div>
 
 <div class="faq">
   <h3>Wat is het verschil tussen Familie en Familie Plus?</h3>
@@ -66,33 +137,100 @@
 </div>
 
 <div class="faq">
+  <h3>Wat is gratis en wat is premium?</h3>
+  <p><strong>Gratis:</strong> account aanmaken, gezin starten, kinderen toevoegen, basisrooster instellen, gezinsleden uitnodigen, agenda bekijken, vakanties en feestdagen verdelen.</p>
+  <p><strong>Premium:</strong> voorstellen doen en goedkeuren (afstemmen), activiteiten bijhouden, statistieken van de zorgverdeling, push-meldingen, agenda-export en backup.</p>
+  <p>Je start met 14 dagen gratis proefperiode, zodat je alles kunt uitproberen.</p>
+</div>
+
+<div class="faq">
+  <h3>Hoe start mijn gratis proefperiode?</h3>
+  <p>De 14-dagen proefperiode start zodra je via de paywall een abonnement kiest. Je wordt pas betaald na afloop van de proefperiode, en kunt tot 24 uur daarvoor kosteloos opzeggen via je Apple ID of Google Play.</p>
+</div>
+
+<div class="faq">
   <h3>Hoe zeg ik mijn abonnement op?</h3>
-  <p>Op iPhone: ga naar Instellingen &gt; je naam &gt; Abonnementen &gt; TweeHuizen &gt; Zeg op. Op Android: ga naar Google Play &gt; Abonnementen &gt; TweeHuizen &gt; Opzeggen. Je houdt toegang tot het einde van de betaalde periode.</p>
+  <p><strong>iPhone:</strong> Instellingen &gt; je naam &gt; Abonnementen &gt; TweeHuizen &gt; Zeg op.</p>
+  <p><strong>Android:</strong> Google Play &gt; Abonnementen &gt; TweeHuizen &gt; Opzeggen.</p>
+  <p>Je houdt toegang tot het einde van de betaalde periode. TweeHuizen kan niet zelf abonnementen opzeggen — dat doet Apple of Google.</p>
 </div>
 
 <div class="faq">
   <h3>Hoe herstel ik een eerder gekocht abonnement?</h3>
-  <p>Ga naar het premium scherm (via Meer &gt; Premium) en tik op "Eerder gekocht? Herstel aankopen". Dit koppelt je bestaande abonnement opnieuw aan je account.</p>
+  <p>Ga naar <strong>Meer</strong> en tik op <strong>"Herstel aankopen"</strong> (ook beschikbaar in het premium scherm). Dit koppelt je bestaande abonnement opnieuw aan je account, bijvoorbeeld na het installeren op een nieuwe telefoon.</p>
 </div>
 
 <div class="faq">
-  <h3>Kan ik mijn gegevens exporteren?</h3>
-  <p>Ja. Ga naar Meer &gt; Export om het zorgrooster naar je agenda-app te exporteren. Via Meer &gt; Backup kun je een volledige backup maken van al je gegevens.</p>
+  <h3>Wat gebeurt er als mijn abonnement afloopt?</h3>
+  <p>Je behoudt toegang tot de basisfuncties: gezin, kinderen, basisrooster en het bekijken van de agenda. Premium functies (voorstellen, activiteiten, statistieken, meldingen, export, backup) worden gepauzeerd tot je opnieuw een abonnement afsluit. Je gegevens blijven behouden.</p>
+</div>
+
+<div class="category-header">Meldingen en sync</div>
+
+<div class="faq">
+  <h3>Welke meldingen krijg ik?</h3>
+  <p>TweeHuizen stuurt meldingen bij: een nieuw voorstel, een reactie op een voorstel, een wissel die eraan komt, en belangrijke wijzigingen in het rooster. Je kunt meldingen fijn-tunen via <strong>Meer &gt; Meldingen</strong>.</p>
 </div>
 
 <div class="faq">
   <h3>Werken meldingen in de simulator?</h3>
-  <p>Nee. Push-meldingen werken alleen op een echt toestel (iPhone of Android). Lokale herinneringen werken ook zonder push-meldingen.</p>
+  <p>Nee. Push-meldingen werken alleen op een echt toestel (iPhone of Android). Lokale herinneringen in de app zelf werken ook zonder push-meldingen.</p>
+</div>
+
+<div class="faq">
+  <h3>Kan ik TweeHuizen op meerdere apparaten gebruiken?</h3>
+  <p>Ja. Log in met hetzelfde account op al je apparaten — je rooster en wijzigingen synchroniseren automatisch. Op een nieuw toestel kun je "Herstel aankopen" gebruiken om je abonnement te herkoppelen.</p>
+</div>
+
+<div class="faq">
+  <h3>Werkt TweeHuizen offline?</h3>
+  <p>Beperkt. Je kunt eerder geladen data bekijken als je offline bent, maar voor voorstellen, meldingen en synchronisatie heb je internetverbinding nodig. Wijzigingen worden automatisch geüpload zodra je weer online bent.</p>
+</div>
+
+<div class="category-header">Data en privacy</div>
+
+<div class="faq">
+  <h3>Kan ik mijn gegevens exporteren?</h3>
+  <p>Ja. Ga naar <strong>Meer &gt; Agenda-export</strong> om het zorgrooster naar je agenda-app (Apple Calendar, Google Calendar) te exporteren. Via <strong>Meer &gt; Backup</strong> kun je een volledige lokale backup maken van al je gezinsdata.</p>
 </div>
 
 <div class="faq">
   <h3>Hoe verwijder ik mijn account?</h3>
-  <p>Neem contact op via <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a> met het verzoek om je account te verwijderen. We verwerken dit binnen 30 dagen.</p>
+  <p>Ga naar <strong>Meer</strong> en scroll helemaal naar beneden. Tik op <strong>"Account verwijderen"</strong> en bevestig twee keer. Je account en alle bijbehorende gegevens worden binnen 30 dagen definitief verwijderd uit onze systemen.</p>
+  <p>Let op: als jij de laatste volwassene in het gezin bent, wordt ook het hele gezin verwijderd.</p>
 </div>
 
 <div class="faq">
   <h3>Is mijn data veilig?</h3>
-  <p>Ja. We gebruiken versleutelde verbindingen, databasebeveiliging op rijniveau (alleen jij en je gezinsleden zien jullie data) en veilige authenticatie. Zie ons <a href="privacy.html">Privacybeleid</a> voor meer informatie.</p>
+  <p>Ja. We gebruiken versleutelde verbindingen (HTTPS), Row Level Security op databaseniveau (alleen jij en je gezinsleden zien jullie data) en veilige authenticatie. Inloggegevens worden op je apparaat opgeslagen in de beveiligde Keychain (iOS) of Keystore (Android). Servers staan in de EU.</p>
+  <p>Zie ons <a href="privacy.html">Privacybeleid</a> voor meer informatie.</p>
+</div>
+
+<div class="faq">
+  <h3>Wie kan mijn gezinsdata zien?</h3>
+  <p>Alleen de leden van jouw gezin. Medewerkers van TweeHuizen hebben geen toegang tot je inhoud. We gebruiken geen externe analytics-diensten en verkopen geen gegevens.</p>
+</div>
+
+<div class="category-header">Overig</div>
+
+<div class="faq">
+  <h3>Is TweeHuizen ook geschikt voor samenwonende ouders?</h3>
+  <p>De app is specifiek ontworpen voor gescheiden ouders met kinderen op twee adressen. Samenwonende ouders kunnen hem natuurlijk ook gebruiken om het weekschema bij te houden, maar veel functies (zoals voorstellen tussen twee huizen) zijn dan minder relevant.</p>
+</div>
+
+<div class="faq">
+  <h3>Mijn voorstel is goedgekeurd, maar ik wil het toch annuleren. Kan dat?</h3>
+  <p>Goedgekeurde voorstellen worden definitief. Je kunt wel een nieuw voorstel doen om de wijziging ongedaan te maken — dit moet dan opnieuw door de andere ouder goedgekeurd worden. Zo blijft iedereen op de hoogte van wijzigingen.</p>
+</div>
+
+<div class="faq">
+  <h3>Ik heb een fout of bug gevonden. Waar meld ik dat?</h3>
+  <p>Stuur een e-mail naar <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a> met een beschrijving van het probleem en — als het kan — een schermafbeelding. Vermeld ook je telefoontype en of je iPhone of Android gebruikt.</p>
+</div>
+
+<div class="faq">
+  <h3>Kan ik TweeHuizen met meer dan één gezin gebruiken?</h3>
+  <p>Eén account is gekoppeld aan één gezin. Als je bij meerdere gezinnen betrokken bent (bijvoorbeeld als zorgverlener voor verschillende families), heb je per gezin een apart account nodig.</p>
 </div>
 
 <h2>Overig</h2>
