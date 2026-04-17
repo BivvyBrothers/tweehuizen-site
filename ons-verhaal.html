@@ -4,77 +4,417 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mijn verhaal — TweeHuizen</title>
+<meta name="description" content="Waarom ik TweeHuizen heb gemaakt — een app bedacht aan de keukentafel door een vader van vijf en zijn kinderen.">
+<link rel="icon" type="image/png" href="logo.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #24323F; background: #F0EDE8; padding: 0 24px 24px; max-width: 720px; margin: 0 auto; position: relative; }
-  body::before { content: ''; position: fixed; top: 50%; left: 50%; width: 600px; height: 600px; transform: translate(-50%, -50%); background: url('logo.png') no-repeat center; background-size: contain; opacity: 0.04; pointer-events: none; z-index: 0; }
-  nav, h1, h2, p, .photo-section, .footer { position: relative; z-index: 1; }
-  nav { text-align: center; padding: 16px 0 0; }
-  nav a { color: #4A90D9; text-decoration: none; font-size: 15px; margin: 0 14px; }
-  nav a:hover { text-decoration: underline; }
-  h1 { font-size: 28px; margin: 32px 0 8px; color: #2F5F8F; }
-  h2 { font-size: 20px; margin: 32px 0 12px; color: #2F5F8F; }
-  p { font-size: 16px; margin-bottom: 16px; }
-  .meta { color: #667381; font-size: 14px; margin-bottom: 32px; }
-  a { color: #4A90D9; }
-  .quote { font-size: 20px; font-style: italic; color: #2F5F8F; text-align: center; margin: 40px 0; padding: 24px; border-top: 2px solid #E9DCCF; border-bottom: 2px solid #E9DCCF; line-height: 1.6; }
-  .kids-illustration { text-align: center; margin: 32px 0; }
-  .kids-illustration img { max-width: 100%; width: 480px; height: auto; }
-  .kids-caption { font-size: 14px; color: #667381; margin-top: 8px; font-style: italic; }
-  .footer { text-align: center; padding: 32px 0 12px; color: #97A3AE; font-size: 13px; }
+  :root {
+    --blue: #2F5F8F;
+    --blue-light: #4A90D9;
+    --green: #6B9A6B;
+    --green-light: #A8C5A2;
+    --accent: #E9A864;
+    --accent-light: #F5E1C8;
+    --text: #24323F;
+    --text-muted: #667381;
+    --text-light: #97A3AE;
+    --bg: #F0EDE8;
+    --surface: #FFFFFF;
+    --border: #E9DCCF;
+    --border-light: #F0E9E1;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+  a { color: var(--blue-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* Watermark */
+  .bg-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background: url('logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.025;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Sticky nav */
+  .topnav {
+    padding: 20px 24px;
+    text-align: center;
+    background: rgba(240, 237, 232, 0.85);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .topnav a {
+    color: var(--blue-light);
+    font-size: 15px;
+    margin: 0 14px;
+    font-weight: 500;
+  }
+
+  /* Container */
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 56px 0; }
+
+  /* Header */
+  .page-header {
+    text-align: center;
+    padding: 64px 24px 32px;
+  }
+  .page-kicker {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--green);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: #DEEAD7;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .page-title {
+    font-size: clamp(36px, 6vw, 48px);
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .page-sub {
+    color: var(--text-muted);
+    font-size: 18px;
+  }
+
+  /* Body tekst */
+  .lead {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+  p strong { color: var(--blue); font-weight: 600; }
+
+  h2 {
+    font-size: clamp(22px, 3vw, 28px);
+    color: var(--blue);
+    margin: 48px 0 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  /* Quote blocks */
+  .quote-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 36px 32px;
+    margin: 40px 0;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    position: relative;
+    box-shadow: 0 4px 20px rgba(47, 95, 143, 0.04);
+  }
+  .quote-card::before {
+    content: "\201C";
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    font-size: 80px;
+    color: var(--blue-light);
+    opacity: 0.25;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .quote-card blockquote {
+    font-size: clamp(18px, 2.5vw, 22px);
+    color: var(--blue);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* Highlight card voor speciale blokken */
+  .highlight {
+    background: linear-gradient(135deg, #E9F1F8 0%, #DEEAD7 100%);
+    border-radius: 20px;
+    padding: 32px;
+    margin: 32px 0;
+    border: 1px solid var(--border-light);
+  }
+  .highlight-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .highlight p:last-child { margin-bottom: 0; }
+  .highlight em {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--blue);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* Kinderen-sectie */
+  .kids-section {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--surface);
+    border-radius: 20px;
+    margin: 40px 0;
+    border: 1px solid var(--border-light);
+  }
+  .kids-section img {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 24px;
+    border-radius: 16px;
+  }
+  .kids-caption {
+    color: var(--text-muted);
+    font-size: 14.5px;
+    font-style: italic;
+  }
+  .kids-names {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+
+  /* Ondertekening */
+  .signature {
+    text-align: right;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+  }
+  .signature strong {
+    color: var(--blue);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* CTA */
+  .cta-card {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    margin: 48px 0;
+    border: 1px solid var(--border-light);
+  }
+  .cta-card h2 { margin-top: 0; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 16px;
+  }
+  .cta-btn:hover {
+    background: var(--blue-light);
+    text-decoration: none;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 24px 24px;
+    background: #E9E4DC;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+  }
+  .footer-links {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .footer-links a {
+    color: var(--blue-light);
+    font-size: 14.5px;
+    margin: 0 10px;
+  }
+  .footer-copy {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<div class="bg-watermark"></div>
+
+<nav class="topnav">
   <a href="index.html">Home</a>
   <a href="ons-verhaal.html">Mijn verhaal</a>
   <a href="support.html">Hulp &amp; Support</a>
 </nav>
 
-<h1>Mijn verhaal</h1>
-<p class="meta">TweeHuizen — Waarom ik deze app heb gemaakt</p>
+<!-- ─── Header ────────────────────────────── -->
+<header class="page-header">
+  <span class="page-kicker">Mijn verhaal</span>
+  <h1 class="page-title">Aan de keukentafel bedacht</h1>
+  <p class="page-sub">Waarom TweeHuizen bestaat — en wie het gemaakt heeft.</p>
+</header>
 
-<p>Ik ben Patrick, vader van vijf kinderen — Kioko, Mila, Noa, Kuba en Wolf — en samen met mijn vrouw Shanna leef ik al meer dan tien jaar in een samengesteld gezin. TweeHuizen is geboren uit onze eigen dagelijkse praktijk. In al die jaren liepen we keer op keer tegen dezelfde problemen aan: het plannen van de zorg voor onze kinderen tussen twee huishoudens was ingewikkeld, onduidelijk en vaak een bron van frustratie.</p>
+<!-- ─── Verhaal ─────────────────────────────── -->
+<section class="container">
 
-<p>Niet omdat de wil er niet was, maar omdat er simpelweg geen goed hulpmiddel bestond. Bestaande apps misten essentiële functies, waren te ingewikkeld of hielden geen rekening met de dynamiek van gescheiden ouders die samen het beste willen voor hun kinderen.</p>
+  <p class="lead">
+    Ik ben <strong>Patrick</strong>, vader van vijf kinderen — Kioko, Mila, Noa,
+    Kuba en Wolf — en samen met mijn vrouw <strong>Shanna</strong> leef ik al
+    meer dan tien jaar in een samengesteld gezin.
+  </p>
 
-<div class="quote">
-  "Het verbaasde me enorm dat er geen goede app bestond voor iets dat miljoenen gezinnen dagelijks raakt."
-</div>
+  <p>
+    TweeHuizen is geboren uit onze eigen dagelijkse praktijk. In al die jaren
+    liepen we keer op keer tegen dezelfde problemen aan: het plannen van de zorg
+    voor onze kinderen tussen twee huishoudens was ingewikkeld, onduidelijk en
+    vaak een bron van frustratie.
+  </p>
 
-<h2>Van frustratie naar oplossing</h2>
+  <p>
+    Niet omdat de wil er niet was, maar omdat er simpelweg geen goed hulpmiddel
+    bestond. Bestaande apps misten essentiële functies, waren te ingewikkeld of
+    hielden geen rekening met de dynamiek van gescheiden ouders die samen het
+    beste willen voor hun kinderen.
+  </p>
 
-<p>Zoals bij de meeste goede oplossingen begint het bij een probleem dat je zelf ervaart. Ik kon geen bestaand product vinden dat écht werkte voor onze situatie. En als iets niet bestaat, waarom zou je het dan niet zelf bouwen? Met de technologie van vandaag is dat toegankelijker dan ooit.</p>
+  <div class="quote-card">
+    <blockquote>
+      Het verbaasde me enorm dat er geen goede app bestond voor iets dat
+      miljoenen gezinnen dagelijks raakt.
+    </blockquote>
+  </div>
 
-<p>Zo begon mijn reis naar TweeHuizen: een app die niet vanuit een vergaderzaal is bedacht, maar aan onze keukentafel. Want wie weet er beter wat een co-ouderschapsapp nodig heeft dan de mensen die er dagelijks mee te maken hebben?</p>
+  <h2>Van frustratie naar oplossing</h2>
 
-<h2>Gebouwd met mijn gezin</h2>
+  <p>
+    Zoals bij de meeste goede oplossingen begint het bij een probleem dat je
+    zelf ervaart. Ik kon geen bestaand product vinden dat écht werkte voor onze
+    situatie. En als iets niet bestaat, waarom zou je het dan niet zelf bouwen?
+    Met de technologie van vandaag is dat toegankelijker dan ooit.
+  </p>
 
-<p>Ik heb TweeHuizen niet in stilte ontwikkeld. Vanaf het eerste moment hebben Shanna en de kinderen meegedacht. Kioko, Mila, Noa, Kuba en Wolf kwamen allemaal met ideeën voor functies die zij belangrijk vonden, dachten mee over hoe de app eruit moest zien, en testten elke nieuwe versie met me. Hun stem zit verweven in elk onderdeel van de app.</p>
+  <p>
+    Zo begon mijn reis naar TweeHuizen: een app die niet vanuit een vergaderzaal
+    is bedacht, maar aan onze keukentafel. Want wie weet er beter wat een
+    co-ouderschapsapp nodig heeft dan de mensen die er dagelijks mee te maken
+    hebben?
+  </p>
 
-<p>Eén van de mooiste voorbeelden: de kinderen vroegen op een dag waarom ze 's ochtends nog altijd moesten onthouden wat er mee moest naar handbal, voetbal of muziekles. <em>"Kan de app ons dat niet gewoon vertellen?"</em> Uit die ene vraag is de <strong>herinneringen-met-spullen</strong>-functie geboren. Als je nu een activiteit toevoegt, vink je aan wat er mee moet — handbalschoenen, zwempak, voetbalschoenen, cadeautje — en de ouder die brengt (en het kind zelf, als hij of zij een eigen telefoon heeft) krijgt een melding op tijd: <em>"Over een uur: Noa naar handbal. Meenemen: handbalschoenen, sporttenue, bidon."</em></p>
+  <h2>Gebouwd met mijn gezin</h2>
 
-<p>Zulke kleine dingen komen rechtstreeks van kinderen die wéten waar het meestal misgaat. Dat is precies wat ik bedoel met "aan de keukentafel bedacht".</p>
+  <p>
+    Ik heb TweeHuizen niet in stilte ontwikkeld. Vanaf het eerste moment hebben
+    Shanna en de kinderen meegedacht. Kioko, Mila, Noa, Kuba en Wolf kwamen
+    allemaal met ideeën voor functies die zij belangrijk vonden, dachten mee
+    over hoe de app eruit moest zien, en testten elke nieuwe versie met me. Hun
+    stem zit verweven in elk onderdeel van de app.
+  </p>
 
-<p>Het resultaat is een app die niet alleen technisch werkt, maar die aansluit bij hoe gezinnen écht functioneren. Eerlijk, rustig en overzichtelijk — precies wat co-ouderschap nodig heeft. Ik hoop dat TweeHuizen ook voor jullie gezin rust brengt.</p>
+  <div class="highlight">
+    <div class="highlight-label">★ Voorbeeld uit de praktijk</div>
+    <p>
+      De kinderen vroegen op een dag waarom ze 's ochtends nog altijd moesten
+      onthouden wat er mee moest naar handbal, voetbal of muziekles.
+      <em>"Kan de app ons dat niet gewoon vertellen?"</em> Uit die ene vraag is
+      de <strong>herinneringen-met-spullen</strong>-functie geboren. Als je nu
+      een activiteit toevoegt, vink je aan wat er mee moet — handbalschoenen,
+      zwempak, voetbalschoenen, cadeautje — en de ouder die brengt (en het kind
+      zelf, als hij of zij een eigen telefoon heeft) krijgt een melding op tijd:
+    </p>
+    <p><em>"Over een uur: Noa naar handbal. Meenemen: handbalschoenen, sporttenue, bidon."</em></p>
+  </div>
 
-<p style="text-align: right; color: #667381; font-style: italic; margin-top: 24px;">— Patrick, Shanna, Kioko, Mila, Noa, Kuba &amp; Wolf</p>
+  <p>
+    Zulke kleine dingen komen rechtstreeks van kinderen die wéten waar het
+    meestal misgaat. Dat is precies wat ik bedoel met "aan de keukentafel
+    bedacht".
+  </p>
 
-<div class="quote">
-  Rust in co-ouderschap.
-</div>
+  <p>
+    Het resultaat is een app die niet alleen technisch werkt, maar die aansluit
+    bij hoe gezinnen écht functioneren. Eerlijk, rustig en overzichtelijk —
+    precies wat co-ouderschap nodig heeft. Ik hoop dat TweeHuizen ook voor
+    jullie gezin rust brengt.
+  </p>
 
-<div class="kids-illustration">
-  <img src="foto-5-kids.png" alt="Kioko, Mila, Noa, Kuba en Wolf — de inspiratie achter TweeHuizen">
-  <p class="kids-caption">Kioko, Mila, Noa, Kuba en Wolf — de inspiratie achter TweeHuizen</p>
-</div>
+  <!-- Kinderen-kaart -->
+  <div class="kids-section">
+    <img src="foto-5-kids.png" alt="Kioko, Mila, Noa, Kuba en Wolf">
+    <div class="kids-names">Kioko · Mila · Noa · Kuba · Wolf</div>
+    <p class="kids-caption">De inspiratie achter TweeHuizen</p>
+  </div>
 
-<div class="footer">
-  <a href="privacy.html">Privacybeleid</a> · <a href="voorwaarden.html">Voorwaarden</a> · <a href="support.html">Hulp &amp; Support</a>
-  <br><br>
-  &copy; 2026 TweeHuizen — Een product van <a href="https://kemblinck.nl" style="color:#4A90D9;text-decoration:underline;">KemblincK</a>
-</div>
+  <p class="signature">
+    — <strong>Patrick</strong>, Shanna, Kioko, Mila, Noa, Kuba &amp; Wolf
+  </p>
+
+</section>
+
+<!-- ─── CTA ─────────────────────────────────── -->
+<section class="container">
+  <div class="cta-card">
+    <h2 style="margin-top: 0">Benieuwd wat TweeHuizen kan?</h2>
+    <p style="color: var(--text-muted); font-size: 16px;">
+      Ontdek alle functies op de homepage of stel je vraag.
+    </p>
+    <a href="index.html" class="cta-btn">Bekijk de features</a>
+    &nbsp;
+    <a href="support.html" style="display:inline-block; margin-top: 16px; padding: 12px 28px; border-radius: 999px; border: 1.5px solid var(--blue-light); font-weight: 600; font-size: 15px;">Hulp &amp; Support</a>
+  </div>
+</section>
+
+<!-- ─── Footer ──────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="index.html">Home</a> ·
+    <a href="support.html">Hulp &amp; Support</a> ·
+    <a href="privacy.html">Privacybeleid</a> ·
+    <a href="voorwaarden.html">Voorwaarden</a>
+  </div>
+  <div class="footer-copy">
+    &copy; 2026 TweeHuizen — Een product van
+    <a href="https://kemblinck.nl" style="color:var(--blue-light);">KemblincK</a>,
+    gemaakt in Den Haag
+  </div>
+</footer>
 
 </body>
 </html>
