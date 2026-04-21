@@ -5,7 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hulp &amp; Support | TweeHuizen</title>
 <meta name="description" content="Veelgestelde vragen over TweeHuizen: abonnementen, gezin uitnodigen, activiteiten, meldingen en meer.">
+<meta name="theme-color" content="#2F5F8F">
+<link rel="canonical" href="https://tweehuizen.com/support.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hulp &amp; Support | TweeHuizen">
+<meta property="og:description" content="Veelgestelde vragen over TweeHuizen.">
+<meta property="og:url" content="https://tweehuizen.com/support.html">
+<meta property="og:image" content="https://tweehuizen.com/logo.png">
+<meta property="og:locale" content="nl_NL">
 <link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -32,6 +41,35 @@
   }
   a { color: var(--blue-light); text-decoration: none; }
   a:hover { text-decoration: underline; }
+
+  /* Skip link voor toetsenbordgebruikers */
+  .skip-link {
+    position: absolute; top: -40px; left: 8px;
+    background: var(--blue); color: #fff;
+    padding: 8px 16px; border-radius: 6px;
+    text-decoration: none; font-weight: 600;
+    z-index: 999; transition: top 0.2s ease;
+  }
+  .skip-link:focus { top: 8px; outline: 2px solid #E9A864; outline-offset: 2px; }
+
+  :focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; border-radius: 4px; }
+
+  /* Footer-legal (KvK + adres) */
+  .footer-container { max-width: 960px; margin: 0 auto; }
+  .footer-legal {
+    text-align: center; color: var(--text-muted);
+    font-size: 13.5px; font-style: normal;
+    line-height: 1.75; margin-bottom: 14px;
+  }
+  .footer-legal a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
+  .footer-legal a:hover { color: var(--blue); }
+  .footer-legal strong { color: var(--text); font-weight: 600; }
+  .footer-sep { color: var(--text-light); margin: 0 8px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
 
   /* Watermark */
   .bg-watermark {
@@ -247,13 +285,17 @@
 </head>
 <body>
 
-<div class="bg-watermark"></div>
+<a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
 
-<nav class="topnav">
+<div class="bg-watermark" aria-hidden="true"></div>
+
+<nav class="topnav" aria-label="Hoofdnavigatie">
   <a href="index.html">Home</a>
   <a href="ons-verhaal.html">Mijn verhaal</a>
-  <a href="support.html">Hulp &amp; Support</a>
+  <a href="support.html" aria-current="page">Hulp &amp; Support</a>
 </nav>
+
+<main id="main">
 
 <!-- ─── Header ────────────────────────────── -->
 <header class="page-header">
@@ -516,19 +558,34 @@
 </section>
 
 <!-- ─── Footer ──────────────────────────────── -->
-<footer class="footer">
-  <div class="footer-links">
-    <a href="index.html">Home</a> ·
-    <a href="ons-verhaal.html">Mijn verhaal</a> ·
-    <a href="privacy.html">Privacybeleid</a> ·
-    <a href="voorwaarden.html">Voorwaarden</a>
-  </div>
-  <div class="footer-copy">
-    &copy; 2026 TweeHuizen. Een product van
-    <a href="https://kemblinck.nl" style="color:var(--blue-light);">KemblincK</a>,
-    gemaakt in Den Haag
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true"> · </span>
+      <a href="ons-verhaal.html">Mijn verhaal</a>
+      <span aria-hidden="true"> · </span>
+      <a href="support.html">Hulp &amp; Support</a>
+      <span aria-hidden="true"> · </span>
+      <a href="privacy.html">Privacybeleid</a>
+      <span aria-hidden="true"> · </span>
+      <a href="voorwaarden.html">Voorwaarden</a>
+    </div>
+    <address class="footer-legal">
+      Een product van <a href="https://kemblinck.nl"><strong>KemblincK</strong></a><br>
+      Esperantoplein 27, 2518 LE 's-Gravenhage, Nederland<br>
+      KvK 42043399<span class="footer-sep" aria-hidden="true">·</span><a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a>
+    </address>
+    <div class="footer-copy">&copy; <span id="year">2026</span> TweeHuizen. Gemaakt in Den Haag.</div>
   </div>
 </footer>
+
+<script>
+  var y = document.getElementById('year');
+  if (y) { y.textContent = new Date().getFullYear(); }
+</script>
 
 </body>
 </html>
