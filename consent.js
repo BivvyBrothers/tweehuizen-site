@@ -7,7 +7,7 @@
 
   var STORAGE_KEY = 'tweehuizen_consent_v1';
   var META_PIXEL_ID = '1600457547692192';
-  var GA4_MEASUREMENT_ID = ''; // wordt ingevuld zodra GA4 property bestaat
+  var GA4_MEASUREMENT_ID = 'G-QFY2C1QD6K';
 
   function loadMetaPixel() {
     if (window.fbq) return;
