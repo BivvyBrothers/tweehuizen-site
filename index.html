@@ -13,7 +13,10 @@
 <meta property="og:title" content="TweeHuizen | Rust in co-ouderschap">
 <meta property="og:description" content="Zorgrooster, vakanties en activiteiten in één app. Gemaakt door een vader van vijf, met zijn kinderen.">
 <meta property="og:url" content="https://tweehuizen.com/">
-<meta property="og:image" content="https://tweehuizen.com/logo.png">
+<meta property="og:image" content="https://tweehuizen.com/og-tweehuizen.png?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TweeHuizen, rust in co-ouderschap. Nu in de App Store.">
 <meta property="og:locale" content="nl_NL">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -51,6 +54,39 @@
       { "@type": "PropertyValue", "propertyID": "KvK", "value": "42043399" }
     ]
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan de andere ouder meedoen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Je deelt een uitnodigingscode en de andere ouder maakt zijn eigen account aan, gekoppeld aan hetzelfde gezin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tellen kinderen mee als plek in het abonnement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Kinderprofielen zijn altijd gratis. Alleen volwassenen nemen een plek in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat gebeurt er als ik geen abonnement meer heb?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Je basisrooster en gezinsgegevens blijven bewaard. Premium functies (voorstellen, herinneringen, export) worden gepauzeerd tot je opnieuw een abonnement afsluit."
+      }
+    }
+  ]
 }
 </script>
 <style>
@@ -330,6 +366,52 @@
   .feature-icon.muted { background: var(--border); color: var(--text); }
   .feature h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); font-weight: 600; }
   .feature p { color: var(--text-muted); font-size: 15px; }
+
+  /* App-screenshots showcase */
+  .showcase { overflow: hidden; }
+  .shots-row {
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .shot {
+    flex: 0 0 auto;
+    width: 210px;
+    text-align: center;
+  }
+  .shot img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 14px 34px rgba(47, 95, 143, 0.14);
+    background: var(--surface);
+  }
+  .shot figcaption {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  @media (max-width: 820px) {
+    .shots-row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 20px 12px;
+      margin: 0 -20px;
+      gap: 16px;
+    }
+    .shots-row::-webkit-scrollbar { display: none; }
+    .shots-row { scrollbar-width: none; }
+    .shot { width: 168px; scroll-snap-align: center; }
+    .shot img { border-radius: 20px; }
+  }
 
   /* Hoe het werkt */
   .steps {
@@ -725,6 +807,37 @@
   </div>
 </section>
 
+<!-- ─── App-screenshots ─────────────────── -->
+<section class="section showcase">
+  <div class="container">
+    <h2 class="section-title">Zo ziet het eruit</h2>
+    <p class="section-sub">Een rustige, overzichtelijke app. Gebouwd om samen te plannen, niet om te discussiëren.</p>
+
+    <div class="shots-row">
+      <figure class="shot">
+        <img src="screenshots/01-agenda.png" alt="Agendaweergave met het zorgrooster in TweeHuizen" width="640" height="1391" loading="lazy">
+        <figcaption>Agenda &amp; zorgrooster</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/02-afstemmen.png" alt="Voorstel om een dag te ruilen, met goedkeuring in één tik" width="640" height="1391" loading="lazy">
+        <figcaption>Samen afstemmen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/03-zorgverdeling.png" alt="Inzicht in de zorgverdeling per maand" width="640" height="1391" loading="lazy">
+        <figcaption>Eerlijk inzicht</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/05-activiteiten.png" alt="Overzicht van activiteiten met herinneringen" width="640" height="1391" loading="lazy">
+        <figcaption>Activiteiten &amp; herinneringen</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/06-activiteit-detail.png" alt="Activiteit met meenemen-lijstje" width="640" height="1391" loading="lazy">
+        <figcaption>Nooit meer spullen vergeten</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ─── Hoe het werkt ──────────────────── -->
 <section class="section">
   <div class="container">
@@ -871,7 +984,7 @@
       </a>
     </nav>
     <address class="footer-legal">
-      Een product van <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22"><strong>KemblincK</strong></a><br>
+      Een product van <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo-64.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22"><strong>KemblincK</strong></a><br>
       KvK 42043399<span class="footer-sep" aria-hidden="true">·</span><a href="mailto:info@tweehuizen.com">info@tweehuizen.com</a>
     </address>
     <div class="footer-copy">&copy; <span id="year">2026</span> TweeHuizen</div>
