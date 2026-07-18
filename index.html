@@ -306,7 +306,9 @@
     .hero-text { text-align: center; }
     .hero-desc { margin-left: auto; margin-right: auto; }
     .hero-ctas { justify-content: center; }
-    .hero-visual { order: -1; }
+    /* P1-4 (review): op mobiel eerst merknaam, belofte en download-CTA,
+       daarna pas het telefoon-frame; anders zakt de CTA onder de fold. */
+    .hero-visual { order: 1; }
     .hero-img { max-width: 280px; }
     .hero-phone { width: min(210px, 56vw); }
     .pillars { padding: 32px 20px; background: var(--bg); border-top: none; border-bottom: none; }
@@ -444,7 +446,8 @@
   .lightbox {
     position: fixed;
     inset: 0;
-    z-index: 200;
+    /* P1-2 (review): boven de cookiebanner (consent.js gebruikt 9999) */
+    z-index: 10000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -479,7 +482,13 @@
     line-height: 1;
     cursor: pointer;
   }
-  .lightbox-close:hover, .lightbox-close:focus-visible { background: rgba(255, 255, 255, 0.3); }
+  .lightbox-close:hover { background: rgba(255, 255, 255, 0.3); }
+  /* P1-1 (review): duidelijk zichtbare focusstijl op de donkere overlay */
+  .lightbox-close:focus-visible {
+    background: rgba(255, 255, 255, 0.3);
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
   .shot figcaption {
     margin-top: 12px;
     font-size: 14px;
@@ -832,7 +841,7 @@
     <div class="pillar">
       <div class="pillar-icon" aria-hidden="true">🔒</div>
       <h3>Privé by design</h3>
-      <p>Geen tracking, geen advertenties. Jullie data is alleen voor jullie gezin, servers in Europa.</p>
+      <p>In de app: geen tracking en geen advertenties. Jullie data is alleen voor jullie gezin, servers in Europa.</p>
     </div>
     <div class="pillar">
       <div class="pillar-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
@@ -896,8 +905,8 @@
       <div class="feature">
         <div class="feature-icon muted">🔒</div>
         <h3>Privé by design</h3>
-        <p>Jullie data is alleen voor jullie gezin. Geen tracking, geen
-           advertenties, servers in Europa.</p>
+        <p>Jullie data is alleen voor jullie gezin. In de app geen tracking
+           en geen advertenties, servers in Europa.</p>
       </div>
     </div>
   </div>
@@ -912,33 +921,33 @@
 
     <div class="shots-row">
       <figure class="shot">
-        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: agenda en zorgrooster">
+        <a class="shot-btn" href="screenshots/01-agenda.png" aria-label="Vergroot screenshot: agenda en zorgrooster">
           <img src="screenshots/01-agenda.png" alt="Agendaweergave met het zorgrooster in TweeHuizen" width="640" height="1391" loading="lazy">
-        </button>
+        </a>
         <figcaption>Agenda &amp; zorgrooster</figcaption>
       </figure>
       <figure class="shot">
-        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: samen afstemmen">
+        <a class="shot-btn" href="screenshots/02-afstemmen.png" aria-label="Vergroot screenshot: samen afstemmen">
           <img src="screenshots/02-afstemmen.png" alt="Voorstel om een dag te ruilen, met goedkeuring in één tik" width="640" height="1391" loading="lazy">
-        </button>
+        </a>
         <figcaption>Samen afstemmen</figcaption>
       </figure>
       <figure class="shot">
-        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: eerlijk inzicht in de zorgverdeling">
+        <a class="shot-btn" href="screenshots/03-zorgverdeling.png" aria-label="Vergroot screenshot: eerlijk inzicht in de zorgverdeling">
           <img src="screenshots/03-zorgverdeling.png" alt="Inzicht in de zorgverdeling per maand" width="640" height="1391" loading="lazy">
-        </button>
+        </a>
         <figcaption>Eerlijk inzicht</figcaption>
       </figure>
       <figure class="shot">
-        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: activiteiten en herinneringen">
+        <a class="shot-btn" href="screenshots/05-activiteiten.png" aria-label="Vergroot screenshot: activiteiten en herinneringen">
           <img src="screenshots/05-activiteiten.png" alt="Overzicht van activiteiten met herinneringen" width="640" height="1391" loading="lazy">
-        </button>
+        </a>
         <figcaption>Activiteiten &amp; herinneringen</figcaption>
       </figure>
       <figure class="shot">
-        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: activiteit met meenemen-lijstje">
+        <a class="shot-btn" href="screenshots/06-activiteit-detail.png" aria-label="Vergroot screenshot: activiteit met meenemen-lijstje">
           <img src="screenshots/06-activiteit-detail.png" alt="Activiteit met meenemen-lijstje" width="640" height="1391" loading="lazy">
-        </button>
+        </a>
         <figcaption>Nooit meer spullen vergeten</figcaption>
       </figure>
     </div>
@@ -1106,8 +1115,10 @@
   if (y) { y.textContent = new Date().getFullYear(); }
 </script>
 
-<!-- Lightbox voor de app-screenshots (toegankelijk: dialog, Escape, focus terug) -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vergroot screenshot" hidden>
+<!-- Lightbox voor de app-screenshots. Toegankelijk conform review:
+     focus-containment (Tab blijft binnen de dialog), Escape, focus terug
+     naar de opener, iOS-veilige scroll-lock, boven de cookiebanner. -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
   <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Sluiten">&times;</button>
   <figure style="margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;">
     <img id="lightbox-img" src="" alt="">
@@ -1122,32 +1133,54 @@
   var caption = document.getElementById('lightbox-caption');
   var closeBtn = document.getElementById('lightbox-close');
   var opener = null;
+  var savedScrollY = 0;
 
-  function open(btn) {
-    var thumb = btn.querySelector('img');
-    var fig = btn.closest('figure');
+  function lockScroll() {
+    // iOS Safari: overflow:hidden op body is niet genoeg; position:fixed
+    // met bewaarde scrollpositie voorkomt scroll-bleed en positieverlies.
+    savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.style.position = 'fixed';
+    document.body.style.top = -savedScrollY + 'px';
+    document.body.style.width = '100%';
+  }
+  function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
+  }
+  function open(link) {
+    var thumb = link.querySelector('img');
+    var fig = link.parentNode;
     var cap = fig ? fig.querySelector('figcaption') : null;
     img.src = thumb.currentSrc || thumb.src;
     img.alt = thumb.alt;
-    caption.textContent = cap ? cap.textContent : '';
-    opener = btn;
+    caption.textContent = cap ? cap.textContent : 'Vergroot screenshot';
+    opener = link;
     box.hidden = false;
-    document.body.style.overflow = 'hidden';
+    lockScroll();
     closeBtn.focus();
   }
   function close() {
     box.hidden = true;
     img.src = '';
-    document.body.style.overflow = '';
+    unlockScroll();
     if (opener) { opener.focus(); opener = null; }
   }
-  document.querySelectorAll('.shot-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () { open(btn); });
+  Array.prototype.forEach.call(document.querySelectorAll('.shot-btn'), function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault(); // zonder JS opent de href de afbeelding zelf
+      open(link);
+    });
   });
   closeBtn.addEventListener('click', close);
   box.addEventListener('click', function (e) { if (e.target === box) close(); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !box.hidden) close();
+    if (box.hidden) return;
+    if (e.key === 'Escape' || e.key === 'Esc') close();
+    // Focus-containment: de sluitknop is het enige interactieve element in
+    // de dialog, dus Tab en Shift+Tab blijven daarop staan (aria-modal).
+    if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
   });
 })();
 </script>
