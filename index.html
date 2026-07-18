@@ -216,6 +216,39 @@
     z-index: 1;
     filter: drop-shadow(0 20px 40px rgba(47, 95, 143, 0.12));
   }
+  /* Telefoon-frame in de hero: laat de app zelf zien (les van de
+     viswedstrijdapp-landing: het product tonen werkt beter dan alleen
+     een logo). */
+  .hero-phone {
+    position: relative;
+    z-index: 1;
+    width: min(258px, 62vw);
+    border: 9px solid #22344b;
+    border-radius: 36px;
+    background: #22344b;
+    box-shadow: 0 18px 44px rgba(34, 52, 75, 0.28);
+    overflow: hidden;
+  }
+  .hero-phone img { display: block; width: 100%; height: auto; }
+  .hero-phone-caption {
+    position: relative;
+    z-index: 1;
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+  /* Sectie-kickers: kleine label boven elke sectietitel voor ritme */
+  .section-kicker {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--green, #6B9A6B);
+    text-align: center;
+    margin-bottom: 8px;
+  }
 
   .badge {
     display: inline-flex;
@@ -275,6 +308,7 @@
     .hero-ctas { justify-content: center; }
     .hero-visual { order: -1; }
     .hero-img { max-width: 280px; }
+    .hero-phone { width: min(210px, 56vw); }
     .pillars { padding: 32px 20px; background: var(--bg); border-top: none; border-bottom: none; }
     .pillars-grid { grid-template-columns: 1fr; gap: 16px; }
     .pillar {
@@ -387,11 +421,65 @@
   .shot img {
     width: 100%;
     height: auto;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    box-shadow: 0 14px 34px rgba(47, 95, 143, 0.14);
-    background: var(--surface);
+    border-radius: 22px;
+    border: 6px solid #22344b;
+    box-shadow: 0 14px 34px rgba(34, 52, 75, 0.2);
+    background: #22344b;
   }
+  /* Screenshots zijn klikbaar (lightbox), toegankelijk via toetsenbord */
+  .shot-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+    border-radius: 22px;
+  }
+  .shot-btn:focus-visible {
+    outline: 3px solid var(--blue, #2F5F8F);
+    outline-offset: 3px;
+  }
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px;
+    background: rgba(20, 30, 44, 0.86);
+  }
+  .lightbox[hidden] { display: none; }
+  .lightbox img {
+    max-height: min(78vh, 900px);
+    max-width: min(92vw, 420px);
+    width: auto;
+    height: auto;
+    border-radius: 26px;
+    border: 8px solid #22344b;
+    background: #22344b;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+  .lightbox figcaption { color: #fff; font-size: 15px; text-align: center; }
+  .lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .lightbox-close:hover, .lightbox-close:focus-visible { background: rgba(255, 255, 255, 0.3); }
   .shot figcaption {
     margin-top: 12px;
     font-size: 14px;
@@ -728,7 +816,12 @@
       <span class="badge">Nu beschikbaar voor iOS, Android volgt</span>
     </div>
     <div class="hero-visual">
-      <img src="logo-transparent.png" alt="TweeHuizen logo" class="hero-img" width="440" height="440">
+      <div>
+        <div class="hero-phone">
+          <img src="screenshots/01-agenda.png" alt="De agenda in TweeHuizen met het zorgrooster: gekleurde dagen per ouder en de eerstvolgende wissel" width="640" height="1391" fetchpriority="high">
+        </div>
+        <p class="hero-phone-caption">De agenda: in één oogopslag wie wanneer zorgt</p>
+      </div>
     </div>
   </div>
 </section>
@@ -757,6 +850,7 @@
 <!-- ─── Wat kan TweeHuizen? ─────────── -->
 <section class="section" id="wat-kan-tweehuizen" style="background: var(--surface);">
   <div class="container">
+    <span class="section-kicker">Functies</span>
     <h2 class="section-title">Wat kan TweeHuizen?</h2>
     <p class="section-sub">
       Geen losse appjes meer. Geen discussies over wie wanneer welke dagen had.
@@ -812,28 +906,39 @@
 <!-- ─── App-screenshots ─────────────────── -->
 <section class="section showcase">
   <div class="container">
+    <span class="section-kicker">Screenshots</span>
     <h2 class="section-title">Zo ziet het eruit</h2>
     <p class="section-sub">Een rustige, overzichtelijke app. Gebouwd om samen te plannen, niet om te discussiëren.</p>
 
     <div class="shots-row">
       <figure class="shot">
-        <img src="screenshots/01-agenda.png" alt="Agendaweergave met het zorgrooster in TweeHuizen" width="640" height="1391" loading="lazy">
+        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: agenda en zorgrooster">
+          <img src="screenshots/01-agenda.png" alt="Agendaweergave met het zorgrooster in TweeHuizen" width="640" height="1391" loading="lazy">
+        </button>
         <figcaption>Agenda &amp; zorgrooster</figcaption>
       </figure>
       <figure class="shot">
-        <img src="screenshots/02-afstemmen.png" alt="Voorstel om een dag te ruilen, met goedkeuring in één tik" width="640" height="1391" loading="lazy">
+        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: samen afstemmen">
+          <img src="screenshots/02-afstemmen.png" alt="Voorstel om een dag te ruilen, met goedkeuring in één tik" width="640" height="1391" loading="lazy">
+        </button>
         <figcaption>Samen afstemmen</figcaption>
       </figure>
       <figure class="shot">
-        <img src="screenshots/03-zorgverdeling.png" alt="Inzicht in de zorgverdeling per maand" width="640" height="1391" loading="lazy">
+        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: eerlijk inzicht in de zorgverdeling">
+          <img src="screenshots/03-zorgverdeling.png" alt="Inzicht in de zorgverdeling per maand" width="640" height="1391" loading="lazy">
+        </button>
         <figcaption>Eerlijk inzicht</figcaption>
       </figure>
       <figure class="shot">
-        <img src="screenshots/05-activiteiten.png" alt="Overzicht van activiteiten met herinneringen" width="640" height="1391" loading="lazy">
+        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: activiteiten en herinneringen">
+          <img src="screenshots/05-activiteiten.png" alt="Overzicht van activiteiten met herinneringen" width="640" height="1391" loading="lazy">
+        </button>
         <figcaption>Activiteiten &amp; herinneringen</figcaption>
       </figure>
       <figure class="shot">
-        <img src="screenshots/06-activiteit-detail.png" alt="Activiteit met meenemen-lijstje" width="640" height="1391" loading="lazy">
+        <button type="button" class="shot-btn" aria-label="Vergroot screenshot: activiteit met meenemen-lijstje">
+          <img src="screenshots/06-activiteit-detail.png" alt="Activiteit met meenemen-lijstje" width="640" height="1391" loading="lazy">
+        </button>
         <figcaption>Nooit meer spullen vergeten</figcaption>
       </figure>
     </div>
@@ -843,6 +948,7 @@
 <!-- ─── Hoe het werkt ──────────────────── -->
 <section class="section">
   <div class="container">
+    <span class="section-kicker">Aan de slag</span>
     <h2 class="section-title">Zo werkt het</h2>
     <p class="section-sub">Binnen 5 minuten ben je klaar om samen te plannen.</p>
 
@@ -870,6 +976,7 @@
 <!-- ─── Abonnementen ───────────────────── -->
 <section class="section" style="background: var(--surface);">
   <div class="container">
+    <span class="section-kicker">Prijzen</span>
     <h2 class="section-title">Eerlijk geprijsd</h2>
     <p class="section-sub">
       Eén abonnement voor het hele gezin. Probeer 14 dagen gratis.
@@ -928,6 +1035,7 @@
 <!-- ─── FAQ teaser ──────────────────────── -->
 <section class="section" style="background: var(--surface);">
   <div class="container">
+    <span class="section-kicker">Vragen</span>
     <h2 class="section-title">Veelgestelde vragen</h2>
     <p class="section-sub">De meest gestelde vragen, kort en duidelijk.</p>
 
@@ -998,6 +1106,51 @@
   if (y) { y.textContent = new Date().getFullYear(); }
 </script>
 
+<!-- Lightbox voor de app-screenshots (toegankelijk: dialog, Escape, focus terug) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vergroot screenshot" hidden>
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Sluiten">&times;</button>
+  <figure style="margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+<script>
+(function () {
+  'use strict';
+  var box = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  var caption = document.getElementById('lightbox-caption');
+  var closeBtn = document.getElementById('lightbox-close');
+  var opener = null;
+
+  function open(btn) {
+    var thumb = btn.querySelector('img');
+    var fig = btn.closest('figure');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    img.src = thumb.currentSrc || thumb.src;
+    img.alt = thumb.alt;
+    caption.textContent = cap ? cap.textContent : '';
+    opener = btn;
+    box.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close() {
+    box.hidden = true;
+    img.src = '';
+    document.body.style.overflow = '';
+    if (opener) { opener.focus(); opener = null; }
+  }
+  document.querySelectorAll('.shot-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { open(btn); });
+  });
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !box.hidden) close();
+  });
+})();
+</script>
 <script src="consent.js?v=2" defer></script>
 </body>
 </html>
