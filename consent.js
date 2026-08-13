@@ -82,16 +82,39 @@
   function showBanner() {
     if (document.getElementById('th-consent')) return;
     injectStyles();
+
+    // De banner volgt de taal van de pagina. Zonder dit kreeg een bezoeker van
+    // support-en.html een Nederlandse toestemmingsvraag te zien, precies het
+    // moment waarop je duidelijk hoort te zijn over wat je bijhoudt.
+    var texts = {
+      nl: {
+        label: 'Cookietoestemming',
+        title: 'Cookies en tracking',
+        body: 'We willen graag begrijpen hoe bezoekers TweeHuizen vinden, zodat we de app verder kunnen verbeteren. Daarvoor gebruiken we Meta Pixel en Google Analytics. Geen verkoop van data, geen reclame van derden. Lees meer in onze <a href="privacy.html">privacyverklaring</a>.',
+        decline: 'Alleen essentieel',
+        accept: 'Akkoord'
+      },
+      en: {
+        label: 'Cookie consent',
+        title: 'Cookies and tracking',
+        body: 'We would like to understand how visitors find TweeHuizen, so we can keep improving the app. For that we use the Meta Pixel and Google Analytics. We do not sell data and we do not run third-party advertising. Read more in our <a href="privacy.html" hreflang="nl" lang="nl">privacy policy</a> (in Dutch).',
+        decline: 'Essential only',
+        accept: 'Accept'
+      }
+    };
+    var lang = (document.documentElement.lang || 'nl').slice(0, 2).toLowerCase();
+    var t = texts[lang] || texts.nl;
+
     var div = document.createElement('div');
     div.id = 'th-consent';
     div.setAttribute('role', 'dialog');
-    div.setAttribute('aria-label', 'Cookietoestemming');
+    div.setAttribute('aria-label', t.label);
     div.innerHTML =
-      '<h3>Cookies en tracking</h3>' +
-      '<p>We willen graag begrijpen hoe bezoekers TweeHuizen vinden, zodat we de app verder kunnen verbeteren. Daarvoor gebruiken we Meta Pixel en Google Analytics. Geen verkoop van data, geen reclame van derden. Lees meer in onze <a href="privacy.html">privacyverklaring</a>.</p>' +
+      '<h3>' + t.title + '</h3>' +
+      '<p>' + t.body + '</p>' +
       '<div class="th-btns">' +
-      '<button class="th-decline" type="button">Alleen essentieel</button>' +
-      '<button class="th-accept" type="button">Akkoord</button>' +
+      '<button class="th-decline" type="button">' + t.decline + '</button>' +
+      '<button class="th-accept" type="button">' + t.accept + '</button>' +
       '</div>';
     document.body.appendChild(div);
 

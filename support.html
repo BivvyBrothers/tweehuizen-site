@@ -7,6 +7,9 @@
 <meta name="description" content="Veelgestelde vragen over TweeHuizen: abonnementen, gezin uitnodigen, activiteiten, meldingen en meer.">
 <meta name="theme-color" content="#2F5F8F">
 <link rel="canonical" href="https://tweehuizen.com/support.html">
+<link rel="alternate" hreflang="nl" href="https://tweehuizen.com/support.html">
+<link rel="alternate" hreflang="en" href="https://tweehuizen.com/support-en.html">
+<link rel="alternate" hreflang="x-default" href="https://tweehuizen.com/support.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hulp &amp; Support | TweeHuizen">
 <meta property="og:description" content="Veelgestelde vragen over TweeHuizen.">
@@ -53,6 +56,11 @@
   .skip-link:focus { top: 8px; outline: 2px solid #E9A864; outline-offset: 2px; }
 
   :focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; border-radius: 4px; }
+
+  /* Taalschakelaar in de navigatie: rustig, maar wel vindbaar voor wie
+     de Engelse App Store-listing volgt. */
+  .topnav .lang-switch { font-weight: 600; }
+  .topnav .lang-switch::before { content: "\1F310"; margin-right: 5px; }
 
   /* Footer-legal (KvK + adres) */
   .footer-container { max-width: 960px; margin: 0 auto; }
@@ -317,6 +325,7 @@
   <a href="index.html">Home</a>
   <a href="ons-verhaal.html">Mijn verhaal</a>
   <a href="support.html" aria-current="page">Hulp &amp; Support</a>
+  <a href="support-en.html" class="lang-switch" hreflang="en" lang="en">English</a>
 </nav>
 
 <main id="main">
@@ -369,7 +378,7 @@
   <div class="faq">
     <h3>Hoe werkt een uitnodigingscode?</h3>
     <p>Een uitnodigingscode is een unieke code waarmee iemand zich bij jullie gezin kan aansluiten. Na het invoeren tijdens registratie wordt de persoon automatisch aan jullie gezin gekoppeld, met de rol en rechten die je hebt ingesteld.</p>
-    <p>Codes blijven 24 uur geldig. Niet op tijd ingewisseld? Geen probleem: je kunt eenvoudig een nieuwe code genereren via het profiel van de uitgenodigde persoon in het tabblad Gezin.</p>
+    <p>Codes blijven zeven dagen geldig. Niet op tijd ingewisseld? Geen probleem: je kunt eenvoudig een nieuwe code genereren via het profiel van de uitgenodigde persoon in het tabblad Gezin.</p>
   </div>
 
   <div class="faq">
@@ -615,6 +624,6 @@
   if (y) { y.textContent = new Date().getFullYear(); }
 </script>
 
-<script src="consent.js?v=2" defer></script>
+<script src="consent.js?v=3" defer></script>
 </body>
 </html>

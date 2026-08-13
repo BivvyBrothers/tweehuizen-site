@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help &amp; Support | TweeHuizen</title>
+<meta name="description" content="Frequently asked questions about TweeHuizen: subscriptions, inviting your family, activities, notifications and more.">
+<meta name="theme-color" content="#2F5F8F">
+<link rel="canonical" href="https://tweehuizen.com/support-en.html">
+<link rel="alternate" hreflang="nl" href="https://tweehuizen.com/support.html">
+<link rel="alternate" hreflang="en" href="https://tweehuizen.com/support-en.html">
+<link rel="alternate" hreflang="x-default" href="https://tweehuizen.com/support.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Help &amp; Support | TweeHuizen">
+<meta property="og:description" content="Frequently asked questions about TweeHuizen.">
+<meta property="og:url" content="https://tweehuizen.com/support-en.html">
+<meta property="og:image" content="https://tweehuizen.com/logo.png">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="nl_NL">
+<link rel="icon" type="image/png" href="favicon-180.png?v=1">
+<link rel="apple-touch-icon" href="favicon-180.png?v=1">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --blue: #2F5F8F;
+    --blue-light: #4A90D9;
+    --green: #6B9A6B;
+    --green-light: #A8C5A2;
+    --accent: #E9A864;
+    --accent-light: #F5E1C8;
+    --text: #24323F;
+    --text-muted: #667381;
+    --text-light: #97A3AE;
+    --bg: #F0EDE8;
+    --surface: #FFFFFF;
+    --border: #E9DCCF;
+    --border-light: #F0E9E1;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  a { color: var(--blue-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Skip link voor toetsenbordgebruikers */
+  .skip-link {
+    position: absolute; top: -40px; left: 8px;
+    background: var(--blue); color: #fff;
+    padding: 8px 16px; border-radius: 6px;
+    text-decoration: none; font-weight: 600;
+    z-index: 999; transition: top 0.2s ease;
+  }
+  .skip-link:focus { top: 8px; outline: 2px solid #E9A864; outline-offset: 2px; }
+
+  :focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; border-radius: 4px; }
+
+  /* Taalschakelaar in de navigatie: rustig, maar wel vindbaar voor wie
+     de Engelse App Store-listing volgt. */
+  .topnav .lang-switch { font-weight: 600; }
+  .topnav .lang-switch::before { content: "\1F310"; margin-right: 5px; }
+
+  /* Footer-legal (KvK + adres) */
+  .footer-container { max-width: 960px; margin: 0 auto; }
+  .footer-legal {
+    text-align: center; color: var(--text-muted);
+    font-size: 13.5px; font-style: normal;
+    line-height: 1.75; margin-bottom: 14px;
+  }
+  .footer-legal a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
+  .footer-legal a:hover { color: var(--blue); }
+  .footer-legal strong { color: var(--text); font-weight: 600; }
+  .footer-sep { color: var(--text-light); margin: 0 8px; }
+  .footer-kemblinck__logo {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* Watermark */
+  .bg-watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background: url('logo.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.025;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Sticky nav */
+  .topnav {
+    padding: 20px 24px;
+    text-align: center;
+    background: rgba(240, 237, 232, 0.85);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .topnav a {
+    color: var(--blue-light);
+    font-size: 15px;
+    margin: 0 14px;
+    font-weight: 500;
+  }
+
+  /* Container */
+  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  .page-header {
+    text-align: center;
+    padding: 56px 24px 32px;
+  }
+  .page-kicker {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: #DCE9F3;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .page-title {
+    font-size: clamp(36px, 6vw, 48px);
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .page-sub {
+    color: var(--text-muted);
+    font-size: 18px;
+  }
+
+  /* Contact-kaart */
+  .contact-card {
+    background: linear-gradient(135deg, #E9F1F8 0%, #DEEAD7 100%);
+    border-radius: 20px;
+    padding: 32px;
+    margin: 32px 0 48px;
+    border: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .contact-icon {
+    width: 64px;
+    height: 64px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .contact-body { flex: 1; min-width: 220px; }
+  .contact-body h2 { font-size: 20px; color: var(--blue); margin-bottom: 4px; font-weight: 700; }
+  .contact-body p { color: var(--text); font-size: 15px; margin-bottom: 4px; }
+  .contact-body .email {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  /* Quick jump nav */
+  .category-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+  .category-chip {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .category-chip:hover {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+    text-decoration: none;
+  }
+
+  /* Categorie header */
+  .category {
+    margin-top: 48px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .category-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .category-icon.blue { background: #DCE9F3; color: var(--blue); }
+  .category-icon.green { background: #DEEAD7; color: var(--green); }
+  .category-icon.accent { background: var(--accent-light); color: var(--accent); }
+  .category-icon.muted { background: var(--border); color: var(--text); }
+  .category-title {
+    font-size: 22px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  /* FAQ */
+  .faq {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border-light);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .faq:hover {
+    border-color: var(--blue-light);
+    box-shadow: 0 4px 16px rgba(47, 95, 143, 0.05);
+  }
+  .faq h3 {
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .faq p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .faq p:last-child { margin-bottom: 0; }
+  .faq strong { color: var(--text); font-weight: 600; }
+  .faq ul { padding-left: 20px; margin: 8px 0; }
+  .faq ul li {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 24px 24px;
+    background: #E9E4DC;
+    border-top: 1px solid var(--border);
+    margin-top: 64px;
+  }
+  .footer-links {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .footer-links a {
+    color: var(--blue-light);
+    font-size: 14.5px;
+    margin: 0 10px;
+  }
+  .footer-copy {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+  }
+
+  /* Compact mobile (<640px) */
+  @media (max-width: 640px) {
+    .topnav { padding: 14px 16px; }
+    .topnav a { margin: 0 10px; font-size: 14.5px; }
+    .page-header { padding: 40px 20px 24px; }
+    .page-title { font-size: clamp(28px, 8vw, 38px); }
+    .page-sub { font-size: 16px; }
+    .page-kicker { font-size: 12px; margin-bottom: 14px; }
+    .contact-card { padding: 24px 20px; border-radius: 16px; flex-direction: column; text-align: center; gap: 12px; }
+    .contact-body h2 { font-size: 18px; }
+    .category-jump { gap: 10px; }
+    .category-chip { padding: 10px 14px; font-size: 14px; }
+    .footer { padding: 32px 20px 24px; margin-top: 40px; }
+    .footer-links a { display: inline-block; padding: 4px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="bg-watermark" aria-hidden="true"></div>
+
+<nav class="topnav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="ons-verhaal.html" hreflang="nl" lang="nl">Mijn verhaal</a>
+  <a href="support-en.html" aria-current="page">Help &amp; Support</a>
+  <a href="support.html" class="lang-switch" hreflang="nl" lang="nl">Nederlands</a>
+</nav>
+
+<main id="main">
+
+<!-- ─── Header ────────────────────────────── -->
+<header class="page-header">
+  <span class="page-kicker">Help &amp; Support</span>
+  <h1 class="page-title">How can we help?</h1>
+  <p class="page-sub">Frequently asked questions, sorted by topic. Not finding your answer? Send us an email.</p>
+</header>
+
+<!-- ─── Contact-kaart ─────────────────────── -->
+<section class="container">
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-body">
+      <h2>Get in touch</h2>
+      <p>Have a question, a problem or a suggestion? We usually reply within 1 to 2 working days.</p>
+      <a href="mailto:support@tweehuizen.com" class="email">support@tweehuizen.com</a>
+    </div>
+  </div>
+
+  <!-- Jump links -->
+  <div class="category-jump">
+    <a href="#getting-started" class="category-chip">Getting started</a>
+    <a href="#family" class="category-chip">Family &amp; roles</a>
+    <a href="#planning" class="category-chip">Planning &amp; proposals</a>
+    <a href="#subscription" class="category-chip">Subscription</a>
+    <a href="#notifications" class="category-chip">Notifications &amp; sync</a>
+    <a href="#data" class="category-chip">Data &amp; privacy</a>
+    <a href="#other" class="category-chip">Other</a>
+  </div>
+
+  <!-- ─── Getting started ─────────────────── -->
+  <div class="category" id="getting-started">
+    <div class="category-icon blue">🚀</div>
+    <h2 class="category-title">Getting started with TweeHuizen</h2>
+  </div>
+
+  <div class="faq">
+    <h3>How do I create a family?</h3>
+    <p>After signing up, the onboarding guides you through it. You create a family, add your children and set up the base schedule. After that you can invite the other parent from the Family tab.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I invite the other parent?</h3>
+    <p>Go to the <strong>Family</strong> tab and tap <strong>"Invite someone"</strong>. You get an invitation code you can share via WhatsApp, email or any other app. The other parent enters that code while creating their own account.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How does an invitation code work?</h3>
+    <p>An invitation code is a unique code that lets someone join your family. Once they enter it during sign-up, they are linked to your family automatically, with the role and permissions you chose.</p>
+    <p>Codes stay valid for seven days. Not redeemed in time? No problem: you can generate a new code from that person's profile in the Family tab.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What is the base schedule?</h3>
+    <p>The base schedule is the fixed care split that repeats itself, for example "week on, week off" or a fixed weekly pattern. You set it up under <strong>Coordinate → Base schedule</strong>. When the split changes, you can make a proposal for specific days or periods.</p>
+  </div>
+
+  <!-- ─── Family and roles ─────────────────── -->
+  <div class="category" id="family">
+    <div class="category-icon green">👨‍👩‍👧‍👦</div>
+    <h2 class="category-title">Family and roles</h2>
+  </div>
+
+  <div class="faq">
+    <h3>What roles exist in a family?</h3>
+    <p>TweeHuizen has three main roles:</p>
+    <ul>
+      <li><strong>Parent (primary parent):</strong> full rights: planning, making proposals and approving them.</li>
+      <li><strong>Someone involved</strong> (step-parent, grandparent, carer): can view and make proposals, and optionally approve them as well (set per person).</li>
+      <li><strong>Child:</strong> a profile without an account, managed by the parents. Older children can optionally get their own login with limited rights.</li>
+    </ul>
+  </div>
+
+  <div class="faq">
+    <h3>Can a grandparent or step-parent approve proposals?</h3>
+    <p>By default only parents can approve proposals. Parents can change this under <strong>Family → Permission settings</strong>: turn on "Non-parents may approve", then decide per person who gets that right. This change needs approval from both parents.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can my child use the app?</h3>
+    <p>Yes, older children can get their own login with limited rights. You first create a child profile in the app and then generate a link code. With that code the child can sign in on their own phone and follow the schedule, without being able to change family details.</p>
+  </div>
+
+  <!-- ─── Planning ───────────────────────── -->
+  <div class="category" id="planning">
+    <div class="category-icon accent">📅</div>
+    <h2 class="category-title">Planning and proposals</h2>
+  </div>
+
+  <div class="faq">
+    <h3>What is a "proposal" in the app?</h3>
+    <p>A proposal is a request to deviate from the base schedule, for example "I would like to swap Saturday" or "the children are all with me next week". The other parent gets a notification and can approve or decline. The schedule only changes after approval.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I make a proposal?</h3>
+    <p>Go to the <strong>Schedule</strong> or <strong>Coordinate</strong> tab and tap <strong>"New proposal"</strong>. Choose a date, say what you want to change and add a note if you like. The other parent gets a notification.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What happens if nobody responds to a proposal?</h3>
+    <p>Proposals stay open until the other parent responds. Nothing is approved automatically: every change needs explicit consent. Notifications keep you up to date.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can I withdraw my own proposal?</h3>
+    <p>Yes. As long as the other parent has not approved or declined it, you can withdraw it yourself. Go to <strong>Coordinate</strong>, find your proposal under <strong>"Waiting for a response"</strong> and tap <strong>"Withdraw proposal"</strong>. The other parent no longer sees it in their list. The action stays visible in the log, so you can both look back at what happened.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I split school holidays and public holidays?</h3>
+    <p>Go to <strong>Coordinate → Holidays and public holidays</strong>. You will see all Dutch school holidays and recognised public holidays. For each holiday period you can record which parent the children are with, or propose a different split.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can I keep track of my child's activities?</h3>
+    <p>Yes. Under <strong>Coordinate → Activities</strong> you add sports, parties, hobbies and other regular commitments. This makes it clear who takes the child to which activity, and prevents double bookings.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can the app remember what needs to come along to an activity?</h3>
+    <p>Yes. For every activity you can make a list of things to bring, for example swimwear, a towel and goggles for a swimming lesson. Choose when you want a reminder (30 minutes, 1 hour, 2 hours or a day before) and the app sends a notification with the full list.</p>
+    <p>The app also suggests items for common activities: type "swimming lesson" and TweeHuizen proposes swimwear, a towel and goggles.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Who receives the reminder for an activity?</h3>
+    <p>The parent doing the drop-off gets the notification, including the list of things to bring. That way they do not have to dig through old messages in the morning to work out what goes in the sports bag.</p>
+    <p>Does your child have their own account, for example an older teenager? Then you can tick the box so they get the notification too. Very handy when they pack their own bag.</p>
+  </div>
+
+  <div class="faq">
+    <h3>I have already packed everything, what now?</h3>
+    <p>The reminder itself has two buttons: <strong>Packed</strong> and <strong>Snooze 15 min</strong>. "Packed" closes the notification. "Snooze" brings it back 15 minutes later, handy if you are busy right now but want to pack shortly.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What does the Care split tab show?</h3>
+    <p>Care split shows statistics about how care is divided: how many days, weekends and holidays each family member has had. Useful to look at every now and then to see whether the split still feels fair.</p>
+  </div>
+
+  <!-- ─── Subscription ─────────────────────── -->
+  <div class="category" id="subscription">
+    <div class="category-icon blue">💳</div>
+    <h2 class="category-title">Subscription and payment</h2>
+  </div>
+
+  <div class="faq">
+    <h3>What is the difference between Family and Family Plus?</h3>
+    <p><strong>Family</strong> is for 2 adults (the two parents). <strong>Family Plus</strong> is for 3 to 6 adults, for example when step-parents, grandparents or other involved adults take part. Children are free in both cases.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Do children count towards the seats?</h3>
+    <p>No. Children are always free profiles. Only adults use a seat in your subscription.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What is free and what is premium?</h3>
+    <p><strong>Free:</strong> creating an account, starting a family, adding children, setting up the base schedule, inviting family members, viewing the schedule, and splitting holidays and public holidays.</p>
+    <p><strong>Premium:</strong> making and approving proposals (coordinating), tracking activities, care split statistics, push notifications, calendar export and backup.</p>
+    <p>You start with a 14-day free trial, so you can try everything.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How does my free trial start?</h3>
+    <p>The 14-day trial starts as soon as you choose a subscription on the paywall. You are only charged after the trial ends, and you can cancel free of charge up to 24 hours before that from your Apple ID settings.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I cancel my subscription?</h3>
+    <p>On your iPhone go to <strong>Settings → your name → Subscriptions → TweeHuizen → Cancel</strong>. You keep access until the end of the paid period. TweeHuizen cannot cancel subscriptions itself; Apple handles that.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I restore a subscription I bought earlier?</h3>
+    <p>Go to <strong>More</strong> and tap <strong>"Restore purchases"</strong> (also available on the premium screen). This links your existing subscription to your account again, for example after installing the app on a new phone.</p>
+  </div>
+
+  <div class="faq">
+    <h3>What happens when my subscription ends?</h3>
+    <p>You keep access to the basics: family, children, base schedule and viewing the schedule. Premium features (proposals, activities, statistics, notifications, export, backup) are paused until you subscribe again. Your data is kept.</p>
+  </div>
+
+  <!-- ─── Notifications & sync ───────────────── -->
+  <div class="category" id="notifications">
+    <div class="category-icon green">🔔</div>
+    <h2 class="category-title">Notifications and sync</h2>
+  </div>
+
+  <div class="faq">
+    <h3>Which notifications do I get?</h3>
+    <p>TweeHuizen sends notifications for: a new proposal, a response to a proposal, an upcoming handover, and important changes to the schedule. You can fine-tune them under <strong>More → Notifications</strong>.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Do notifications work in the simulator?</h3>
+    <p>No. Push notifications only work on a real iPhone. Local reminders inside the app work without push notifications.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can I use TweeHuizen on more than one device?</h3>
+    <p>Yes. Sign in with the same account on all your devices. Your schedule and changes sync automatically. On a new device you can use "Restore purchases" to link your subscription again.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Does TweeHuizen work offline?</h3>
+    <p>To a limited extent. You can view previously loaded data while offline, but proposals, notifications and syncing need an internet connection. Changes are uploaded automatically as soon as you are back online.</p>
+  </div>
+
+  <!-- ─── Data and privacy ────────────────── -->
+  <div class="category" id="data">
+    <div class="category-icon muted">🔒</div>
+    <h2 class="category-title">Data and privacy</h2>
+  </div>
+
+  <div class="faq">
+    <h3>Can I export my data?</h3>
+    <p>Yes. Go to <strong>More → Calendar export</strong> to export the care schedule to your calendar app (Apple Calendar, Google Calendar). Under <strong>More → Backup</strong> you can make a complete local backup of all your family data.</p>
+  </div>
+
+  <div class="faq">
+    <h3>How do I delete my account?</h3>
+    <p>Go to <strong>More</strong> and scroll all the way down. Tap <strong>"Delete account"</strong> and confirm twice. Your account and all related data are permanently removed from our systems within 30 days.</p>
+    <p>Note: if you are the last adult in the family, the whole family is deleted as well.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Is my data safe?</h3>
+    <p>Yes. We use encrypted connections (HTTPS), Row Level Security at database level (only you and your family members can see your data) and secure authentication. Sign-in details are stored in the secure Keychain on your iPhone. Our servers are in the EU.</p>
+    <p>See our <a href="privacy.html" hreflang="nl" lang="nl">Privacy policy</a> (in Dutch) for more information.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Who can see my family data?</h3>
+    <p>Only the members of your own family. TweeHuizen staff have no access to your content. We do not use external analytics services and we do not sell data.</p>
+  </div>
+
+  <!-- ─── Other ─────────────────────────── -->
+  <div class="category" id="other">
+    <div class="category-icon accent">✨</div>
+    <h2 class="category-title">Other</h2>
+  </div>
+
+  <div class="faq">
+    <h3>Is TweeHuizen suitable for parents living together?</h3>
+    <p>The app is designed specifically for separated parents with children living at two addresses. Parents living together can of course use it to keep track of the weekly schedule, but a lot of features (such as proposals between two homes) are then less relevant.</p>
+  </div>
+
+  <div class="faq">
+    <h3>My proposal was approved, but I want to cancel it after all. Is that possible?</h3>
+    <p>Approved proposals are final. You can make a new proposal to undo the change; that then needs approval from the other parent again. This way everyone stays aware of changes.</p>
+  </div>
+
+  <div class="faq">
+    <h3>I found a bug. Where do I report it?</h3>
+    <p>Send an email to <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a> describing the problem and, if you can, a screenshot. Please also mention which iPhone and which iOS version you are using.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Can I use TweeHuizen for more than one family?</h3>
+    <p>One account is linked to one family. If you are involved with several families (for example as a carer for different households), you need a separate account per family.</p>
+  </div>
+
+</section>
+
+<!-- ─── Footer ──────────────────────────────── -->
+</main>
+<footer class="footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true"> · </span>
+      <a href="ons-verhaal.html" hreflang="nl" lang="nl">Mijn verhaal</a>
+      <span aria-hidden="true"> · </span>
+      <a href="support-en.html">Help &amp; Support</a>
+      <span aria-hidden="true"> · </span>
+      <a href="privacy.html" hreflang="nl" lang="nl">Privacy policy</a>
+      <span aria-hidden="true"> · </span>
+      <a href="voorwaarden.html" hreflang="nl" lang="nl">Terms</a>
+    </div>
+    <address class="footer-legal">
+      A product of <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo-64.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22"><strong>KemblincK</strong></a><br>
+      KvK 42043399<span class="footer-sep" aria-hidden="true">·</span><a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a>
+    </address>
+    <div class="footer-copy">&copy; <span id="year">2026</span> TweeHuizen</div>
+  </div>
+</footer>
+
+<script>
+  var y = document.getElementById('year');
+  if (y) { y.textContent = new Date().getFullYear(); }
+</script>
+
+<script src="consent.js?v=3" defer></script>
+</body>
+</html>
