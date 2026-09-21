@@ -19,7 +19,7 @@
 <meta property="og:locale:alternate" content="nl_NL">
 <link rel="icon" type="image/png" href="assets/favicon-180.png?v=2">
 <link rel="apple-touch-icon" href="assets/favicon-180.png?v=2">
-<link rel="stylesheet" href="assets/stijl-v2.css?v=2">
+<link rel="stylesheet" href="assets/stijl-v2.css?v=3">
 </head>
 <body>
 
@@ -43,9 +43,18 @@
 </header>
 
 <!-- ─── Contact-kaart ─────────────────────── -->
-<section class="container">
+<section class="container support-content">
+<nav class="category-jump" id="onderwerpen" aria-label="Help topics">
+    <a href="#getting-started" class="category-chip">Getting started</a>
+    <a href="#family" class="category-chip">Family &amp; roles</a>
+    <a href="#planning" class="category-chip">Planning &amp; proposals</a>
+    <a href="#subscription" class="category-chip">Subscription</a>
+    <a href="#notifications" class="category-chip">Notifications &amp; sync</a>
+    <a href="#data" class="category-chip">Data &amp; privacy</a>
+    <a href="#other" class="category-chip">Other</a>
+  </nav>
+
   <div class="contact-card">
-    <div class="contact-icon" aria-hidden="true">✉️</div>
     <div class="contact-body">
       <h2>Get in touch</h2>
       <p>Have a question, a problem or a suggestion? We usually reply within 1 to 2 working days.</p>
@@ -54,251 +63,314 @@
   </div>
 
   <!-- Jump links -->
-  <div class="category-jump">
-    <a href="#getting-started" class="category-chip">Getting started</a>
-    <a href="#family" class="category-chip">Family &amp; roles</a>
-    <a href="#planning" class="category-chip">Planning &amp; proposals</a>
-    <a href="#subscription" class="category-chip">Subscription</a>
-    <a href="#notifications" class="category-chip">Notifications &amp; sync</a>
-    <a href="#data" class="category-chip">Data &amp; privacy</a>
-    <a href="#other" class="category-chip">Other</a>
-  </div>
+
 
   <!-- ─── Getting started ─────────────────── -->
   <div class="category" id="getting-started">
-    <div class="category-icon blue" aria-hidden="true">🚀</div>
     <h2 class="category-title">Getting started with TweeHuizen</h2>
   </div>
 
-  <div class="faq">
-    <h3>How do I create a family?</h3>
+  <details class="faq">
+    <summary>How do I create a family?</summary>
+    <div class="faq-answer">
     <p>After signing up, the onboarding guides you through it. You create a family, add your children and set up the base schedule. After that you can invite the other parent from the Family tab.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How do I invite the other parent?</h3>
+  <details class="faq">
+    <summary>How do I invite the other parent?</summary>
+    <div class="faq-answer">
     <p>Go to the <strong>Family</strong> tab and tap <strong>"Invite someone"</strong>. You get an invitation code you can share via WhatsApp, email or any other app. The other parent enters that code while creating their own account.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How does an invitation code work?</h3>
+  <details class="faq">
+    <summary>How does an invitation code work?</summary>
+    <div class="faq-answer">
     <p>An invitation code is a unique code that lets someone join your family. Once they enter it during sign-up, they are linked to your family automatically, with the role and permissions you chose.</p>
     <p>Codes stay valid for thirty days. Not redeemed in time? No problem: you can generate a new code from that person's profile in the Family tab.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>What is the base schedule?</h3>
+  <details class="faq">
+    <summary>What is the base schedule?</summary>
+    <div class="faq-answer">
     <p>The base schedule is the fixed care split that repeats itself, for example "week on, week off" or a fixed weekly pattern. You set it up under <strong>Coordinate → Base schedule</strong>. When the split changes, you can make a proposal for specific days or periods.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Family and roles ─────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Back to topics</a>
   <div class="category" id="family">
-    <div class="category-icon green" aria-hidden="true">👨‍👩‍👧‍👦</div>
     <h2 class="category-title">Family and roles</h2>
   </div>
 
-  <div class="faq">
-    <h3>What roles exist in a family?</h3>
+  <details class="faq">
+    <summary>What roles exist in a family?</summary>
+    <div class="faq-answer">
     <p>TweeHuizen has three main roles:</p>
     <ul>
       <li><strong>Parent (primary parent):</strong> full rights: planning, making proposals and approving them.</li>
       <li><strong>Someone involved</strong> (step-parent, grandparent, carer): can view and make proposals, and optionally approve them as well (set per person).</li>
       <li><strong>Child:</strong> a profile without an account, managed by the parents. Older children can optionally get their own login with limited rights.</li>
     </ul>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can a grandparent or step-parent approve proposals?</h3>
+  <details class="faq">
+    <summary>Can a grandparent or step-parent approve proposals?</summary>
+    <div class="faq-answer">
     <p>By default only parents can approve proposals. Parents can change this under <strong>Family → Permission settings</strong>: turn on "Non-parents may approve", then decide per person who gets that right. This change needs approval from both parents.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can my child use the app?</h3>
+  <details class="faq">
+    <summary>Can my child use the app?</summary>
+    <div class="faq-answer">
     <p>Yes, older children can get their own login with limited rights. You first create a child profile in the app and then generate a link code. With that code the child can sign in on their own phone and follow the schedule, without being able to change family details.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Planning ───────────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Back to topics</a>
   <div class="category" id="planning">
-    <div class="category-icon accent" aria-hidden="true">📅</div>
     <h2 class="category-title">Planning and proposals</h2>
   </div>
 
-  <div class="faq">
-    <h3>What is a "proposal" in the app?</h3>
+  <details class="faq">
+    <summary>What is a "proposal" in the app?</summary>
+    <div class="faq-answer">
     <p>A proposal is a request to deviate from the base schedule, for example "I would like to swap Saturday" or "the children are all with me next week". The other parent gets a notification and can approve or decline. The schedule only changes after approval.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How do I make a proposal?</h3>
+  <details class="faq">
+    <summary>How do I make a proposal?</summary>
+    <div class="faq-answer">
     <p>Go to the <strong>Schedule</strong> or <strong>Coordinate</strong> tab and tap <strong>"New proposal"</strong>. Choose a date, say what you want to change and add a note if you like. The other parent gets a notification.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>What happens if nobody responds to a proposal?</h3>
+  <details class="faq">
+    <summary>What happens if nobody responds to a proposal?</summary>
+    <div class="faq-answer">
     <p>Proposals stay open until the other parent responds. If both primary parents are linked with their own account, every change needs the other parent's explicit consent. If only one primary parent is linked, for example while the second parent has not accepted the invitation yet, an authorised proposal for the base schedule is applied right away. Notifications keep you up to date.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can I withdraw my own proposal?</h3>
+  <details class="faq">
+    <summary>Can I withdraw my own proposal?</summary>
+    <div class="faq-answer">
     <p>Yes. As long as the other parent has not approved or declined it, you can withdraw it yourself. Go to <strong>Coordinate</strong>, find your proposal under <strong>"Waiting for a response"</strong> and tap <strong>"Withdraw proposal"</strong>. The other parent no longer sees it in their list. The action stays visible in the log, so you can both look back at what happened.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How do I split school holidays and public holidays?</h3>
+  <details class="faq">
+    <summary>How do I split school holidays and public holidays?</summary>
+    <div class="faq-answer">
     <p>Go to <strong>Coordinate → Holidays and public holidays</strong>. You will see all Dutch school holidays and recognised public holidays. For each holiday period you can record which parent the children are with, or propose a different split.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can I keep track of my child's activities?</h3>
+  <details class="faq">
+    <summary>Can I keep track of my child's activities?</summary>
+    <div class="faq-answer">
     <p>Yes. Under <strong>Coordinate → Activities</strong> you add sports, parties, hobbies and other regular commitments. This makes it clear who takes the child to which activity, and prevents double bookings.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can the app remember what needs to come along to an activity?</h3>
+  <details class="faq">
+    <summary>Can the app remember what needs to come along to an activity?</summary>
+    <div class="faq-answer">
     <p>Yes. For every activity you can make a list of things to bring, for example swimwear, a towel and goggles for a swimming lesson. Choose when you want a reminder (30 minutes, 1 hour, 2 hours or a day before) and the app sends a notification with the full list.</p>
     <p>The app also suggests items for common activities: type "swimming lesson" and TweeHuizen proposes swimwear, a towel and goggles.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Who receives the reminder for an activity?</h3>
+  <details class="faq">
+    <summary>Who receives the reminder for an activity?</summary>
+    <div class="faq-answer">
     <p>The parent doing the drop-off gets the notification, including the list of things to bring. That way they do not have to dig through old messages in the morning to work out what goes in the sports bag.</p>
     <p>Does your child have their own account, for example an older teenager? Then you can tick the box so they get the notification too. Very handy when they pack their own bag.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>I have already packed everything, what now?</h3>
+  <details class="faq">
+    <summary>I have already packed everything, what now?</summary>
+    <div class="faq-answer">
     <p>The reminder itself has two buttons: <strong>Packed</strong> and <strong>Snooze 15 min</strong>. "Packed" closes the notification. "Snooze" brings it back 15 minutes later, handy if you are busy right now but want to pack shortly.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>What does the Care split tab show?</h3>
+  <details class="faq">
+    <summary>What does the Care split tab show?</summary>
+    <div class="faq-answer">
     <p>Care split shows statistics about how care is divided: how many days, weekends and holidays each family member has had. Useful to look at every now and then to see whether the split still feels fair.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Subscription ─────────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Back to topics</a>
   <div class="category" id="subscription">
-    <div class="category-icon blue" aria-hidden="true">💳</div>
     <h2 class="category-title">Subscription and payment</h2>
   </div>
 
-  <div class="faq">
-    <h3>What is the difference between Family and Family Plus?</h3>
+  <details class="faq">
+    <summary>What is the difference between Family and Family Plus?</summary>
+    <div class="faq-answer">
     <p><strong>Family</strong> is for 2 adults (the two parents). <strong>Family Plus</strong> is for 3 to 6 adults, for example when step-parents, grandparents or other involved adults take part. Children are free in both cases.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Do children count towards the seats?</h3>
+  <details class="faq">
+    <summary>Do children count towards the seats?</summary>
+    <div class="faq-answer">
     <p>No. Children are always free profiles. Only adults use a seat in your subscription.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>What is free and what is premium?</h3>
+  <details class="faq">
+    <summary>What is free and what is premium?</summary>
+    <div class="faq-answer">
     <p><strong>Free:</strong> creating an account, starting a family, adding children, setting up the base schedule, inviting family members, viewing the schedule, and splitting holidays and public holidays.</p>
     <p><strong>Premium:</strong> making and approving proposals (coordinating), tracking activities, care split statistics, push notifications, calendar export and backup.</p>
     <p>You start with a 14-day free trial, so you can try everything.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How does my free trial start?</h3>
+  <details class="faq">
+    <summary>How does my free trial start?</summary>
+    <div class="faq-answer">
     <p>The 14-day trial starts as soon as you choose a subscription on the paywall. You are only charged after the trial ends, and you can cancel free of charge up to 24 hours before that from your Apple ID settings.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How do I cancel my subscription?</h3>
+  <details class="faq">
+    <summary>How do I cancel my subscription?</summary>
+    <div class="faq-answer">
     <p>On your iPhone go to <strong>Settings → your name → Subscriptions → TweeHuizen → Cancel</strong>. You keep access until the end of the paid period. TweeHuizen cannot cancel subscriptions itself; Apple handles that.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How do I restore a subscription I bought earlier?</h3>
-    <p>Email <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> and we will delete your account and your data within 30 days. The <strong>More &gt; Delete account</strong> button in the app does not work properly at the moment and is being replaced, so please use email. If you were the last member of the family, the whole family is deleted, including the schedule, proposals and activities. If other members remain, the family stays and your name can still appear in the schedule and in earlier proposals. See our <a href="privacy.html" hreflang="nl">privacy policy</a> (in Dutch) for details.</p>
-  </div>
+  <details class="faq">
+    <summary>How do I restore a subscription I bought earlier?</summary>
+    <div class="faq-answer">
+    <p>Sign in with the account you used before and choose <strong>Restore purchases</strong> to link your subscription again. Need help? Email <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a>.</p>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>What happens when my subscription ends?</h3>
+  <details class="faq">
+    <summary>What happens when my subscription ends?</summary>
+    <div class="faq-answer">
     <p>You keep access to the basics: family, children, base schedule and viewing the schedule. Premium features (proposals, activities, statistics, notifications, export, backup) are paused until you subscribe again. Your data is kept.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Notifications & sync ───────────────── -->
+  <a class="back-topics" href="#onderwerpen">Back to topics</a>
   <div class="category" id="notifications">
-    <div class="category-icon green" aria-hidden="true">🔔</div>
     <h2 class="category-title">Notifications and sync</h2>
   </div>
 
-  <div class="faq">
-    <h3>Which notifications do I get?</h3>
+  <details class="faq">
+    <summary>Which notifications do I get?</summary>
+    <div class="faq-answer">
     <p>TweeHuizen sends notifications for: a new proposal, a response to a proposal, an upcoming handover, and important changes to the schedule. You can fine-tune them under <strong>More → Notifications</strong>.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Do notifications work in the simulator?</h3>
+  <details class="faq">
+    <summary>Do notifications work in the simulator?</summary>
+    <div class="faq-answer">
     <p>No. Push notifications only work on a real iPhone. Local reminders inside the app work without push notifications.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can I use TweeHuizen on more than one device?</h3>
+  <details class="faq">
+    <summary>Can I use TweeHuizen on more than one device?</summary>
+    <div class="faq-answer">
     <p>Yes. Sign in with the same account on all your devices. Your schedule and changes sync automatically. On a new device you can use "Restore purchases" to link your subscription again.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Does TweeHuizen work offline?</h3>
+  <details class="faq">
+    <summary>Does TweeHuizen work offline?</summary>
+    <div class="faq-answer">
     <p>To a limited extent. You can view previously loaded data while offline, but proposals, notifications and syncing need an internet connection. A change you try to make offline will only go through once you are back online, so you need to make it again.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Data and privacy ────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Back to topics</a>
   <div class="category" id="data">
-    <div class="category-icon muted" aria-hidden="true">🔒</div>
     <h2 class="category-title">Data and privacy</h2>
   </div>
 
-  <div class="faq">
-    <h3>Can I export my data?</h3>
+  <details class="faq">
+    <summary>Can I export my data?</summary>
+    <div class="faq-answer">
     <p>Yes. Go to <strong>More → Calendar export</strong> to export the care schedule to your calendar app (Apple Calendar, Google Calendar). Under <strong>More → Backup</strong> you can make a local backup of part of your family data; activities, the family log and the images are not included. For a full overview, email privacy@tweehuizen.com.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>How do I delete my account?</h3>
+  <details class="faq">
+    <summary>How do I delete my account?</summary>
+    <div class="faq-answer">
     <p>Email <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> and we will delete your account and your data within 30 days. The <strong>More &gt; Delete account</strong> button in the app does not work properly at the moment and is being replaced, so please use email. If you were the last member of the family, the whole family is deleted, including the schedule, proposals and activities. If other members remain, the family stays and your name can still appear in the schedule and in earlier proposals. See our <a href="privacy.html" hreflang="nl">privacy policy</a> (in Dutch) for details.</p>
-    
-  </div>
 
-  <div class="faq">
-    <h3>Is my data safe?</h3>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Is my data safe?</summary>
+    <div class="faq-answer">
     <p>Yes. We use encrypted connections (HTTPS), Row Level Security at database level (only you and your family members can read your data from the database) and secure authentication. Sign-in details are stored in the secure Keychain on your iPhone. Our account and family database is hosted with Supabase in the EU.</p>
     <p>See our <a href="privacy.html" hreflang="nl">Privacy policy</a> (in Dutch) for more information.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Who can see my family data?</h3>
+  <details class="faq">
+    <summary>Who can see my family data?</summary>
+    <div class="faq-answer">
     <p>The members of your own family. Through the app, nobody outside your family can reach your
 data. As the administrator of the database we do have technical access, for example to fix an
 outage or carry out a deletion request; we do not look inside families without a reason. One exception: profile pictures are stored in a way that lets anyone with the direct link open them without signing in; we are moving those to links that expire, and you can email us to have a picture removed. In the app we do not use external analytics services and we do not sell data.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Other ─────────────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Back to topics</a>
   <div class="category" id="other">
-    <div class="category-icon accent" aria-hidden="true">✨</div>
     <h2 class="category-title">Other</h2>
   </div>
 
-  <div class="faq">
-    <h3>Is TweeHuizen suitable for parents living together?</h3>
+  <details class="faq">
+    <summary>Is TweeHuizen suitable for parents living together?</summary>
+    <div class="faq-answer">
     <p>The app is designed specifically for separated parents with children living at two addresses. Parents living together can of course use it to keep track of the weekly schedule, but a lot of features (such as proposals between two homes) are then less relevant.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>My proposal was approved, but I want to cancel it after all. Is that possible?</h3>
+  <details class="faq">
+    <summary>My proposal was approved, but I want to cancel it after all. Is that possible?</summary>
+    <div class="faq-answer">
     <p>Approved proposals are final. You can make a new proposal to undo the change; that then needs approval from the other parent again. This way everyone stays aware of changes.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>I found a bug. Where do I report it?</h3>
+  <details class="faq">
+    <summary>I found a bug. Where do I report it?</summary>
+    <div class="faq-answer">
     <p>Send an email to <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a> describing the problem and, if you can, a screenshot. Please also mention which iPhone and which iOS version you are using.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Can I use TweeHuizen for more than one family?</h3>
+  <details class="faq">
+    <summary>Can I use TweeHuizen for more than one family?</summary>
+    <div class="faq-answer">
     <p>One account is linked to one family. If you are involved with several families (for example as a carer for different households), you need a separate account per family.</p>
-  </div>
+    </div>
+  </details>
 
 </section>
 
@@ -316,7 +388,7 @@ outage or carry out a deletion request; we do not look inside families without a
       <a href="privacy.html" hreflang="nl">Privacy policy</a>
       <span aria-hidden="true"> · </span>
       <a href="voorwaarden.html" hreflang="nl">Terms</a>
-    
+
       <button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookie preferences</button>
     </div>
     <address class="footer-legal">

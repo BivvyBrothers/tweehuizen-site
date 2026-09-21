@@ -21,7 +21,7 @@
   --tekst: var(--merk-paars);
   --rand: var(--merk-paars);
   --actie: var(--merk-paars);
-  --op-actie: var(--merk-creme);
+  --op-actie: var(--merk-paars);
   --ouder-a: var(--merk-koraal);
   --ouder-b: var(--merk-aqua);
   --overlay: rgba(54, 6, 77, 0.55);
@@ -81,10 +81,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
   border-radius: var(--rond-s);
 }
 
-/* In de voettekst staat paars op paars: daar moet de focusrand crème zijn,
-   anders is hij onzichtbaar (1:1). Codex-review 21 sep. */
+/* Focus blijft zichtbaar op de witte voettekst. */
 .footer a:focus-visible, .footer button:focus-visible, .voettekst a:focus-visible {
-  outline-color: var(--merk-creme);
+  outline-color: var(--actie);
 }
 
 /* De schermafbeeldingknoppen snijden een buitenliggende rand af, dus die
@@ -138,7 +137,7 @@ img { max-width: 100%; height: auto; }
   border: var(--lijn-dik);
   cursor: pointer;
 }
-.knop-primair { background: var(--actie); color: var(--op-actie); border-color: var(--actie); }
+.knop-primair { background: var(--oppervlak); color: var(--tekst); border-color: var(--actie); }
 .knop-secundair { background: var(--oppervlak); color: var(--tekst); }
 
 .kaart {
@@ -202,12 +201,12 @@ details.faq[open] summary::after { content: "\2212"; }
 }
 
 .voettekst {
-  background: var(--merk-paars);
-  color: var(--merk-creme);
+  background: var(--oppervlak);
+  color: var(--tekst);
   padding: var(--ruimte-xl) var(--ruimte-l);
   margin-top: var(--ruimte-xxl);
 }
-.voettekst a { color: var(--merk-creme); }
+.voettekst a { color: var(--tekst); }
 
 .banner-cookies {
   position: fixed;
@@ -282,7 +281,7 @@ details.faq[open] summary::after { content: "\2212"; }
   text-decoration: none;
   border: var(--lijn-dik);
 }
-.btn-primary { background: var(--actie); color: var(--op-actie); }
+.btn-primary { background: var(--oppervlak); color: var(--tekst); }
 .btn-secondary { background: var(--oppervlak); color: var(--tekst); }
 
 .pillars { padding: var(--ruimte-xl) var(--ruimte-l); }
@@ -337,8 +336,8 @@ details.faq[open] summary::after { content: "\2212"; }
 .muted { font-size: 15px; }
 .accent { font-weight: 700; }
 
-.footer { background: var(--merk-paars); color: var(--merk-creme); padding: var(--ruimte-xl) var(--ruimte-l); margin-top: var(--ruimte-xxl); }
-.footer a { color: var(--merk-creme); }
+.footer { background: var(--oppervlak); color: var(--tekst); padding: var(--ruimte-xl) var(--ruimte-l); margin-top: var(--ruimte-xxl); }
+.footer a { color: var(--tekst); }
 .footer-container { max-width: var(--breedte); margin: 0 auto; }
 .footer-links, .footer-legal, .footer-social { display: flex; flex-wrap: wrap; gap: var(--ruimte-m); margin-bottom: var(--ruimte-m); }
 .footer-copy { font-size: 15px; }
@@ -437,7 +436,7 @@ details.faq[open] summary::after { content: "\2212"; }
   font-weight: 700;
   cursor: pointer;
 }
-#th-consent .th-accept { background: var(--actie); color: var(--op-actie); }
+#th-consent .th-accept { background: var(--oppervlak); color: var(--tekst); }
 #th-consent .th-decline { background: var(--oppervlak); color: var(--tekst); }
 
 @media (max-width: 480px) {
@@ -486,8 +485,8 @@ details.faq[open] summary::after { content: "\2212"; }
   padding: 14px var(--ruimte-l);
   border-radius: var(--rond-m);
   border: var(--lijn-dik);
-  background: var(--actie);
-  color: var(--op-actie);
+  background: var(--oppervlak);
+  color: var(--tekst);
   font-weight: 700;
   text-decoration: none;
 }
@@ -507,7 +506,7 @@ details.faq[open] summary::after { content: "\2212"; }
 .contact-icon { font-size: 24px; }
 .contact-body { margin-top: var(--ruimte-s); }
 .email { font-weight: 700; }
-.lang-switch { float: right; font-weight: 600; }
+.lang-switch { font-weight: 600; }
 
 /* 404 */
 .logo { max-width: 260px; margin-bottom: var(--ruimte-l); }
@@ -546,4 +545,100 @@ details.faq[open] summary::after { content: "\2212"; }
   font-weight: 600;
   cursor: pointer;
 }
-.footer .cookie-link { background: transparent; color: var(--merk-creme); border-color: var(--merk-creme); }
+.footer .cookie-link { background: var(--oppervlak); color: var(--tekst); border-color: var(--rand); }
+
+
+/* Visuele controle, 21 september 2026. Eén ritme op alle schermformaten. */
+.topnav { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 24px; padding: 8px 24px; }
+.topnav a { margin: 0; display: inline-flex; align-items: center; min-height: 44px; }
+.topnav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.lang-switch { border-left: var(--lijn); padding-left: 24px; }
+.page-header { max-width: var(--breedte); margin: 0 auto; }
+.hero-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.hero-visual { width: min(100%, 280px); justify-self: center; }
+.hero-logo img { width: min(100%, 360px); }
+.hero-payoff { font-size: 26px; line-height: 1.3; }
+.hero .badge { border: 0; padding: 0; font-weight: 400; }
+.btn-primary, .knop-primair, .cta-btn { border: 3px solid var(--rand); background: var(--oppervlak); color: var(--tekst); }
+.btn-secondary, .knop-secundair { border: var(--lijn); background: var(--achtergrond); }
+.section > .container { max-width: 1088px; padding: 0; }
+.section-sub { margin-bottom: 32px; }
+.showcase { background: var(--oppervlak); }
+.shots-row { gap: 32px; align-items: start; }
+.shot { margin: 0; width: 100%; max-width: 280px; justify-self: center; }
+.shot img { width: 100%; }
+.shot figcaption { padding: 12px 16px; font-weight: 600; }
+.extra-shots { margin-top: 32px; border-top: var(--lijn); padding-top: 16px; }
+.extra-shots > summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
+.shots-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; margin-top: 24px; }
+.features-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.feature { background: var(--achtergrond); border: 0; border-top: var(--lijn); border-radius: 0; padding: 24px 0 0; }
+.feature p, .step p { margin-bottom: 0; }
+.steps { list-style: none; padding: 0; counter-reset: stappen; }
+.step { counter-increment: stappen; }
+.step::before { content: counter(stappen, decimal-leading-zero); display: block; font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+.plans { max-width: 880px; align-items: start; }
+.plan-price { margin: 12px 0; }
+.plan-price small { display: block; font-size: 16px; font-weight: 400; line-height: 1.6; margin-top: 8px; }
+.story-teaser blockquote, .quote-card blockquote { margin: 0; }
+.download-section { text-align: center; }
+.footer, .voettekst { border-top: var(--lijn); margin-top: 0; }
+.footer-links { align-items: center; gap: 12px 24px; }
+.footer-links > span, .footer-legal br, .footer-sep { display: none; }
+.footer-legal { align-items: center; font-style: normal; gap: 8px 16px; }
+.footer-kemblinck { margin-top: 0; }
+.footer-kemblinck__logo { width: 22px; height: 22px; }
+.story-content > h2 { margin-top: 40px; }
+.highlight { font-weight: 400; border-left: 3px solid var(--rand); padding: 0 0 0 24px; margin: 32px 0; }
+.highlight-label { margin-bottom: 16px; font-weight: 700; }
+.cta-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; }
+.cta-actions > a { white-space: nowrap; }
+.support-content .contact-card { padding: 16px 24px; margin-bottom: 40px; }
+.support-content .contact-card h2 { font-size: 20px; margin-bottom: 8px; }
+.support-content .contact-body { margin: 0; }
+.support-content .category { margin: 16px 0 8px; padding: 20px 24px; }
+.category-title { margin: 0; }
+.category-jump { margin-bottom: 24px; }
+.back-topics { display: inline-block; margin-top: 40px; font-size: 15px; }
+.contact-card + .back-topics { margin-top: 0; }
+details.faq { padding: 0; }
+details.faq summary { padding: 20px 0; align-items: baseline; }
+details.faq summary::after { flex-shrink: 0; }
+.faq-answer { padding-bottom: 8px; }
+.faq-answer p:last-child { margin-bottom: 16px; }
+.lightbox figure { max-height: calc(100dvh - 48px); max-width: 100%; }
+.lightbox img { min-height: 0; max-height: calc(100dvh - 140px); width: auto; object-fit: contain; }
+.lightbox figcaption { margin-top: 0; flex-shrink: 0; }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-visual { width: min(100%, 260px); }
+  .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shots-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .shots-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .topnav { gap: 0 18px; padding: 6px 12px; }
+  .topnav a { font-size: 14px; }
+  .topnav .lang-switch { flex-basis: 100%; justify-content: center; border-left: 0; border-top: var(--lijn); padding-left: 0; min-height: 36px; }
+  :target, [id] { scroll-margin-top: 112px; }
+  .page-header { padding: 40px 16px 24px; }
+  .hero { padding: 32px 20px; }
+  .hero-logo img { max-width: 290px; }
+  .hero-payoff { font-size: 23px; }
+  .hero-ctas { gap: 12px; }
+  .hero-ctas .btn { justify-content: center; }
+  .hero-ctas .btn-secondary { padding: 10px 16px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .shots-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 20px; padding: 4px 4px 16px; }
+  .shot { flex: 0 0 82%; max-width: 280px; scroll-snap-align: start; }
+  .showcase .section-sub::after { content: " Veeg opzij om de volgende afbeelding te bekijken."; }
+  .shots-extra { margin-top: 24px; }
+  .plans { gap: 24px; }
+  .footer-links { gap: 12px 20px; }
+  .footer-legal { display: block; }
+  .footer-kemblinck { display: inline-flex; margin: 0 8px 8px 4px; }
+  .footer-legal > a:last-child { display: block; margin-top: 8px; overflow-wrap: anywhere; }
+  .highlight { padding-left: 16px; }
+  .support-content .category { padding: 16px; }
+  .category-title { font-size: 23px; }
+}

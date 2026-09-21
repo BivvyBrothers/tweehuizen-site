@@ -90,7 +90,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/stijl-v2.css?v=2">
+<link rel="stylesheet" href="assets/stijl-v2.css?v=3">
 </head>
 <body>
 
@@ -144,92 +144,12 @@
   </div>
 </section>
 
-<!-- ─── Drie pijlers ─────────────────────── -->
-<section class="pillars" aria-labelledby="waarom-kop">
-  <div class="container">
-    <h2 id="waarom-kop">Waarom TweeHuizen</h2>
-  </div>
-  <div class="pillars-grid">
-    <div class="pillar">
-      <div class="pillar-icon" aria-hidden="true">🔒</div>
-      <h3>Privé by design</h3>
-      <p>In de app: geen advertentietracking en geen advertenties. Jullie gegevens zijn er voor jullie gezin. Onze database staat bij Supabase in de EU. Profielfoto's zijn nu nog met een directe link op te halen; zie het privacybeleid.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
-      <h3>Voor het hele gezin</h3>
-      <p>Ouders, stiefouders, opa's en oma's. Allemaal mee, met eigen rechten.</p>
-    </div>
-    <div class="pillar">
-      <div class="pillar-icon" aria-hidden="true">💬</div>
-      <h3>Samen plannen</h3>
-      <p>Voorstellen voor dagwissels, vakanties en activiteiten, met goedkeuring in één tik.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Wat kan TweeHuizen? ─────────── -->
-<section class="section" id="wat-kan-tweehuizen">
-  <div class="container">
-    <span class="section-kicker">Functies</span>
-    <h2 class="section-title">Wat kan TweeHuizen?</h2>
-    <p class="section-sub">
-      Geen losse appjes meer. Geen discussies over wie wanneer welke dagen had.
-      Alles op één plek, voor iedereen zichtbaar.
-    </p>
-
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon blue" aria-hidden="true">📅</div>
-        <h3>Zorgrooster dat meeleeft</h3>
-        <p>Stel één keer je basisregeling in: om de week, weekschema of maatwerk.
-           Wijzigingen zie je direct, voor alle betrokkenen.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon green" aria-hidden="true">💬</div>
-        <h3>Samen plannen zonder gedoe</h3>
-        <p>Doe een voorstel om een dag te ruilen of een vakantie te verdelen.
-           De andere ouder krijgt een melding en reageert met één tik.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon accent" aria-hidden="true">🎒</div>
-        <h3>Nooit meer spullen vergeten</h3>
-        <p>Voeg activiteiten toe met een meenemen-lijstje. De ouder die brengt
-           (en het kind zelf) krijgt op tijd een herinnering.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon blue" aria-hidden="true">📊</div>
-        <h3>Eerlijk inzicht</h3>
-        <p>In één oogopslag zie je hoeveel dagen de kinderen bij wie zijn
-           geweest: per maand, kwartaal of jaar.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon green" aria-hidden="true">👨‍👩‍👧‍👦</div>
-        <h3>Het hele gezin doet mee</h3>
-        <p>Niet alleen de ouders. Ook stiefouders, opa's en oma's kunnen
-           worden uitgenodigd met eigen rechten.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon muted" aria-hidden="true">🔒</div>
-        <h3>Privé by design</h3>
-        <p>Jullie gegevens zijn er voor jullie gezin. In de app geen advertentietracking
-           en geen advertenties, onze database staat bij Supabase in de EU.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── App-screenshots ─────────────────── -->
 <section class="section showcase">
   <div class="container">
     <span class="section-kicker">Screenshots</span>
     <h2 class="section-title">Zo ziet het eruit</h2>
-    <p class="section-sub">Een rustige, overzichtelijke app. Gebouwd om samen te plannen, niet om te discussiëren.</p>
+    <p class="section-sub">Het rooster, een voorstel en een activiteit met meeneemlijstje. Tik op een afbeelding om deze te vergroten.</p>
 
     <div class="shots-row">
       <figure class="shot">
@@ -245,6 +165,16 @@
         <figcaption>Samen afstemmen</figcaption>
       </figure>
       <figure class="shot">
+        <a class="shot-btn" href="screenshots/v2/06-activiteit-detail.png" aria-label="Vergroot screenshot: activiteit met meenemen-lijstje">
+          <img src="screenshots/v2/06-activiteit-detail.png" alt="Activiteit met meenemen-lijstje" width="640" height="1391" loading="lazy">
+        </a>
+        <figcaption>Nooit meer spullen vergeten</figcaption>
+      </figure>
+    </div>
+    <details class="extra-shots">
+      <summary>Bekijk ook de zorgverdeling en het activiteitenoverzicht</summary>
+      <div class="shots-row shots-extra">
+      <figure class="shot">
         <a class="shot-btn" href="screenshots/v2/03-zorgverdeling.png" aria-label="Vergroot screenshot: eerlijk inzicht in de zorgverdeling">
           <img src="screenshots/v2/03-zorgverdeling.png" alt="Inzicht in de zorgverdeling per maand" width="640" height="1391" loading="lazy">
         </a>
@@ -256,12 +186,57 @@
         </a>
         <figcaption>Activiteiten &amp; herinneringen</figcaption>
       </figure>
-      <figure class="shot">
-        <a class="shot-btn" href="screenshots/v2/06-activiteit-detail.png" aria-label="Vergroot screenshot: activiteit met meenemen-lijstje">
-          <img src="screenshots/v2/06-activiteit-detail.png" alt="Activiteit met meenemen-lijstje" width="640" height="1391" loading="lazy">
-        </a>
-        <figcaption>Nooit meer spullen vergeten</figcaption>
-      </figure>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ─── Wat kan TweeHuizen? ─────────── -->
+<section class="section" id="wat-kan-tweehuizen">
+  <div class="container">
+    <span class="section-kicker">Functies</span>
+    <h2 class="section-title">Wat kan TweeHuizen?</h2>
+    <p class="section-sub">
+      Geen losse appjes meer. Geen discussies over wie wanneer welke dagen had.
+      Alles op één plek, voor iedereen zichtbaar.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Zorgrooster dat meeleeft</h3>
+        <p>Stel één keer je basisregeling in: om de week, weekschema of maatwerk.
+           Wijzigingen zie je direct, voor alle betrokkenen.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Samen plannen zonder gedoe</h3>
+        <p>Doe een voorstel om een dag te ruilen of een vakantie te verdelen.
+           De andere ouder krijgt een melding en reageert met één tik.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Nooit meer spullen vergeten</h3>
+        <p>Voeg activiteiten toe met een meenemen-lijstje. De ouder die brengt
+           (en het kind zelf) krijgt op tijd een herinnering.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Eerlijk inzicht</h3>
+        <p>In één oogopslag zie je hoeveel dagen de kinderen bij wie zijn
+           geweest: per maand, kwartaal of jaar.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Het hele gezin doet mee</h3>
+        <p>Niet alleen de ouders. Ook stiefouders, opa's en oma's kunnen
+           worden uitgenodigd met eigen rechten.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Privé by design</h3>
+        <p>Jullie gegevens zijn er voor jullie gezin. In de app geen advertentietracking
+           en geen advertenties, onze database staat bij Supabase in de EU. Profielfoto's zijn nu nog met een directe link op te halen; lees de toelichting in ons <a href="privacy.html">privacybeleid</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -273,24 +248,21 @@
     <h2 class="section-title">Zo werkt het</h2>
     <p class="section-sub">Binnen 5 minuten ben je klaar om samen te plannen.</p>
 
-    <div class="steps">
-      <div class="step">
+    <ol class="steps">
+      <li class="step">
         <h3>Maak een gezin aan</h3>
         <p>Download de app, maak een account en voeg je kinderen toe.</p>
-      </div>
-      <div class="step">
+      </li>
+      <li class="step">
         <h3>Stel de basisregeling in</h3>
         <p>Kies jullie vaste zorgrooster: om de week of een eigen schema.</p>
-      </div>
-      <div class="step">
+      </li>
+      <li class="step">
         <h3>Nodig de andere ouder uit</h3>
         <p>Deel een uitnodigingscode. Daarna plannen jullie samen.</p>
-      </div>
-      <div class="step">
-        <h3>Rust in co-ouderschap</h3>
-        <p>Voorstellen, vakanties, activiteiten: alles op één plek.</p>
-      </div>
-    </div>
+      </li>
+
+    </ol>
   </div>
 </section>
 
@@ -308,7 +280,7 @@
       <div class="plan popular">
         <span class="plan-tag">Meest gekozen</span>
         <div class="plan-name">Familie</div>
-        <div class="plan-price">€6,99<small>/maand voor jullie samen</small></div>
+        <div class="plan-price">€6,99<small> /maand voor jullie samen</small></div>
         <div class="plan-yearly">€3,50 per ouder, of €59,99 per jaar</div>
         <div class="plan-trial">14 dagen gratis</div>
         <ul>
@@ -323,7 +295,7 @@
 
       <div class="plan">
         <div class="plan-name">Familie Plus</div>
-        <div class="plan-price">vanaf €7,99<small>/maand voor het hele gezin</small></div>
+        <div class="plan-price">vanaf €7,99<small> /maand voor het hele gezin</small></div>
         <div class="plan-yearly">vanaf €2,67 per volwassene, of €69,99 per jaar</div>
         <div class="plan-trial">14 dagen gratis</div>
         <ul>
@@ -384,6 +356,13 @@
   </div>
 </section>
 
+<section class="section download-section">
+  <div class="container">
+    <h2>Samen overzicht in jullie zorgrooster</h2>
+    <p>Bekijk TweeHuizen in de App Store. Beschikbaar voor iOS.</p>
+    <a class="btn btn-primary" href="https://apps.apple.com/nl/app/tweehuizen/id6761052772" target="_blank" rel="noopener">Download in de App Store</a>
+  </div>
+</section>
 </main>
 
 <!-- ─── Footer ──────────────────────────── -->

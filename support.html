@@ -18,7 +18,7 @@
 <meta property="og:locale" content="nl_NL">
 <link rel="icon" type="image/png" href="assets/favicon-180.png?v=2">
 <link rel="apple-touch-icon" href="assets/favicon-180.png?v=2">
-<link rel="stylesheet" href="assets/stijl-v2.css?v=2">
+<link rel="stylesheet" href="assets/stijl-v2.css?v=3">
 </head>
 <body>
 
@@ -42,18 +42,8 @@
 </header>
 
 <!-- ─── Contact-kaart ─────────────────────── -->
-<section class="container">
-  <div class="contact-card">
-    <div class="contact-icon" aria-hidden="true">✉️</div>
-    <div class="contact-body">
-      <h2>Neem contact op</h2>
-      <p>Heb je een vraag, probleem of suggestie? We reageren meestal binnen 1–2 werkdagen.</p>
-      <a href="mailto:support@tweehuizen.com" class="email">support@tweehuizen.com</a>
-    </div>
-  </div>
-
-  <!-- Jump links -->
-  <div class="category-jump">
+<section class="container support-content">
+<nav class="category-jump" id="onderwerpen" aria-label="Hulponderwerpen">
     <a href="#beginnen" class="category-chip">Beginnen</a>
     <a href="#gezin" class="category-chip">Gezin &amp; rollen</a>
     <a href="#planning" class="category-chip">Planning &amp; voorstellen</a>
@@ -61,243 +51,325 @@
     <a href="#meldingen" class="category-chip">Meldingen &amp; sync</a>
     <a href="#data" class="category-chip">Data &amp; privacy</a>
     <a href="#overig" class="category-chip">Overig</a>
+  </nav>
+
+  <div class="contact-card">
+    <div class="contact-body">
+      <h2>Neem contact op</h2>
+      <p>Heb je een vraag, probleem of suggestie? We reageren meestal binnen 1 tot 2 werkdagen.</p>
+      <a href="mailto:support@tweehuizen.com" class="email">support@tweehuizen.com</a>
+    </div>
   </div>
+
+  <!-- Jump links -->
+
 
   <!-- ─── Beginnen ────────────────────────── -->
   <div class="category" id="beginnen">
-    <div class="category-icon blue" aria-hidden="true">🚀</div>
     <h2 class="category-title">Beginnen met TweeHuizen</h2>
   </div>
 
-  <div class="faq">
-    <h3>Hoe maak ik een gezin aan?</h3>
+  <details class="faq">
+    <summary>Hoe maak ik een gezin aan?</summary>
+    <div class="faq-answer">
     <p>Na registratie word je door de onboarding geleid. Je maakt een gezin aan, voegt kinderen toe en stelt het basisrooster in. Daarna kun je de andere ouder uitnodigen via het tabblad Gezin.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe nodig ik de andere ouder uit?</h3>
+  <details class="faq">
+    <summary>Hoe nodig ik de andere ouder uit?</summary>
+    <div class="faq-answer">
     <p>Ga naar het tabblad <strong>Gezin</strong> en tik op <strong>"Iemand uitnodigen"</strong>. Je krijgt een uitnodigingscode die je kunt delen via WhatsApp, e-mail of een andere app. De andere ouder voert deze code in bij het aanmaken van een eigen account.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe werkt een uitnodigingscode?</h3>
+  <details class="faq">
+    <summary>Hoe werkt een uitnodigingscode?</summary>
+    <div class="faq-answer">
     <p>Een uitnodigingscode is een unieke code waarmee iemand zich bij jullie gezin kan aansluiten. Na het invoeren tijdens registratie wordt de persoon automatisch aan jullie gezin gekoppeld, met de rol en rechten die je hebt ingesteld.</p>
     <p>Codes blijven dertig dagen geldig. Niet op tijd ingewisseld? Geen probleem: je kunt eenvoudig een nieuwe code genereren via het profiel van de uitgenodigde persoon in het tabblad Gezin.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Wat is het basisrooster?</h3>
+  <details class="faq">
+    <summary>Wat is het basisrooster?</summary>
+    <div class="faq-answer">
     <p>Het basisrooster is de vaste zorgverdeling die zich herhaalt. Bijvoorbeeld: "om de week" of "een vast weekschema". Je stelt dit in via <strong>Afstemmen → Basisregeling</strong>. Als de verdeling verandert, kun je voor specifieke dagen of periodes een voorstel doen.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Gezin en rollen ─────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Terug naar onderwerpen</a>
   <div class="category" id="gezin">
-    <div class="category-icon green" aria-hidden="true">👨‍👩‍👧‍👦</div>
     <h2 class="category-title">Gezin en rollen</h2>
   </div>
 
-  <div class="faq">
-    <h3>Wat zijn de verschillende rollen in een gezin?</h3>
+  <details class="faq">
+    <summary>Wat zijn de verschillende rollen in een gezin?</summary>
+    <div class="faq-answer">
     <p>TweeHuizen kent drie hoofdrollen:</p>
     <ul>
       <li><strong>Ouder (hoofdouder):</strong> volledige rechten: plannen, voorstellen doen en goedkeuren.</li>
       <li><strong>Betrokkene</strong> (stiefouder, opa/oma, verzorger): mag meekijken en voorstellen doen, eventueel ook goedkeuren (instelbaar per persoon).</li>
       <li><strong>Kind:</strong> eigen profiel zonder account, beheerd door de ouders. Oudere kinderen kunnen optioneel een eigen login krijgen met beperkte rechten.</li>
     </ul>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan een grootouder of stiefouder ook voorstellen goedkeuren?</h3>
+  <details class="faq">
+    <summary>Kan een grootouder of stiefouder ook voorstellen goedkeuren?</summary>
+    <div class="faq-answer">
     <p>Standaard mogen alleen ouders voorstellen goedkeuren. Ouders kunnen dit via <strong>Gezin → Rechteninstellingen</strong> wijzigen: zet "Niet-ouders mogen goedkeuren" aan, en stel daarna per persoon in wie dat recht krijgt. Deze wijziging moet door beide ouders goedgekeurd worden.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan mijn kind de app zelf gebruiken?</h3>
+  <details class="faq">
+    <summary>Kan mijn kind de app zelf gebruiken?</summary>
+    <div class="faq-answer">
     <p>Ja, oudere kinderen kunnen een eigen login krijgen met beperkte rechten. Je maakt eerst een kindprofiel aan in de app en genereert dan een koppelcode. Het kind kan daarmee inloggen op een eigen telefoon en het rooster meekijken, zonder gezinsgegevens te kunnen wijzigen.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Planning ───────────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Terug naar onderwerpen</a>
   <div class="category" id="planning">
-    <div class="category-icon accent" aria-hidden="true">📅</div>
     <h2 class="category-title">Planning en voorstellen</h2>
   </div>
 
-  <div class="faq">
-    <h3>Wat is een "voorstel" in de app?</h3>
+  <details class="faq">
+    <summary>Wat is een "voorstel" in de app?</summary>
+    <div class="faq-answer">
     <p>Een voorstel is een verzoek om af te wijken van het basisrooster. Bijvoorbeeld: "ik wil zaterdag ruilen" of "de kinderen zijn volgende week allemaal bij mij". De andere ouder ontvangt een melding en kan goedkeuren of afkeuren. Pas na goedkeuring wordt het rooster aangepast.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe doe ik een voorstel?</h3>
+  <details class="faq">
+    <summary>Hoe doe ik een voorstel?</summary>
+    <div class="faq-answer">
     <p>Ga naar het tabblad <strong>Agenda</strong> of <strong>Afstemmen</strong> en tik op <strong>"Nieuw voorstel"</strong>. Kies een datum, geef aan wat je wilt wijzigen en voeg eventueel een toelichting toe. De andere ouder krijgt een melding.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Wat gebeurt er als een voorstel niet wordt beantwoord?</h3>
+  <details class="faq">
+    <summary>Wat gebeurt er als een voorstel niet wordt beantwoord?</summary>
+    <div class="faq-answer">
     <p>Voorstellen blijven open staan totdat de andere ouder reageert. Zijn beide hoofdouders met een eigen account gekoppeld, dan vereist elke wijziging expliciete toestemming van de ander. Is er maar één hoofdouder gekoppeld, bijvoorbeeld zolang de tweede ouder de uitnodiging niet heeft aangenomen, dan wordt een bevoegd voorstel voor de basisregeling meteen toegepast. Via meldingen blijf je op de hoogte.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan ik mijn eigen voorstel intrekken?</h3>
+  <details class="faq">
+    <summary>Kan ik mijn eigen voorstel intrekken?</summary>
+    <div class="faq-answer">
     <p>Ja. Zolang de andere ouder je voorstel nog niet heeft goedgekeurd of afgewezen, kun je het zelf intrekken. Ga naar <strong>Afstemmen</strong>, zoek je voorstel onder <strong>"Wacht op reactie"</strong> en tik op <strong>"Voorstel intrekken"</strong>. De andere ouder ziet het voorstel daarna niet meer in zijn lijst. In het logboek blijft de actie zichtbaar zodat jullie samen kunnen terugzien wat er is gebeurd.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe verdeel ik schoolvakanties en feestdagen?</h3>
+  <details class="faq">
+    <summary>Hoe verdeel ik schoolvakanties en feestdagen?</summary>
+    <div class="faq-answer">
     <p>Ga naar <strong>Afstemmen → Vakanties en feestdagen</strong>. Je ziet alle Nederlandse schoolvakanties en erkende feestdagen. Voor elke vakantieperiode of feestdag kun je aangeven bij wie de kinderen zijn, of een afwijkende verdeling voorstellen.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan ik activiteiten van mijn kind bijhouden?</h3>
+  <details class="faq">
+    <summary>Kan ik activiteiten van mijn kind bijhouden?</summary>
+    <div class="faq-answer">
     <p>Ja. Via <strong>Afstemmen → Activiteiten</strong> voeg je sport, feestjes, hobby's en andere vaste bezigheden toe. Dit helpt om te zien wie het kind naar welke activiteit brengt en voorkomt dubbele afspraken.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan de app herinneren wat er mee moet naar een activiteit?</h3>
+  <details class="faq">
+    <summary>Kan de app herinneren wat er mee moet naar een activiteit?</summary>
+    <div class="faq-answer">
     <p>Ja! Bij elke activiteit kun je een lijstje maken met spullen die mee moeten, bijvoorbeeld zwempak, handdoek en zwembril voor zwemles. Kies wanneer je een herinnering wilt (30 min, 1 uur, 2 uur of een dag ervoor) en de app stuurt automatisch een melding met de complete lijst.</p>
     <p>De app doet ook slimme voorstellen voor veelvoorkomende activiteiten: typ "zwemles" en TweeHuizen stelt automatisch zwempak, handdoek en zwembril voor.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Naar wie gaat de herinnering voor een activiteit?</h3>
+  <details class="faq">
+    <summary>Naar wie gaat de herinnering voor een activiteit?</summary>
+    <div class="faq-answer">
     <p>De ouder die het kind brengt, krijgt de melding, inclusief de lijst met spullen die mee moeten. Zo hoeft diegene niet 's ochtends door berichten te zoeken om te weten wat er in de sporttas moet.</p>
     <p>Heeft je kind een eigen account (van bijvoorbeeld een oudere tiener)? Dan kun je bij de activiteit aanvinken dat ook hij of zij een melding krijgt. Superhandig als ze zelf hun tas pakken.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Ik heb de spullen al gepakt, hoe dan verder?</h3>
+  <details class="faq">
+    <summary>Ik heb de spullen al gepakt, hoe dan verder?</summary>
+    <div class="faq-answer">
     <p>Op de herinnering zelf zitten twee knoppen: <strong>Gepakt</strong> en <strong>Snooze 15 min</strong>. Met "Gepakt" is de melding afgehandeld. Met "Snooze" krijg je hem 15 minuten later nog eens, handig als je nu even bezig bent maar straks wil pakken.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Wat zie ik in het tabblad Zorgverdeling?</h3>
+  <details class="faq">
+    <summary>Wat zie ik in het tabblad Zorgverdeling?</summary>
+    <div class="faq-answer">
     <p>Zorgverdeling toont statistieken over de verdeling van de zorg: hoeveel dagen, weekenden en vakanties elk gezinslid heeft gehad. Handig om periodiek te bespreken of de verdeling nog eerlijk voelt.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Abonnement ─────────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Terug naar onderwerpen</a>
   <div class="category" id="abonnement">
-    <div class="category-icon blue" aria-hidden="true">💳</div>
     <h2 class="category-title">Abonnement en betaling</h2>
   </div>
 
-  <div class="faq">
-    <h3>Wat is het verschil tussen Familie en Familie Plus?</h3>
+  <details class="faq">
+    <summary>Wat is het verschil tussen Familie en Familie Plus?</summary>
+    <div class="faq-answer">
     <p><strong>Familie</strong> is voor 2 volwassenen (de twee ouders). <strong>Familie Plus</strong> is voor 3 tot 6 volwassenen, bijvoorbeeld als er stiefouders, grootouders of andere betrokken volwassenen meedoen. Kinderen zijn in beide gevallen gratis.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Tellen kinderen mee als plek?</h3>
+  <details class="faq">
+    <summary>Tellen kinderen mee als plek?</summary>
+    <div class="faq-answer">
     <p>Nee. Kinderen zijn altijd gratis profielen. Alleen volwassenen gebruiken een plek in je abonnement.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Wat is gratis en wat is premium?</h3>
+  <details class="faq">
+    <summary>Wat is gratis en wat is premium?</summary>
+    <div class="faq-answer">
     <p><strong>Gratis:</strong> account aanmaken, gezin starten, kinderen toevoegen, basisrooster instellen, gezinsleden uitnodigen, agenda bekijken, vakanties en feestdagen verdelen.</p>
     <p><strong>Premium:</strong> voorstellen doen en goedkeuren (afstemmen), activiteiten bijhouden, statistieken van de zorgverdeling, push-meldingen, agenda-export en backup.</p>
     <p>Je start met 14 dagen gratis proefperiode, zodat je alles kunt uitproberen.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe start mijn gratis proefperiode?</h3>
+  <details class="faq">
+    <summary>Hoe start mijn gratis proefperiode?</summary>
+    <div class="faq-answer">
     <p>De 14-dagen proefperiode start zodra je via de paywall een abonnement kiest. Er worden pas kosten in rekening gebracht na afloop van de proefperiode. Je kunt uiterlijk 24 uur vóór het einde kosteloos opzeggen via je Apple ID-instellingen.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe zeg ik mijn abonnement op?</h3>
+  <details class="faq">
+    <summary>Hoe zeg ik mijn abonnement op?</summary>
+    <div class="faq-answer">
     <p>Ga op je iPhone naar <strong>Instellingen → je naam → Abonnementen → TweeHuizen → Zeg op</strong>. Je houdt toegang tot het einde van de betaalde periode. TweeHuizen kan niet zelf abonnementen opzeggen. Dat doet Apple.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe herstel ik een eerder gekocht abonnement?</h3>
-    <p>Mail <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> en we verwijderen je account en je gegevens binnen 30 dagen. De knop <strong>Meer &gt; Account verwijderen</strong> in de app werkt op dit moment niet naar behoren en wordt vervangen; gebruik daarom de mail. Was jij het laatste gezinslid, dan verdwijnt het hele gezin met rooster, voorstellen en activiteiten. Blijven er anderen over, dan blijft het gezin bestaan en kan je naam nog in het rooster en in oude voorstellen voorkomen. Zie ons <a href="privacy.html">privacybeleid</a> voor de details.</p>
-  </div>
+  <details class="faq">
+    <summary>Hoe herstel ik een eerder gekocht abonnement?</summary>
+    <div class="faq-answer">
+    <p>Log in met het account dat je eerder gebruikte en kies <strong>Herstel aankopen</strong> om je abonnement opnieuw te koppelen. Lukt dat niet? Mail <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a>.</p>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Wat gebeurt er als mijn abonnement afloopt?</h3>
+  <details class="faq">
+    <summary>Wat gebeurt er als mijn abonnement afloopt?</summary>
+    <div class="faq-answer">
     <p>Je behoudt toegang tot de basisfuncties: gezin, kinderen, basisrooster en het bekijken van de agenda. Premium functies (voorstellen, activiteiten, statistieken, meldingen, export, backup) worden gepauzeerd tot je opnieuw een abonnement afsluit. Je gegevens blijven behouden.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Meldingen & sync ───────────────── -->
+  <a class="back-topics" href="#onderwerpen">Terug naar onderwerpen</a>
   <div class="category" id="meldingen">
-    <div class="category-icon green" aria-hidden="true">🔔</div>
     <h2 class="category-title">Meldingen en sync</h2>
   </div>
 
-  <div class="faq">
-    <h3>Welke meldingen krijg ik?</h3>
+  <details class="faq">
+    <summary>Welke meldingen krijg ik?</summary>
+    <div class="faq-answer">
     <p>TweeHuizen stuurt meldingen bij: een nieuw voorstel, een reactie op een voorstel, een wissel die eraan komt, en belangrijke wijzigingen in het rooster. Je kunt meldingen fijn-tunen via <strong>Meer → Meldingen</strong>.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Werken meldingen in de simulator?</h3>
+  <details class="faq">
+    <summary>Werken meldingen in de simulator?</summary>
+    <div class="faq-answer">
     <p>Nee. Push-meldingen werken alleen op een echte iPhone. Lokale herinneringen in de app zelf werken ook zonder push-meldingen.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan ik TweeHuizen op meerdere apparaten gebruiken?</h3>
+  <details class="faq">
+    <summary>Kan ik TweeHuizen op meerdere apparaten gebruiken?</summary>
+    <div class="faq-answer">
     <p>Ja. Log in met hetzelfde account op al je apparaten. Je rooster en wijzigingen synchroniseren automatisch. Op een nieuw toestel kun je "Herstel aankopen" gebruiken om je abonnement te herkoppelen.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Werkt TweeHuizen offline?</h3>
+  <details class="faq">
+    <summary>Werkt TweeHuizen offline?</summary>
+    <div class="faq-answer">
     <p>Beperkt. Je kunt eerder geladen data bekijken als je offline bent, maar voor voorstellen, meldingen en synchronisatie heb je internetverbinding nodig. Een wijziging die je offline probeert te maken, lukt pas als je weer verbinding hebt.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Data en privacy ────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Terug naar onderwerpen</a>
   <div class="category" id="data">
-    <div class="category-icon muted" aria-hidden="true">🔒</div>
     <h2 class="category-title">Data en privacy</h2>
   </div>
 
-  <div class="faq">
-    <h3>Kan ik mijn gegevens exporteren?</h3>
+  <details class="faq">
+    <summary>Kan ik mijn gegevens exporteren?</summary>
+    <div class="faq-answer">
     <p>Ja. Ga naar <strong>Meer → Agenda-export</strong> om het zorgrooster naar je agenda-app (Apple Calendar, Google Calendar) te exporteren. Via <strong>Meer → Backup</strong> maak je een lokale back-up van een deel van je gezinsgegevens; activiteiten, het gezinslogboek en de afbeeldingen zitten daar niet in. Voor een volledig overzicht mail je privacy@tweehuizen.com. </p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Hoe verwijder ik mijn account?</h3>
+  <details class="faq">
+    <summary>Hoe verwijder ik mijn account?</summary>
+    <div class="faq-answer">
     <p>Mail <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> en we verwijderen je account en je gegevens binnen 30 dagen. De knop <strong>Meer &gt; Account verwijderen</strong> in de app werkt op dit moment niet naar behoren en wordt vervangen; gebruik daarom de mail. Was jij het laatste gezinslid, dan verdwijnt het hele gezin met rooster, voorstellen en activiteiten. Blijven er anderen over, dan blijft het gezin bestaan en kan je naam nog in het rooster en in oude voorstellen voorkomen. Zie ons <a href="privacy.html">privacybeleid</a> voor de details.</p>
-    
-  </div>
 
-  <div class="faq">
-    <h3>Is mijn data veilig?</h3>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Is mijn data veilig?</summary>
+    <div class="faq-answer">
     <p>Ja. We gebruiken versleutelde verbindingen (HTTPS), Row Level Security op databaseniveau (alleen jij en je gezinsleden lezen jullie gegevens uit de database) en veilige authenticatie. Inloggegevens worden op je iPhone opgeslagen in de beveiligde Keychain. Onze account- en gezinsdatabase staat bij Supabase in de EU.</p>
     <p>Zie ons <a href="privacy.html">Privacybeleid</a> voor meer informatie.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Wie kan mijn gezinsdata zien?</h3>
+  <details class="faq">
+    <summary>Wie kan mijn gezinsdata zien?</summary>
+    <div class="faq-answer">
     <p>De leden van jouw gezin. Via de app kan niemand buiten je gezin bij jullie gegevens. Wij
 hebben als beheerder van de database wel technische toegang, bijvoorbeeld om een storing te
 verhelpen of een verwijderverzoek uit te voeren; we kijken niet in gezinnen zonder reden. Eén uitzondering: profielfoto's staan zo opgeslagen dat iedereen met de directe link ze kan openen zonder in te loggen. We zetten dat om naar links die verlopen; mail ons als je een foto weg wilt hebben. In de app gebruiken we geen externe analytics-diensten, en we verkopen geen gegevens.</p>
-  </div>
+    </div>
+  </details>
 
   <!-- ─── Overig ─────────────────────────── -->
+  <a class="back-topics" href="#onderwerpen">Terug naar onderwerpen</a>
   <div class="category" id="overig">
-    <div class="category-icon accent" aria-hidden="true">✨</div>
     <h2 class="category-title">Overig</h2>
   </div>
 
-  <div class="faq">
-    <h3>Is TweeHuizen ook geschikt voor samenwonende ouders?</h3>
+  <details class="faq">
+    <summary>Is TweeHuizen ook geschikt voor samenwonende ouders?</summary>
+    <div class="faq-answer">
     <p>De app is specifiek ontworpen voor gescheiden ouders met kinderen op twee adressen. Samenwonende ouders kunnen hem natuurlijk ook gebruiken om het weekschema bij te houden, maar veel functies (zoals voorstellen tussen twee huizen) zijn dan minder relevant.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Mijn voorstel is goedgekeurd, maar ik wil het toch annuleren. Kan dat?</h3>
+  <details class="faq">
+    <summary>Mijn voorstel is goedgekeurd, maar ik wil het toch annuleren. Kan dat?</summary>
+    <div class="faq-answer">
     <p>Goedgekeurde voorstellen worden definitief. Je kunt wel een nieuw voorstel doen om de wijziging ongedaan te maken; dit moet dan opnieuw door de andere ouder goedgekeurd worden. Zo blijft iedereen op de hoogte van wijzigingen.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Ik heb een fout of bug gevonden. Waar meld ik dat?</h3>
+  <details class="faq">
+    <summary>Ik heb een fout of bug gevonden. Waar meld ik dat?</summary>
+    <div class="faq-answer">
     <p>Stuur een e-mail naar <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a> met een beschrijving van het probleem en, als het kan, een schermafbeelding. Vermeld ook welke iPhone en welke iOS-versie je gebruikt.</p>
-  </div>
+    </div>
+  </details>
 
-  <div class="faq">
-    <h3>Kan ik TweeHuizen met meer dan één gezin gebruiken?</h3>
+  <details class="faq">
+    <summary>Kan ik TweeHuizen met meer dan één gezin gebruiken?</summary>
+    <div class="faq-answer">
     <p>Eén account is gekoppeld aan één gezin. Als je bij meerdere gezinnen betrokken bent (bijvoorbeeld als zorgverlener voor verschillende families), heb je per gezin een apart account nodig.</p>
-  </div>
+    </div>
+  </details>
 
 </section>
 
@@ -316,7 +388,7 @@ verhelpen of een verwijderverzoek uit te voeren; we kijken niet in gezinnen zond
       <a href="privacy.html">Privacybeleid</a>
       <span aria-hidden="true"> · </span>
       <a href="voorwaarden.html">Voorwaarden</a>
-    
+
       <button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookievoorkeuren</button>
     </div>
     <address class="footer-legal">
