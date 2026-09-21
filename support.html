@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hulp &amp; Support | TweeHuizen</title>
 <meta name="description" content="Veelgestelde vragen over TweeHuizen: abonnementen, gezin uitnodigen, activiteiten, meldingen en meer.">
-<meta name="theme-color" content="#2F5F8F">
+<meta name="theme-color" content="#36064D">
 <link rel="canonical" href="https://tweehuizen.com/support.html">
 <link rel="alternate" hreflang="nl" href="https://tweehuizen.com/support.html">
 <link rel="alternate" hreflang="en" href="https://tweehuizen.com/support-en.html">
@@ -14,312 +14,16 @@
 <meta property="og:title" content="Hulp &amp; Support | TweeHuizen">
 <meta property="og:description" content="Veelgestelde vragen over TweeHuizen.">
 <meta property="og:url" content="https://tweehuizen.com/support.html">
-<meta property="og:image" content="https://tweehuizen.com/logo.png">
+<meta property="og:image" content="https://tweehuizen.com/assets/og-tweehuizen.png?v=2">
 <meta property="og:locale" content="nl_NL">
-<link rel="icon" type="image/png" href="favicon-180.png?v=1">
-<link rel="apple-touch-icon" href="favicon-180.png?v=1">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --blue: #2F5F8F;
-    --blue-light: #4A90D9;
-    --green: #6B9A6B;
-    --green-light: #A8C5A2;
-    --accent: #E9A864;
-    --accent-light: #F5E1C8;
-    --text: #24323F;
-    --text-muted: #667381;
-    --text-light: #97A3AE;
-    --bg: #F0EDE8;
-    --surface: #FFFFFF;
-    --border: #E9DCCF;
-    --border-light: #F0E9E1;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.6;
-  }
-  a { color: var(--blue-light); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* Skip link voor toetsenbordgebruikers */
-  .skip-link {
-    position: absolute; top: -40px; left: 8px;
-    background: var(--blue); color: #fff;
-    padding: 8px 16px; border-radius: 6px;
-    text-decoration: none; font-weight: 600;
-    z-index: 999; transition: top 0.2s ease;
-  }
-  .skip-link:focus { top: 8px; outline: 2px solid #E9A864; outline-offset: 2px; }
-
-  :focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; border-radius: 4px; }
-
-  /* Taalschakelaar in de navigatie: rustig, maar wel vindbaar voor wie
-     de Engelse App Store-listing volgt. */
-  .topnav .lang-switch { font-weight: 600; }
-  .topnav .lang-switch::before { content: "\1F310"; margin-right: 5px; }
-
-  /* Footer-legal (KvK + adres) */
-  .footer-container { max-width: 960px; margin: 0 auto; }
-  .footer-legal {
-    text-align: center; color: var(--text-muted);
-    font-size: 13.5px; font-style: normal;
-    line-height: 1.75; margin-bottom: 14px;
-  }
-  .footer-legal a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
-  .footer-legal a:hover { color: var(--blue); }
-  .footer-legal strong { color: var(--text); font-weight: 600; }
-  .footer-sep { color: var(--text-light); margin: 0 8px; }
-  .footer-kemblinck__logo {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    vertical-align: middle;
-    margin-right: 5px;
-    margin-bottom: 2px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  }
-
-  /* Watermark */
-  .bg-watermark {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    background: url('logo.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.025;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  /* Sticky nav */
-  .topnav {
-    padding: 20px 24px;
-    text-align: center;
-    background: rgba(240, 237, 232, 0.85);
-    backdrop-filter: saturate(180%) blur(10px);
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .topnav a {
-    color: var(--blue-light);
-    font-size: 15px;
-    margin: 0 14px;
-    font-weight: 500;
-  }
-
-  /* Container */
-  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-
-  /* Header */
-  .page-header {
-    text-align: center;
-    padding: 56px 24px 32px;
-  }
-  .page-kicker {
-    display: inline-block;
-    font-size: 13px;
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    background: #DCE9F3;
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 18px;
-  }
-  .page-title {
-    font-size: clamp(36px, 6vw, 48px);
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
-  .page-sub {
-    color: var(--text-muted);
-    font-size: 18px;
-  }
-
-  /* Contact-kaart */
-  .contact-card {
-    background: linear-gradient(135deg, #E9F1F8 0%, #DEEAD7 100%);
-    border-radius: 20px;
-    padding: 32px;
-    margin: 32px 0 48px;
-    border: 1px solid var(--border-light);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .contact-icon {
-    width: 64px;
-    height: 64px;
-    background: white;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-  .contact-body { flex: 1; min-width: 220px; }
-  .contact-body h2 { font-size: 20px; color: var(--blue); margin-bottom: 4px; font-weight: 700; }
-  .contact-body p { color: var(--text); font-size: 15px; margin-bottom: 4px; }
-  .contact-body .email {
-    display: inline-block;
-    margin-top: 8px;
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  /* Quick jump nav */
-  .category-jump {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 40px;
-    justify-content: center;
-  }
-  .category-chip {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-  .category-chip:hover {
-    background: var(--blue);
-    color: white;
-    border-color: var(--blue);
-    text-decoration: none;
-  }
-
-  /* Categorie header */
-  .category {
-    margin-top: 48px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .category-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-  .category-icon.blue { background: #DCE9F3; color: var(--blue); }
-  .category-icon.green { background: #DEEAD7; color: var(--green); }
-  .category-icon.accent { background: var(--accent-light); color: var(--accent); }
-  .category-icon.muted { background: var(--border); color: var(--text); }
-  .category-title {
-    font-size: 22px;
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: -0.3px;
-  }
-
-  /* FAQ */
-  .faq {
-    background: var(--surface);
-    border-radius: 14px;
-    padding: 22px 24px;
-    margin-bottom: 12px;
-    border: 1px solid var(--border-light);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .faq:hover {
-    border-color: var(--blue-light);
-    box-shadow: 0 4px 16px rgba(47, 95, 143, 0.05);
-  }
-  .faq h3 {
-    font-size: 17px;
-    color: var(--text);
-    margin-bottom: 8px;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-  .faq p {
-    font-size: 15px;
-    line-height: 1.65;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
-  .faq p:last-child { margin-bottom: 0; }
-  .faq strong { color: var(--text); font-weight: 600; }
-  .faq ul { padding-left: 20px; margin: 8px 0; }
-  .faq ul li {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 40px 24px 24px;
-    background: #E9E4DC;
-    border-top: 1px solid var(--border);
-    margin-top: 64px;
-  }
-  .footer-links {
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .footer-links a {
-    color: var(--blue-light);
-    font-size: 14.5px;
-    margin: 0 10px;
-  }
-  .footer-copy {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 13px;
-  }
-
-  /* Compact mobile (<640px) */
-  @media (max-width: 640px) {
-    .topnav { padding: 14px 16px; }
-    .topnav a { margin: 0 10px; font-size: 14.5px; }
-    .page-header { padding: 40px 20px 24px; }
-    .page-title { font-size: clamp(28px, 8vw, 38px); }
-    .page-sub { font-size: 16px; }
-    .page-kicker { font-size: 12px; margin-bottom: 14px; }
-    .contact-card { padding: 24px 20px; border-radius: 16px; flex-direction: column; text-align: center; gap: 12px; }
-    .contact-body h2 { font-size: 18px; }
-    .category-jump { gap: 10px; }
-    .category-chip { padding: 10px 14px; font-size: 14px; }
-    .footer { padding: 32px 20px 24px; margin-top: 40px; }
-    .footer-links a { display: inline-block; padding: 4px 6px; }
-  }
-</style>
+<link rel="icon" type="image/png" href="assets/favicon-180.png?v=2">
+<link rel="apple-touch-icon" href="assets/favicon-180.png?v=2">
+<link rel="stylesheet" href="assets/stijl-v2.css?v=2">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
 
-<div class="bg-watermark" aria-hidden="true"></div>
 
 <nav class="topnav" aria-label="Hoofdnavigatie">
   <a href="index.html">Home</a>
@@ -340,7 +44,7 @@
 <!-- ─── Contact-kaart ─────────────────────── -->
 <section class="container">
   <div class="contact-card">
-    <div class="contact-icon">✉️</div>
+    <div class="contact-icon" aria-hidden="true">✉️</div>
     <div class="contact-body">
       <h2>Neem contact op</h2>
       <p>Heb je een vraag, probleem of suggestie? We reageren meestal binnen 1–2 werkdagen.</p>
@@ -361,7 +65,7 @@
 
   <!-- ─── Beginnen ────────────────────────── -->
   <div class="category" id="beginnen">
-    <div class="category-icon blue">🚀</div>
+    <div class="category-icon blue" aria-hidden="true">🚀</div>
     <h2 class="category-title">Beginnen met TweeHuizen</h2>
   </div>
 
@@ -378,7 +82,7 @@
   <div class="faq">
     <h3>Hoe werkt een uitnodigingscode?</h3>
     <p>Een uitnodigingscode is een unieke code waarmee iemand zich bij jullie gezin kan aansluiten. Na het invoeren tijdens registratie wordt de persoon automatisch aan jullie gezin gekoppeld, met de rol en rechten die je hebt ingesteld.</p>
-    <p>Codes blijven zeven dagen geldig. Niet op tijd ingewisseld? Geen probleem: je kunt eenvoudig een nieuwe code genereren via het profiel van de uitgenodigde persoon in het tabblad Gezin.</p>
+    <p>Codes blijven dertig dagen geldig. Niet op tijd ingewisseld? Geen probleem: je kunt eenvoudig een nieuwe code genereren via het profiel van de uitgenodigde persoon in het tabblad Gezin.</p>
   </div>
 
   <div class="faq">
@@ -388,7 +92,7 @@
 
   <!-- ─── Gezin en rollen ─────────────────── -->
   <div class="category" id="gezin">
-    <div class="category-icon green">👨‍👩‍👧‍👦</div>
+    <div class="category-icon green" aria-hidden="true">👨‍👩‍👧‍👦</div>
     <h2 class="category-title">Gezin en rollen</h2>
   </div>
 
@@ -409,12 +113,12 @@
 
   <div class="faq">
     <h3>Kan mijn kind de app zelf gebruiken?</h3>
-    <p>Ja, oudere kinderen kunnen een eigen login krijgen met beperkte rechten. Je maakt eerst een kindprofiel aan in de app en genereert dan een koppelcode. Het kind kan daarmee inloggen op een eigen telefoon en het rooster meekijken, zonder dat je gezinsgegevens kunt wijzigen.</p>
+    <p>Ja, oudere kinderen kunnen een eigen login krijgen met beperkte rechten. Je maakt eerst een kindprofiel aan in de app en genereert dan een koppelcode. Het kind kan daarmee inloggen op een eigen telefoon en het rooster meekijken, zonder gezinsgegevens te kunnen wijzigen.</p>
   </div>
 
   <!-- ─── Planning ───────────────────────── -->
   <div class="category" id="planning">
-    <div class="category-icon accent">📅</div>
+    <div class="category-icon accent" aria-hidden="true">📅</div>
     <h2 class="category-title">Planning en voorstellen</h2>
   </div>
 
@@ -430,7 +134,7 @@
 
   <div class="faq">
     <h3>Wat gebeurt er als een voorstel niet wordt beantwoord?</h3>
-    <p>Voorstellen blijven open staan totdat de andere ouder reageert. Je krijgt geen automatische goedkeuring. Elke wijziging vereist expliciete toestemming. Via meldingen blijf je op de hoogte.</p>
+    <p>Voorstellen blijven open staan totdat de andere ouder reageert. Zijn beide hoofdouders met een eigen account gekoppeld, dan vereist elke wijziging expliciete toestemming van de ander. Is er maar één hoofdouder gekoppeld, bijvoorbeeld zolang de tweede ouder de uitnodiging niet heeft aangenomen, dan wordt een bevoegd voorstel voor de basisregeling meteen toegepast. Via meldingen blijf je op de hoogte.</p>
   </div>
 
   <div class="faq">
@@ -472,7 +176,7 @@
 
   <!-- ─── Abonnement ─────────────────────── -->
   <div class="category" id="abonnement">
-    <div class="category-icon blue">💳</div>
+    <div class="category-icon blue" aria-hidden="true">💳</div>
     <h2 class="category-title">Abonnement en betaling</h2>
   </div>
 
@@ -495,7 +199,7 @@
 
   <div class="faq">
     <h3>Hoe start mijn gratis proefperiode?</h3>
-    <p>De 14-dagen proefperiode start zodra je via de paywall een abonnement kiest. Je wordt pas betaald na afloop van de proefperiode, en kunt tot 24 uur daarvoor kosteloos opzeggen via je Apple ID-instellingen.</p>
+    <p>De 14-dagen proefperiode start zodra je via de paywall een abonnement kiest. Er worden pas kosten in rekening gebracht na afloop van de proefperiode. Je kunt uiterlijk 24 uur vóór het einde kosteloos opzeggen via je Apple ID-instellingen.</p>
   </div>
 
   <div class="faq">
@@ -505,7 +209,7 @@
 
   <div class="faq">
     <h3>Hoe herstel ik een eerder gekocht abonnement?</h3>
-    <p>Ga naar <strong>Meer</strong> en tik op <strong>"Herstel aankopen"</strong> (ook beschikbaar in het premium scherm). Dit koppelt je bestaande abonnement opnieuw aan je account, bijvoorbeeld na het installeren op een nieuwe telefoon.</p>
+    <p>Mail <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> en we verwijderen je account en je gegevens binnen 30 dagen. De knop <strong>Meer &gt; Account verwijderen</strong> in de app werkt op dit moment niet naar behoren en wordt vervangen; gebruik daarom de mail. Was jij het laatste gezinslid, dan verdwijnt het hele gezin met rooster, voorstellen en activiteiten. Blijven er anderen over, dan blijft het gezin bestaan en kan je naam nog in het rooster en in oude voorstellen voorkomen. Zie ons <a href="privacy.html">privacybeleid</a> voor de details.</p>
   </div>
 
   <div class="faq">
@@ -515,7 +219,7 @@
 
   <!-- ─── Meldingen & sync ───────────────── -->
   <div class="category" id="meldingen">
-    <div class="category-icon green">🔔</div>
+    <div class="category-icon green" aria-hidden="true">🔔</div>
     <h2 class="category-title">Meldingen en sync</h2>
   </div>
 
@@ -536,40 +240,42 @@
 
   <div class="faq">
     <h3>Werkt TweeHuizen offline?</h3>
-    <p>Beperkt. Je kunt eerder geladen data bekijken als je offline bent, maar voor voorstellen, meldingen en synchronisatie heb je internetverbinding nodig. Wijzigingen worden automatisch geüpload zodra je weer online bent.</p>
+    <p>Beperkt. Je kunt eerder geladen data bekijken als je offline bent, maar voor voorstellen, meldingen en synchronisatie heb je internetverbinding nodig. Een wijziging die je offline probeert te maken, lukt pas als je weer verbinding hebt.</p>
   </div>
 
   <!-- ─── Data en privacy ────────────────── -->
   <div class="category" id="data">
-    <div class="category-icon muted">🔒</div>
+    <div class="category-icon muted" aria-hidden="true">🔒</div>
     <h2 class="category-title">Data en privacy</h2>
   </div>
 
   <div class="faq">
     <h3>Kan ik mijn gegevens exporteren?</h3>
-    <p>Ja. Ga naar <strong>Meer → Agenda-export</strong> om het zorgrooster naar je agenda-app (Apple Calendar, Google Calendar) te exporteren. Via <strong>Meer → Backup</strong> kun je een volledige lokale backup maken van al je gezinsdata.</p>
+    <p>Ja. Ga naar <strong>Meer → Agenda-export</strong> om het zorgrooster naar je agenda-app (Apple Calendar, Google Calendar) te exporteren. Via <strong>Meer → Backup</strong> maak je een lokale back-up van een deel van je gezinsgegevens; activiteiten, het gezinslogboek en de afbeeldingen zitten daar niet in. Voor een volledig overzicht mail je privacy@tweehuizen.com. </p>
   </div>
 
   <div class="faq">
     <h3>Hoe verwijder ik mijn account?</h3>
-    <p>Ga naar <strong>Meer</strong> en scroll helemaal naar beneden. Tik op <strong>"Account verwijderen"</strong> en bevestig twee keer. Je account en alle bijbehorende gegevens worden binnen 30 dagen definitief verwijderd uit onze systemen.</p>
-    <p>Let op: als jij de laatste volwassene in het gezin bent, wordt ook het hele gezin verwijderd.</p>
+    <p>Mail <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> en we verwijderen je account en je gegevens binnen 30 dagen. De knop <strong>Meer &gt; Account verwijderen</strong> in de app werkt op dit moment niet naar behoren en wordt vervangen; gebruik daarom de mail. Was jij het laatste gezinslid, dan verdwijnt het hele gezin met rooster, voorstellen en activiteiten. Blijven er anderen over, dan blijft het gezin bestaan en kan je naam nog in het rooster en in oude voorstellen voorkomen. Zie ons <a href="privacy.html">privacybeleid</a> voor de details.</p>
+    
   </div>
 
   <div class="faq">
     <h3>Is mijn data veilig?</h3>
-    <p>Ja. We gebruiken versleutelde verbindingen (HTTPS), Row Level Security op databaseniveau (alleen jij en je gezinsleden zien jullie data) en veilige authenticatie. Inloggegevens worden op je iPhone opgeslagen in de beveiligde Keychain. Servers staan in de EU.</p>
+    <p>Ja. We gebruiken versleutelde verbindingen (HTTPS), Row Level Security op databaseniveau (alleen jij en je gezinsleden lezen jullie gegevens uit de database) en veilige authenticatie. Inloggegevens worden op je iPhone opgeslagen in de beveiligde Keychain. Onze account- en gezinsdatabase staat bij Supabase in de EU.</p>
     <p>Zie ons <a href="privacy.html">Privacybeleid</a> voor meer informatie.</p>
   </div>
 
   <div class="faq">
     <h3>Wie kan mijn gezinsdata zien?</h3>
-    <p>Alleen de leden van jouw gezin. Medewerkers van TweeHuizen hebben geen toegang tot je inhoud. We gebruiken geen externe analytics-diensten en verkopen geen gegevens.</p>
+    <p>De leden van jouw gezin. Via de app kan niemand buiten je gezin bij jullie gegevens. Wij
+hebben als beheerder van de database wel technische toegang, bijvoorbeeld om een storing te
+verhelpen of een verwijderverzoek uit te voeren; we kijken niet in gezinnen zonder reden. Eén uitzondering: profielfoto's staan zo opgeslagen dat iedereen met de directe link ze kan openen zonder in te loggen. We zetten dat om naar links die verlopen; mail ons als je een foto weg wilt hebben. In de app gebruiken we geen externe analytics-diensten, en we verkopen geen gegevens.</p>
   </div>
 
   <!-- ─── Overig ─────────────────────────── -->
   <div class="category" id="overig">
-    <div class="category-icon accent">✨</div>
+    <div class="category-icon accent" aria-hidden="true">✨</div>
     <h2 class="category-title">Overig</h2>
   </div>
 
@@ -610,6 +316,8 @@
       <a href="privacy.html">Privacybeleid</a>
       <span aria-hidden="true"> · </span>
       <a href="voorwaarden.html">Voorwaarden</a>
+    
+      <button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookievoorkeuren</button>
     </div>
     <address class="footer-legal">
       Een product van <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo-64.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22"><strong>KemblincK</strong></a><br>

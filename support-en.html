@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Help &amp; Support | TweeHuizen</title>
 <meta name="description" content="Frequently asked questions about TweeHuizen: subscriptions, inviting your family, activities, notifications and more.">
-<meta name="theme-color" content="#2F5F8F">
+<meta name="theme-color" content="#36064D">
 <link rel="canonical" href="https://tweehuizen.com/support-en.html">
 <link rel="alternate" hreflang="nl" href="https://tweehuizen.com/support.html">
 <link rel="alternate" hreflang="en" href="https://tweehuizen.com/support-en.html">
@@ -14,313 +14,17 @@
 <meta property="og:title" content="Help &amp; Support | TweeHuizen">
 <meta property="og:description" content="Frequently asked questions about TweeHuizen.">
 <meta property="og:url" content="https://tweehuizen.com/support-en.html">
-<meta property="og:image" content="https://tweehuizen.com/logo.png">
+<meta property="og:image" content="https://tweehuizen.com/assets/og-tweehuizen.png?v=2">
 <meta property="og:locale" content="en_GB">
 <meta property="og:locale:alternate" content="nl_NL">
-<link rel="icon" type="image/png" href="favicon-180.png?v=1">
-<link rel="apple-touch-icon" href="favicon-180.png?v=1">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --blue: #2F5F8F;
-    --blue-light: #4A90D9;
-    --green: #6B9A6B;
-    --green-light: #A8C5A2;
-    --accent: #E9A864;
-    --accent-light: #F5E1C8;
-    --text: #24323F;
-    --text-muted: #667381;
-    --text-light: #97A3AE;
-    --bg: #F0EDE8;
-    --surface: #FFFFFF;
-    --border: #E9DCCF;
-    --border-light: #F0E9E1;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.6;
-  }
-  a { color: var(--blue-light); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* Skip link voor toetsenbordgebruikers */
-  .skip-link {
-    position: absolute; top: -40px; left: 8px;
-    background: var(--blue); color: #fff;
-    padding: 8px 16px; border-radius: 6px;
-    text-decoration: none; font-weight: 600;
-    z-index: 999; transition: top 0.2s ease;
-  }
-  .skip-link:focus { top: 8px; outline: 2px solid #E9A864; outline-offset: 2px; }
-
-  :focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; border-radius: 4px; }
-
-  /* Taalschakelaar in de navigatie: rustig, maar wel vindbaar voor wie
-     de Engelse App Store-listing volgt. */
-  .topnav .lang-switch { font-weight: 600; }
-  .topnav .lang-switch::before { content: "\1F310"; margin-right: 5px; }
-
-  /* Footer-legal (KvK + adres) */
-  .footer-container { max-width: 960px; margin: 0 auto; }
-  .footer-legal {
-    text-align: center; color: var(--text-muted);
-    font-size: 13.5px; font-style: normal;
-    line-height: 1.75; margin-bottom: 14px;
-  }
-  .footer-legal a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
-  .footer-legal a:hover { color: var(--blue); }
-  .footer-legal strong { color: var(--text); font-weight: 600; }
-  .footer-sep { color: var(--text-light); margin: 0 8px; }
-  .footer-kemblinck__logo {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
-    vertical-align: middle;
-    margin-right: 5px;
-    margin-bottom: 2px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  }
-
-  /* Watermark */
-  .bg-watermark {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    background: url('logo.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.025;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  /* Sticky nav */
-  .topnav {
-    padding: 20px 24px;
-    text-align: center;
-    background: rgba(240, 237, 232, 0.85);
-    backdrop-filter: saturate(180%) blur(10px);
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .topnav a {
-    color: var(--blue-light);
-    font-size: 15px;
-    margin: 0 14px;
-    font-weight: 500;
-  }
-
-  /* Container */
-  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-
-  /* Header */
-  .page-header {
-    text-align: center;
-    padding: 56px 24px 32px;
-  }
-  .page-kicker {
-    display: inline-block;
-    font-size: 13px;
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    background: #DCE9F3;
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 18px;
-  }
-  .page-title {
-    font-size: clamp(36px, 6vw, 48px);
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 12px;
-  }
-  .page-sub {
-    color: var(--text-muted);
-    font-size: 18px;
-  }
-
-  /* Contact-kaart */
-  .contact-card {
-    background: linear-gradient(135deg, #E9F1F8 0%, #DEEAD7 100%);
-    border-radius: 20px;
-    padding: 32px;
-    margin: 32px 0 48px;
-    border: 1px solid var(--border-light);
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .contact-icon {
-    width: 64px;
-    height: 64px;
-    background: white;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-  .contact-body { flex: 1; min-width: 220px; }
-  .contact-body h2 { font-size: 20px; color: var(--blue); margin-bottom: 4px; font-weight: 700; }
-  .contact-body p { color: var(--text); font-size: 15px; margin-bottom: 4px; }
-  .contact-body .email {
-    display: inline-block;
-    margin-top: 8px;
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  /* Quick jump nav */
-  .category-jump {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 40px;
-    justify-content: center;
-  }
-  .category-chip {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-  .category-chip:hover {
-    background: var(--blue);
-    color: white;
-    border-color: var(--blue);
-    text-decoration: none;
-  }
-
-  /* Categorie header */
-  .category {
-    margin-top: 48px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .category-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-  .category-icon.blue { background: #DCE9F3; color: var(--blue); }
-  .category-icon.green { background: #DEEAD7; color: var(--green); }
-  .category-icon.accent { background: var(--accent-light); color: var(--accent); }
-  .category-icon.muted { background: var(--border); color: var(--text); }
-  .category-title {
-    font-size: 22px;
-    color: var(--blue);
-    font-weight: 700;
-    letter-spacing: -0.3px;
-  }
-
-  /* FAQ */
-  .faq {
-    background: var(--surface);
-    border-radius: 14px;
-    padding: 22px 24px;
-    margin-bottom: 12px;
-    border: 1px solid var(--border-light);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .faq:hover {
-    border-color: var(--blue-light);
-    box-shadow: 0 4px 16px rgba(47, 95, 143, 0.05);
-  }
-  .faq h3 {
-    font-size: 17px;
-    color: var(--text);
-    margin-bottom: 8px;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-  .faq p {
-    font-size: 15px;
-    line-height: 1.65;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
-  .faq p:last-child { margin-bottom: 0; }
-  .faq strong { color: var(--text); font-weight: 600; }
-  .faq ul { padding-left: 20px; margin: 8px 0; }
-  .faq ul li {
-    font-size: 15px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 40px 24px 24px;
-    background: #E9E4DC;
-    border-top: 1px solid var(--border);
-    margin-top: 64px;
-  }
-  .footer-links {
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .footer-links a {
-    color: var(--blue-light);
-    font-size: 14.5px;
-    margin: 0 10px;
-  }
-  .footer-copy {
-    text-align: center;
-    color: var(--text-light);
-    font-size: 13px;
-  }
-
-  /* Compact mobile (<640px) */
-  @media (max-width: 640px) {
-    .topnav { padding: 14px 16px; }
-    .topnav a { margin: 0 10px; font-size: 14.5px; }
-    .page-header { padding: 40px 20px 24px; }
-    .page-title { font-size: clamp(28px, 8vw, 38px); }
-    .page-sub { font-size: 16px; }
-    .page-kicker { font-size: 12px; margin-bottom: 14px; }
-    .contact-card { padding: 24px 20px; border-radius: 16px; flex-direction: column; text-align: center; gap: 12px; }
-    .contact-body h2 { font-size: 18px; }
-    .category-jump { gap: 10px; }
-    .category-chip { padding: 10px 14px; font-size: 14px; }
-    .footer { padding: 32px 20px 24px; margin-top: 40px; }
-    .footer-links a { display: inline-block; padding: 4px 6px; }
-  }
-</style>
+<link rel="icon" type="image/png" href="assets/favicon-180.png?v=2">
+<link rel="apple-touch-icon" href="assets/favicon-180.png?v=2">
+<link rel="stylesheet" href="assets/stijl-v2.css?v=2">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="bg-watermark" aria-hidden="true"></div>
 
 <nav class="topnav" aria-label="Main navigation">
   <a href="index.html">Home</a>
@@ -341,7 +45,7 @@
 <!-- ─── Contact-kaart ─────────────────────── -->
 <section class="container">
   <div class="contact-card">
-    <div class="contact-icon">✉️</div>
+    <div class="contact-icon" aria-hidden="true">✉️</div>
     <div class="contact-body">
       <h2>Get in touch</h2>
       <p>Have a question, a problem or a suggestion? We usually reply within 1 to 2 working days.</p>
@@ -362,7 +66,7 @@
 
   <!-- ─── Getting started ─────────────────── -->
   <div class="category" id="getting-started">
-    <div class="category-icon blue">🚀</div>
+    <div class="category-icon blue" aria-hidden="true">🚀</div>
     <h2 class="category-title">Getting started with TweeHuizen</h2>
   </div>
 
@@ -379,7 +83,7 @@
   <div class="faq">
     <h3>How does an invitation code work?</h3>
     <p>An invitation code is a unique code that lets someone join your family. Once they enter it during sign-up, they are linked to your family automatically, with the role and permissions you chose.</p>
-    <p>Codes stay valid for seven days. Not redeemed in time? No problem: you can generate a new code from that person's profile in the Family tab.</p>
+    <p>Codes stay valid for thirty days. Not redeemed in time? No problem: you can generate a new code from that person's profile in the Family tab.</p>
   </div>
 
   <div class="faq">
@@ -389,7 +93,7 @@
 
   <!-- ─── Family and roles ─────────────────── -->
   <div class="category" id="family">
-    <div class="category-icon green">👨‍👩‍👧‍👦</div>
+    <div class="category-icon green" aria-hidden="true">👨‍👩‍👧‍👦</div>
     <h2 class="category-title">Family and roles</h2>
   </div>
 
@@ -415,7 +119,7 @@
 
   <!-- ─── Planning ───────────────────────── -->
   <div class="category" id="planning">
-    <div class="category-icon accent">📅</div>
+    <div class="category-icon accent" aria-hidden="true">📅</div>
     <h2 class="category-title">Planning and proposals</h2>
   </div>
 
@@ -431,7 +135,7 @@
 
   <div class="faq">
     <h3>What happens if nobody responds to a proposal?</h3>
-    <p>Proposals stay open until the other parent responds. Nothing is approved automatically: every change needs explicit consent. Notifications keep you up to date.</p>
+    <p>Proposals stay open until the other parent responds. If both primary parents are linked with their own account, every change needs the other parent's explicit consent. If only one primary parent is linked, for example while the second parent has not accepted the invitation yet, an authorised proposal for the base schedule is applied right away. Notifications keep you up to date.</p>
   </div>
 
   <div class="faq">
@@ -473,7 +177,7 @@
 
   <!-- ─── Subscription ─────────────────────── -->
   <div class="category" id="subscription">
-    <div class="category-icon blue">💳</div>
+    <div class="category-icon blue" aria-hidden="true">💳</div>
     <h2 class="category-title">Subscription and payment</h2>
   </div>
 
@@ -506,7 +210,7 @@
 
   <div class="faq">
     <h3>How do I restore a subscription I bought earlier?</h3>
-    <p>Go to <strong>More</strong> and tap <strong>"Restore purchases"</strong> (also available on the premium screen). This links your existing subscription to your account again, for example after installing the app on a new phone.</p>
+    <p>Email <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> and we will delete your account and your data within 30 days. The <strong>More &gt; Delete account</strong> button in the app does not work properly at the moment and is being replaced, so please use email. If you were the last member of the family, the whole family is deleted, including the schedule, proposals and activities. If other members remain, the family stays and your name can still appear in the schedule and in earlier proposals. See our <a href="privacy.html" hreflang="nl">privacy policy</a> (in Dutch) for details.</p>
   </div>
 
   <div class="faq">
@@ -516,7 +220,7 @@
 
   <!-- ─── Notifications & sync ───────────────── -->
   <div class="category" id="notifications">
-    <div class="category-icon green">🔔</div>
+    <div class="category-icon green" aria-hidden="true">🔔</div>
     <h2 class="category-title">Notifications and sync</h2>
   </div>
 
@@ -537,40 +241,42 @@
 
   <div class="faq">
     <h3>Does TweeHuizen work offline?</h3>
-    <p>To a limited extent. You can view previously loaded data while offline, but proposals, notifications and syncing need an internet connection. Changes are uploaded automatically as soon as you are back online.</p>
+    <p>To a limited extent. You can view previously loaded data while offline, but proposals, notifications and syncing need an internet connection. A change you try to make offline will only go through once you are back online, so you need to make it again.</p>
   </div>
 
   <!-- ─── Data and privacy ────────────────── -->
   <div class="category" id="data">
-    <div class="category-icon muted">🔒</div>
+    <div class="category-icon muted" aria-hidden="true">🔒</div>
     <h2 class="category-title">Data and privacy</h2>
   </div>
 
   <div class="faq">
     <h3>Can I export my data?</h3>
-    <p>Yes. Go to <strong>More → Calendar export</strong> to export the care schedule to your calendar app (Apple Calendar, Google Calendar). Under <strong>More → Backup</strong> you can make a complete local backup of all your family data.</p>
+    <p>Yes. Go to <strong>More → Calendar export</strong> to export the care schedule to your calendar app (Apple Calendar, Google Calendar). Under <strong>More → Backup</strong> you can make a local backup of part of your family data; activities, the family log and the images are not included. For a full overview, email privacy@tweehuizen.com.</p>
   </div>
 
   <div class="faq">
     <h3>How do I delete my account?</h3>
-    <p>Go to <strong>More</strong> and scroll all the way down. Tap <strong>"Delete account"</strong> and confirm twice. Your account and all related data are permanently removed from our systems within 30 days.</p>
-    <p>Note: if you are the last adult in the family, the whole family is deleted as well.</p>
+    <p>Email <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a> and we will delete your account and your data within 30 days. The <strong>More &gt; Delete account</strong> button in the app does not work properly at the moment and is being replaced, so please use email. If you were the last member of the family, the whole family is deleted, including the schedule, proposals and activities. If other members remain, the family stays and your name can still appear in the schedule and in earlier proposals. See our <a href="privacy.html" hreflang="nl">privacy policy</a> (in Dutch) for details.</p>
+    
   </div>
 
   <div class="faq">
     <h3>Is my data safe?</h3>
-    <p>Yes. We use encrypted connections (HTTPS), Row Level Security at database level (only you and your family members can see your data) and secure authentication. Sign-in details are stored in the secure Keychain on your iPhone. Our servers are in the EU.</p>
-    <p>See our <a href="privacy.html" hreflang="nl" lang="nl">Privacy policy</a> (in Dutch) for more information.</p>
+    <p>Yes. We use encrypted connections (HTTPS), Row Level Security at database level (only you and your family members can read your data from the database) and secure authentication. Sign-in details are stored in the secure Keychain on your iPhone. Our account and family database is hosted with Supabase in the EU.</p>
+    <p>See our <a href="privacy.html" hreflang="nl">Privacy policy</a> (in Dutch) for more information.</p>
   </div>
 
   <div class="faq">
     <h3>Who can see my family data?</h3>
-    <p>Only the members of your own family. TweeHuizen staff have no access to your content. We do not use external analytics services and we do not sell data.</p>
+    <p>The members of your own family. Through the app, nobody outside your family can reach your
+data. As the administrator of the database we do have technical access, for example to fix an
+outage or carry out a deletion request; we do not look inside families without a reason. One exception: profile pictures are stored in a way that lets anyone with the direct link open them without signing in; we are moving those to links that expire, and you can email us to have a picture removed. In the app we do not use external analytics services and we do not sell data.</p>
   </div>
 
   <!-- ─── Other ─────────────────────────── -->
   <div class="category" id="other">
-    <div class="category-icon accent">✨</div>
+    <div class="category-icon accent" aria-hidden="true">✨</div>
     <h2 class="category-title">Other</h2>
   </div>
 
@@ -607,9 +313,11 @@
       <span aria-hidden="true"> · </span>
       <a href="support-en.html">Help &amp; Support</a>
       <span aria-hidden="true"> · </span>
-      <a href="privacy.html" hreflang="nl" lang="nl">Privacy policy</a>
+      <a href="privacy.html" hreflang="nl">Privacy policy</a>
       <span aria-hidden="true"> · </span>
-      <a href="voorwaarden.html" hreflang="nl" lang="nl">Terms</a>
+      <a href="voorwaarden.html" hreflang="nl">Terms</a>
+    
+      <button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookie preferences</button>
     </div>
     <address class="footer-legal">
       A product of <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo-64.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22"><strong>KemblincK</strong></a><br>
