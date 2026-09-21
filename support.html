@@ -44,7 +44,7 @@
 <!-- ─── Contact-kaart ─────────────────────── -->
 <section class="container">
   <div class="contact-card">
-    <div class="contact-icon">✉️</div>
+    <div class="contact-icon" aria-hidden="true">✉️</div>
     <div class="contact-body">
       <h2>Neem contact op</h2>
       <p>Heb je een vraag, probleem of suggestie? We reageren meestal binnen 1–2 werkdagen.</p>
@@ -65,7 +65,7 @@
 
   <!-- ─── Beginnen ────────────────────────── -->
   <div class="category" id="beginnen">
-    <div class="category-icon blue">🚀</div>
+    <div class="category-icon blue" aria-hidden="true">🚀</div>
     <h2 class="category-title">Beginnen met TweeHuizen</h2>
   </div>
 
@@ -92,7 +92,7 @@
 
   <!-- ─── Gezin en rollen ─────────────────── -->
   <div class="category" id="gezin">
-    <div class="category-icon green">👨‍👩‍👧‍👦</div>
+    <div class="category-icon green" aria-hidden="true">👨‍👩‍👧‍👦</div>
     <h2 class="category-title">Gezin en rollen</h2>
   </div>
 
@@ -113,12 +113,12 @@
 
   <div class="faq">
     <h3>Kan mijn kind de app zelf gebruiken?</h3>
-    <p>Ja, oudere kinderen kunnen een eigen login krijgen met beperkte rechten. Je maakt eerst een kindprofiel aan in de app en genereert dan een koppelcode. Het kind kan daarmee inloggen op een eigen telefoon en het rooster meekijken, zonder dat je gezinsgegevens kunt wijzigen.</p>
+    <p>Ja, oudere kinderen kunnen een eigen login krijgen met beperkte rechten. Je maakt eerst een kindprofiel aan in de app en genereert dan een koppelcode. Het kind kan daarmee inloggen op een eigen telefoon en het rooster meekijken, zonder gezinsgegevens te kunnen wijzigen.</p>
   </div>
 
   <!-- ─── Planning ───────────────────────── -->
   <div class="category" id="planning">
-    <div class="category-icon accent">📅</div>
+    <div class="category-icon accent" aria-hidden="true">📅</div>
     <h2 class="category-title">Planning en voorstellen</h2>
   </div>
 
@@ -176,7 +176,7 @@
 
   <!-- ─── Abonnement ─────────────────────── -->
   <div class="category" id="abonnement">
-    <div class="category-icon blue">💳</div>
+    <div class="category-icon blue" aria-hidden="true">💳</div>
     <h2 class="category-title">Abonnement en betaling</h2>
   </div>
 
@@ -199,7 +199,7 @@
 
   <div class="faq">
     <h3>Hoe start mijn gratis proefperiode?</h3>
-    <p>De 14-dagen proefperiode start zodra je via de paywall een abonnement kiest. Er worden pas kosten in rekening gebracht na afloop van de proefperiode, en kunt tot 24 uur daarvoor kosteloos opzeggen via je Apple ID-instellingen.</p>
+    <p>De 14-dagen proefperiode start zodra je via de paywall een abonnement kiest. Er worden pas kosten in rekening gebracht na afloop van de proefperiode. Je kunt uiterlijk 24 uur vóór het einde kosteloos opzeggen via je Apple ID-instellingen.</p>
   </div>
 
   <div class="faq">
@@ -219,7 +219,7 @@
 
   <!-- ─── Meldingen & sync ───────────────── -->
   <div class="category" id="meldingen">
-    <div class="category-icon green">🔔</div>
+    <div class="category-icon green" aria-hidden="true">🔔</div>
     <h2 class="category-title">Meldingen en sync</h2>
   </div>
 
@@ -245,7 +245,7 @@
 
   <!-- ─── Data en privacy ────────────────── -->
   <div class="category" id="data">
-    <div class="category-icon muted">🔒</div>
+    <div class="category-icon muted" aria-hidden="true">🔒</div>
     <h2 class="category-title">Data en privacy</h2>
   </div>
 
@@ -273,7 +273,7 @@
 
   <!-- ─── Overig ─────────────────────────── -->
   <div class="category" id="overig">
-    <div class="category-icon accent">✨</div>
+    <div class="category-icon accent" aria-hidden="true">✨</div>
     <h2 class="category-title">Overig</h2>
   </div>
 
@@ -315,7 +315,7 @@
       <span aria-hidden="true"> · </span>
       <a href="voorwaarden.html">Voorwaarden</a>
     
-      <a href="#" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren(); return false;">Cookievoorkeuren</a>
+      <button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookievoorkeuren</button>
     </div>
     <address class="footer-legal">
       Een product van <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo-64.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22"><strong>KemblincK</strong></a><br>

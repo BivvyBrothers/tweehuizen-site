@@ -81,6 +81,17 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
   border-radius: var(--rond-s);
 }
 
+/* In de voettekst staat paars op paars: daar moet de focusrand crème zijn,
+   anders is hij onzichtbaar (1:1). Codex-review 21 sep. */
+.footer a:focus-visible, .footer button:focus-visible, .voettekst a:focus-visible {
+  outline-color: var(--merk-creme);
+}
+
+/* De schermafbeeldingknoppen snijden een buitenliggende rand af, dus die
+   markering gaat naar binnen. */
+.shot-btn:focus-visible { outline: none; }
+.shot-btn:focus-visible .shot { outline: 3px solid var(--actie); outline-offset: -3px; }
+
 img { max-width: 100%; height: auto; }
 
 /* Ankers moeten onder de vaste navigatie uit komen. */
@@ -330,7 +341,6 @@ details.faq[open] summary::after { content: "\2212"; }
 .footer a { color: var(--merk-creme); }
 .footer-container { max-width: var(--breedte); margin: 0 auto; }
 .footer-links, .footer-legal, .footer-social { display: flex; flex-wrap: wrap; gap: var(--ruimte-m); margin-bottom: var(--ruimte-m); }
-.footer-sep { opacity: 1; }
 .footer-copy { font-size: 15px; }
 .footer-kemblinck { display: flex; align-items: center; gap: var(--ruimte-s); margin-top: var(--ruimte-l); }
 .footer-kemblinck__logo { width: 32px; height: 32px; }
@@ -349,6 +359,15 @@ details.faq[open] summary::after { content: "\2212"; }
 }
 .lightbox[hidden] { display: none; }
 .lightbox img { max-height: 90vh; border-radius: var(--rond-m); }
+.lightbox figcaption {
+  /* Eigen ondoorzichtig vlak: paarse tekst op de overlay haalde maar 3,84:1. */
+  background: var(--achtergrond);
+  color: var(--tekst);
+  border-radius: var(--rond-s);
+  padding: var(--ruimte-s) var(--ruimte-m);
+  margin-top: var(--ruimte-m);
+  text-align: center;
+}
 .lightbox-close {
   position: absolute;
   top: var(--ruimte-m);
@@ -497,3 +516,32 @@ details.faq[open] summary::after { content: "\2212"; }
 .juridisch .meta { font-size: 15px; margin-bottom: var(--ruimte-xl); }
 
 .cookie-link { cursor: pointer; }
+
+/* ─── Hersteld na het samenvoegen (Codex-review 21 sep) ── */
+
+/* De sociale iconen hadden geen afmeting meer en het klikvlak was te klein. */
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+.footer-social svg { width: 22px; height: 22px; }
+
+/* 404 had geen container meer. */
+.foutpagina { max-width: 560px; margin: 0 auto; padding: var(--ruimte-xxl) var(--ruimte-l); text-align: center; }
+
+/* De knop op ons-verhaal gebruikte tokens die niet meer bestaan. */
+.voorkeuren { margin-top: var(--ruimte-xl); }
+.cookie-link {
+  background: var(--oppervlak);
+  color: var(--tekst);
+  border: var(--lijn);
+  border-radius: var(--rond-s);
+  padding: 6px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.footer .cookie-link { background: transparent; color: var(--merk-creme); border-color: var(--merk-creme); }

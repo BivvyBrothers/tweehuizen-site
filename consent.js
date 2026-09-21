@@ -84,13 +84,51 @@
   // verwees naar het handmatig wissen van localStorage. Elke pagina heeft nu
   // een link "Cookievoorkeuren" in de voettekst die hierop uitkomt.
   function heropenVoorkeuren() {
-    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    // De bestaande keuze blijft staan zolang iemand alleen kijkt; hij wordt
+    // pas overschreven als er opnieuw op een knop wordt gedrukt.
     var bestaand = document.getElementById('th-consent');
     if (bestaand) bestaand.remove();
-    showBanner();
+    showBanner(true);
   }
 
-  function showBanner() {
+  /**
+   * Toestemming intrekken. Alleen de opgeslagen waarde wijzigen is niet
+   * genoeg: Meta Pixel en GA4 zijn dan al geladen en blijven meten.
+   * Daarom: meetsignalen uitzetten, de eigen trackingcookies weggooien en
+   * de pagina opnieuw laden zodat er niets van blijft draaien.
+   * Codex-review 21 sep 2026.
+   */
+  function trekToestemmingIn() {
+    try {
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied'
+        });
+      }
+      if (window.fbq) {
+        window.fbq('consent', 'revoke');
+      }
+    } catch (e) {}
+
+    // Eigen trackingcookies van GA en Meta opruimen, op dit domein en op het
+    // domein zonder subdomein.
+    try {
+      var host = location.hostname;
+      var domeinen = ['', '; domain=' + host, '; domain=.' + host.replace(/^www\./, '')];
+      document.cookie.split(';').forEach(function (stuk) {
+        var naam = stuk.split('=')[0].trim();
+        if (!/^(_ga|_gid|_gat|_fbp|_fbc)/.test(naam)) return;
+        domeinen.forEach(function (d) {
+          document.cookie = naam + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+        });
+      });
+    } catch (e) {}
+  }
+
+  function showBanner(heropend) {
     if (document.getElementById('th-consent')) return;
     injectStyles();
 
@@ -108,7 +146,7 @@
       en: {
         label: 'Cookie consent',
         title: 'Cookies and tracking',
-        body: 'We would like to understand how visitors find TweeHuizen, so we can keep improving the app. For that we use the Meta Pixel and Google Analytics. We do not sell data and we do not run third-party advertising. Read more in our <a href="privacy.html" hreflang="nl" lang="nl">privacy policy</a> (in Dutch).',
+        body: 'We would like to understand how visitors find TweeHuizen, so we can keep improving the app. For that we use the Meta Pixel and Google Analytics. We do not sell data and we do not run third-party advertising. Read more in our <a href="privacy.html" hreflang="nl">privacy policy</a> (in Dutch).',
         decline: 'Essential only',
         accept: 'Accept'
       }
@@ -129,14 +167,28 @@
       '</div>';
     document.body.appendChild(div);
 
+    // Codex-audit: de banner kondigde zich niet aan en beheerde geen focus.
+    // Bij heropenen springt de focus naar de banner; bij sluiten terug naar
+    // de knop die hem opende.
+    var kwamVan = document.activeElement;
+    if (heropend) {
+      div.setAttribute('tabindex', '-1');
+      div.focus();
+    }
+    function sluit() {
+      div.remove();
+      if (heropend && kwamVan && typeof kwamVan.focus === 'function') kwamVan.focus();
+    }
+
     div.querySelector('.th-accept').addEventListener('click', function () {
       setConsent('granted');
-      div.remove();
+      sluit();
       activateTracking();
     });
     div.querySelector('.th-decline').addEventListener('click', function () {
       setConsent('denied');
-      div.remove();
+      trekToestemmingIn();
+      sluit();
     });
   }
 
