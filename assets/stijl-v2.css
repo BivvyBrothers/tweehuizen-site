@@ -355,7 +355,9 @@ details.faq[open] summary::after { content: "\2212"; }
   align-items: center;
   justify-content: center;
   padding: var(--ruimte-l);
-  z-index: 160;
+  /* Boven de cookiebanner (9999): de lichtbak is modaal en vangt alle focus,
+     dus een banner eronder zou onbereikbaar zijn. Codex-review 21 sep. */
+  z-index: 10000;
 }
 .lightbox[hidden] { display: none; }
 .lightbox img { max-height: 90vh; border-radius: var(--rond-m); }

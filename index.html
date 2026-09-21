@@ -473,11 +473,13 @@
     caption.textContent = cap ? cap.textContent : 'Vergroot screenshot';
     opener = link;
     box.hidden = false;
+    document.querySelectorAll('body > *:not(#lightbox)').forEach(function (el) { el.inert = true; });
     lockScroll();
     closeBtn.focus();
   }
   function close() {
     box.hidden = true;
+    document.querySelectorAll('body > *').forEach(function (el) { el.inert = false; });
     img.src = '';
     unlockScroll();
     if (opener) { opener.focus(); opener = null; }
