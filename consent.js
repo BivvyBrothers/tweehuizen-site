@@ -80,6 +80,16 @@
     document.head.appendChild(style);
   }
 
+  // Codex-audit 21 sep: de keuze was niet opnieuw te openen; het privacybeleid
+  // verwees naar het handmatig wissen van localStorage. Elke pagina heeft nu
+  // een link "Cookievoorkeuren" in de voettekst die hierop uitkomt.
+  function heropenVoorkeuren() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+    var bestaand = document.getElementById('th-consent');
+    if (bestaand) bestaand.remove();
+    showBanner();
+  }
+
   function showBanner() {
     if (document.getElementById('th-consent')) return;
     injectStyles();
@@ -146,4 +156,5 @@
   } else {
     init();
   }
+  window.tweeHuizenCookievoorkeuren = heropenVoorkeuren;
 })();

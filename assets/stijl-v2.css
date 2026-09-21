@@ -422,3 +422,78 @@ details.faq[open] summary::after { content: "\2212"; }
 @media (max-width: 480px) {
   #th-consent { left: var(--ruimte-s); right: var(--ruimte-s); bottom: var(--ruimte-s); padding: var(--ruimte-m); }
 }
+
+/* ─── Onderdelen van de overige pagina's ────────────── */
+
+.page-header { padding: var(--ruimte-xxl) var(--ruimte-l) var(--ruimte-l); }
+.page-kicker {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--ruimte-s);
+}
+.page-title { margin-bottom: var(--ruimte-s); }
+.page-sub { max-width: 62ch; }
+
+.lead { font-size: 19px; }
+.quote-card, .cta-card, .contact-card, .kids-section, .category {
+  background: var(--oppervlak);
+  border: var(--lijn);
+  border-radius: var(--rond-l);
+  padding: var(--ruimte-l);
+  margin-bottom: var(--ruimte-l);
+}
+.signature { font-weight: 700; margin-top: var(--ruimte-m); }
+.highlight { font-weight: 700; }
+.highlight-label {
+  display: inline-block;
+  border: var(--lijn);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.kids-caption { font-size: 15px; }
+.kids-names { font-weight: 700; }
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ruimte-s);
+  padding: 14px var(--ruimte-l);
+  border-radius: var(--rond-m);
+  border: var(--lijn-dik);
+  background: var(--actie);
+  color: var(--op-actie);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.category-title { margin-bottom: var(--ruimte-m); }
+.category-icon { font-size: 24px; margin-right: var(--ruimte-s); }
+.category-jump { display: flex; flex-wrap: wrap; gap: var(--ruimte-s); margin-bottom: var(--ruimte-xl); }
+.category-chip {
+  display: inline-block;
+  border: var(--lijn);
+  border-radius: 999px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.faq { border-bottom: var(--lijn); padding: var(--ruimte-m) 0; }
+.contact-icon { font-size: 24px; }
+.contact-body { margin-top: var(--ruimte-s); }
+.email { font-weight: 700; }
+.lang-switch { float: right; font-weight: 600; }
+
+/* 404 */
+.logo { max-width: 260px; margin-bottom: var(--ruimte-l); }
+
+/* Juridische pagina's: smalle kolom, gewone leesbare tekst. */
+.juridisch { max-width: 720px; margin: 0 auto; padding: var(--ruimte-xl) var(--ruimte-l); }
+.juridisch h2 { margin-top: var(--ruimte-xl); }
+.juridisch .meta { font-size: 15px; margin-bottom: var(--ruimte-xl); }
+
+.cookie-link { cursor: pointer; }
