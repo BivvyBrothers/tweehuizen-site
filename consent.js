@@ -57,22 +57,23 @@
     try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
   }
 
+  // De vormgeving van de banner staat sinds de merkombouw in assets/stijl-v2.css,
+  // zodat hij dezelfde tokens gebruikt als de rest van de site. Deze functie
+  // bestaat nog als terugval voor een pagina die dat stijlblad niet laadt.
   function injectStyles() {
+    if (document.querySelector('link[href*="stijl-v2.css"]')) return;
     var css =
       '#th-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;' +
-      'background:#fff;color:#1a1a1a;border:1px solid #e5e5e5;border-radius:12px;' +
-      'box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:18px 20px;max-width:560px;margin:0 auto;' +
-      'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;font-size:14px;line-height:1.5}' +
-      '#th-consent h3{margin:0 0 8px;font-size:15px;font-weight:600;color:#2F5F8F}' +
-      '#th-consent p{margin:0 0 14px}' +
-      '#th-consent a{color:#2F5F8F;text-decoration:underline}' +
-      '#th-consent .th-btns{display:flex;gap:8px;flex-wrap:wrap}' +
-      '#th-consent button{flex:1;min-width:120px;padding:10px 14px;border-radius:8px;border:0;' +
-      'font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}' +
-      '#th-consent .th-accept{background:#2F5F8F;color:#fff}' +
-      '#th-consent .th-decline{background:#f3f3f3;color:#1a1a1a}' +
-      '#th-consent button:hover{filter:brightness(0.95)}' +
-      '@media(max-width:480px){#th-consent{left:8px;right:8px;bottom:8px;padding:14px 16px}}';
+      'background:#FFFFFF;color:#36064D;border:2px solid #36064D;border-radius:20px;' +
+      'padding:24px;max-width:560px;margin:0 auto;' +
+      'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6}' +
+      '#th-consent h3{margin:0 0 8px;font-size:17px;font-weight:700;color:#36064D}' +
+      '#th-consent a{color:#36064D}' +
+      '#th-consent .th-btns{display:flex;gap:16px;flex-wrap:wrap}' +
+      '#th-consent button{flex:1;min-width:140px;padding:14px 24px;border-radius:14px;' +
+      'border:2px solid #36064D;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit}' +
+      '#th-consent .th-accept{background:#36064D;color:#F7F6E5}' +
+      '#th-consent .th-decline{background:#FFFFFF;color:#36064D}';
     var style = document.createElement('style');
     style.id = 'th-consent-style';
     style.textContent = css;

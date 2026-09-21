@@ -1,0 +1,424 @@
+/* TweeHuizen, huisstijl van Steven. Eén stijlblad voor alle pagina's.
+   Volgorde: tokens, basis, componenten, paginavarianten, mediaqueries.
+   Regels die niet onderhandelbaar zijn:
+   1. Alleen deze vier kleuren plus wit. Geen afgeleide tinten.
+   2. Gewone tekst is paars op crème of paars op wit.
+      Nooit tekst op koraal (wit erop 4,2:1, paars erop 3,88:1) en nooit aqua
+      als tekst (1,75:1 op wit).
+   3. Koraal is ouder A, aqua is ouder B. Geen decoratie.
+   4. Geen gradients, schaduwen of filters. De overlay van de lightbox is de
+      enige transparantie. */
+
+:root {
+  --merk-paars: #36064D;
+  --merk-creme: #F7F6E5;
+  --merk-koraal: #DA4848;
+  --merk-aqua: #76D2DB;
+  --merk-wit: #FFFFFF;
+
+  --achtergrond: var(--merk-creme);
+  --oppervlak: var(--merk-wit);
+  --tekst: var(--merk-paars);
+  --rand: var(--merk-paars);
+  --actie: var(--merk-paars);
+  --op-actie: var(--merk-creme);
+  --ouder-a: var(--merk-koraal);
+  --ouder-b: var(--merk-aqua);
+  --overlay: rgba(54, 6, 77, 0.55);
+
+  /* Eén plek voor het lettertype. Zodra het besluit A, B of C valt, is dit
+     de enige regel die verandert. */
+  --letter-kop: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --letter-tekst: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --ruimte-xs: 4px;
+  --ruimte-s: 8px;
+  --ruimte-m: 16px;
+  --ruimte-l: 24px;
+  --ruimte-xl: 40px;
+  --ruimte-xxl: 64px;
+  --rond-s: 8px;
+  --rond-m: 14px;
+  --rond-l: 20px;
+  --lijn: 1px solid var(--rand);
+  --lijn-dik: 2px solid var(--rand);
+  --breedte: 800px;
+}
+
+/* ─── Basis ─────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--achtergrond);
+  color: var(--tekst);
+  font-family: var(--letter-tekst);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--letter-kop);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 var(--ruimte-m);
+}
+
+h1 { font-size: clamp(32px, 6vw, 48px); }
+h2 { font-size: clamp(24px, 4vw, 32px); }
+h3 { font-size: 20px; }
+
+p { margin: 0 0 var(--ruimte-m); }
+
+a { color: var(--tekst); text-decoration: underline; text-underline-offset: 3px; }
+
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--actie);
+  outline-offset: 2px;
+  border-radius: var(--rond-s);
+}
+
+img { max-width: 100%; height: auto; }
+
+/* Ankers moeten onder de vaste navigatie uit komen. */
+:target, [id] { scroll-margin-top: 88px; }
+
+.container { max-width: var(--breedte); margin: 0 auto; padding: 0 var(--ruimte-l); }
+
+.overslaan {
+  position: absolute;
+  left: -9999px;
+}
+.overslaan:focus {
+  left: var(--ruimte-m);
+  top: var(--ruimte-m);
+  z-index: 200;
+  background: var(--oppervlak);
+  padding: var(--ruimte-s) var(--ruimte-m);
+  border: var(--lijn-dik);
+  border-radius: var(--rond-s);
+}
+
+/* ─── Componenten ───────────────────────────────────── */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--achtergrond);
+  border-bottom: var(--lijn);
+  padding: var(--ruimte-m) var(--ruimte-l);
+  text-align: center;
+}
+.topnav a { margin: 0 var(--ruimte-m); text-decoration: none; font-weight: 600; }
+.topnav a:hover { text-decoration: underline; }
+
+.knop {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ruimte-s);
+  padding: 14px var(--ruimte-l);
+  border-radius: var(--rond-m);
+  font-weight: 700;
+  text-decoration: none;
+  border: var(--lijn-dik);
+  cursor: pointer;
+}
+.knop-primair { background: var(--actie); color: var(--op-actie); border-color: var(--actie); }
+.knop-secundair { background: var(--oppervlak); color: var(--tekst); }
+
+.kaart {
+  background: var(--oppervlak);
+  border: var(--lijn);
+  border-radius: var(--rond-l);
+  padding: var(--ruimte-l);
+}
+
+.vlak-creme { background: var(--achtergrond); }
+
+/* Ouderkleuren: alleen als VLAK met een paars label ernaast, nooit als
+   tekstkleur. Aqua krijgt een paarse contour omdat het zelf te licht is. */
+.ouder-stip {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--rand);
+  vertical-align: -2px;
+  margin-right: var(--ruimte-xs);
+}
+.ouder-a { background: var(--ouder-a); }
+.ouder-b { background: var(--ouder-b); }
+
+.lijst-vink { list-style: none; padding: 0; margin: 0; }
+.lijst-vink li { padding-left: 28px; position: relative; margin-bottom: var(--ruimte-s); }
+.lijst-vink li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 14px;
+  height: 8px;
+  border-left: var(--lijn-dik);
+  border-bottom: var(--lijn-dik);
+  transform: rotate(-45deg);
+}
+
+details.faq {
+  border-bottom: var(--lijn);
+  padding: var(--ruimte-m) 0;
+}
+details.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--ruimte-m);
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after { content: "+"; font-weight: 700; }
+details.faq[open] summary::after { content: "\2212"; }
+
+.schermbeeld {
+  border: var(--lijn-dik);
+  border-radius: var(--rond-l);
+  background: var(--oppervlak);
+  padding: var(--ruimte-s);
+}
+
+.voettekst {
+  background: var(--merk-paars);
+  color: var(--merk-creme);
+  padding: var(--ruimte-xl) var(--ruimte-l);
+  margin-top: var(--ruimte-xxl);
+}
+.voettekst a { color: var(--merk-creme); }
+
+.banner-cookies {
+  position: fixed;
+  left: var(--ruimte-m);
+  right: var(--ruimte-m);
+  bottom: var(--ruimte-m);
+  z-index: 150;
+  background: var(--oppervlak);
+  border: var(--lijn-dik);
+  border-radius: var(--rond-l);
+  padding: var(--ruimte-l);
+}
+
+.overlay-laag {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  z-index: 140;
+}
+
+/* ─── Mediaqueries ──────────────────────────────────── */
+
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  .container { padding: 0 var(--ruimte-m); }
+  .topnav a { margin: 0 var(--ruimte-s); }
+  .voettekst { padding: var(--ruimte-l) var(--ruimte-m); }
+}
+
+/* ─── Paginaonderdelen van index.html ───────────────── */
+
+.hero { padding: var(--ruimte-xxl) var(--ruimte-l) var(--ruimte-xl); }
+.hero-grid {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ruimte-xl);
+  align-items: center;
+}
+.hero-kicker, .section-kicker {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--ruimte-s);
+}
+.hero-logo { margin-bottom: var(--ruimte-xs); }
+.hero-payoff { font-size: 20px; font-weight: 600; margin-bottom: var(--ruimte-m); }
+.hero-desc { max-width: 46ch; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: var(--ruimte-m); margin: var(--ruimte-l) 0 var(--ruimte-m); }
+.hero-phone { border: var(--lijn-dik); border-radius: var(--rond-l); overflow: hidden; background: var(--oppervlak); }
+.hero-phone img { display: block; }
+.hero-phone-caption { font-size: 15px; margin-top: var(--ruimte-s); text-align: center; }
+
+.badge {
+  display: inline-block;
+  border: var(--lijn);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn { /* oude naam, zelfde gedrag als .knop */
+  display: inline-flex;
+  align-items: center;
+  padding: 14px var(--ruimte-l);
+  border-radius: var(--rond-m);
+  font-weight: 700;
+  text-decoration: none;
+  border: var(--lijn-dik);
+}
+.btn-primary { background: var(--actie); color: var(--op-actie); }
+.btn-secondary { background: var(--oppervlak); color: var(--tekst); }
+
+.pillars { padding: var(--ruimte-xl) var(--ruimte-l); }
+.pillars-grid, .features-grid, .steps, .plans, .shots-row {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--ruimte-l);
+}
+.pillars-grid, .features-grid, .steps { grid-template-columns: repeat(3, 1fr); }
+.plans { grid-template-columns: repeat(2, 1fr); max-width: 760px; }
+.shots-row { grid-template-columns: repeat(3, 1fr); }
+
+.pillar, .feature, .step, .plan, .story-teaser {
+  background: var(--oppervlak);
+  border: var(--lijn);
+  border-radius: var(--rond-l);
+  padding: var(--ruimte-l);
+}
+.pillar-icon, .feature-icon { font-size: 28px; margin-bottom: var(--ruimte-s); }
+
+.section { padding: var(--ruimte-xxl) var(--ruimte-l); }
+.section-title { margin-bottom: var(--ruimte-s); }
+.section-sub { max-width: 62ch; margin-bottom: var(--ruimte-xl); }
+
+.shot { border: var(--lijn-dik); border-radius: var(--rond-m); overflow: hidden; background: var(--oppervlak); }
+.shot img { display: block; }
+.shot-btn { display: block; padding: 0; border: 0; background: none; cursor: pointer; width: 100%; }
+
+.plan { text-align: left; }
+.plan.popular { border-width: 3px; }
+.plan-tag {
+  display: inline-block;
+  border: var(--lijn);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: var(--ruimte-s);
+}
+.plan-name { font-weight: 700; }
+.plan-price { font-size: 34px; font-weight: 700; line-height: 1.1; }
+.plan-yearly, .plan-trial { font-size: 15px; font-weight: 600; }
+
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: var(--lijn); padding: var(--ruimte-m) 0; }
+.faq-more { margin-top: var(--ruimte-l); }
+
+.story-teaser { max-width: 720px; margin: 0 auto; }
+.story-teaser-author { font-weight: 700; margin-top: var(--ruimte-m); }
+
+.muted { font-size: 15px; }
+.accent { font-weight: 700; }
+
+.footer { background: var(--merk-paars); color: var(--merk-creme); padding: var(--ruimte-xl) var(--ruimte-l); margin-top: var(--ruimte-xxl); }
+.footer a { color: var(--merk-creme); }
+.footer-container { max-width: var(--breedte); margin: 0 auto; }
+.footer-links, .footer-legal, .footer-social { display: flex; flex-wrap: wrap; gap: var(--ruimte-m); margin-bottom: var(--ruimte-m); }
+.footer-sep { opacity: 1; }
+.footer-copy { font-size: 15px; }
+.footer-kemblinck { display: flex; align-items: center; gap: var(--ruimte-s); margin-top: var(--ruimte-l); }
+.footer-kemblinck__logo { width: 32px; height: 32px; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  /* De pagina zet hem aan en uit met het hidden-attribuut. Zonder deze regel
+     lag de overlay standaard over de hele pagina. */
+  background: var(--overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ruimte-l);
+  z-index: 160;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-height: 90vh; border-radius: var(--rond-m); }
+.lightbox-close {
+  position: absolute;
+  top: var(--ruimte-m);
+  right: var(--ruimte-m);
+  background: var(--oppervlak);
+  color: var(--tekst);
+  border: var(--lijn-dik);
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus {
+  left: var(--ruimte-m);
+  top: var(--ruimte-m);
+  z-index: 200;
+  background: var(--oppervlak);
+  padding: var(--ruimte-s) var(--ruimte-m);
+  border: var(--lijn-dik);
+  border-radius: var(--rond-s);
+}
+
+@media (max-width: 860px) {
+  .hero-grid, .pillars-grid, .features-grid, .steps, .plans, .shots-row {
+    grid-template-columns: 1fr;
+  }
+  .hero { padding-top: var(--ruimte-xl); }
+  .section { padding: var(--ruimte-xl) var(--ruimte-m); }
+}
+
+/* Afwisseling tussen de crème pagina en witte secties. */
+.vlak-wit { background: var(--oppervlak); }
+
+/* ─── Cookiebanner (markup komt uit consent.js) ─────── */
+
+#th-consent {
+  position: fixed;
+  left: var(--ruimte-m);
+  right: var(--ruimte-m);
+  bottom: var(--ruimte-m);
+  z-index: 9999;
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--oppervlak);
+  color: var(--tekst);
+  border: var(--lijn-dik);
+  border-radius: var(--rond-l);
+  padding: var(--ruimte-l);
+  font-size: 16px;
+  line-height: 1.6;
+}
+#th-consent h3 { font-size: 17px; margin: 0 0 var(--ruimte-s); }
+#th-consent p { margin: 0 0 var(--ruimte-m); }
+#th-consent .th-btns { display: flex; gap: var(--ruimte-m); flex-wrap: wrap; }
+#th-consent button {
+  flex: 1;
+  min-width: 140px;
+  padding: 14px var(--ruimte-l);
+  border-radius: var(--rond-m);
+  border: var(--lijn-dik);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+#th-consent .th-accept { background: var(--actie); color: var(--op-actie); }
+#th-consent .th-decline { background: var(--oppervlak); color: var(--tekst); }
+
+@media (max-width: 480px) {
+  #th-consent { left: var(--ruimte-s); right: var(--ruimte-s); bottom: var(--ruimte-s); padding: var(--ruimte-m); }
+}
