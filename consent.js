@@ -44,6 +44,26 @@
     window.gtag('config', GA4_MEASUREMENT_ID, { anonymize_ip: true });
   }
 
+  /**
+   * Toestemming opnieuw geven. De laadfuncties stoppen zodra hun globale
+   * functie bestaat, dus na een eerdere intrekking moesten de signalen
+   * expliciet terug. Codex-review ronde 2.
+   */
+  function herstelToestemming() {
+    try {
+      if (GA4_MEASUREMENT_ID) window['ga-disable-' + GA4_MEASUREMENT_ID] = false;
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+      if (window.fbq) window.fbq('consent', 'grant');
+    } catch (e) {}
+  }
+
   function activateTracking() {
     loadMetaPixel();
     loadGA4();
@@ -99,6 +119,12 @@
    * Codex-review 21 sep 2026.
    */
   function trekToestemmingIn() {
+    // Consent Mode op denied houdt alleen cookies tegen; een geladen
+    // Google-tag kan cookieloos blijven meten. De uitschakelvlag legt de tag
+    // echt stil. Codex-review ronde 2, 21 sep 2026.
+    try {
+      if (GA4_MEASUREMENT_ID) window['ga-disable-' + GA4_MEASUREMENT_ID] = true;
+    } catch (e) {}
     try {
       if (window.gtag) {
         window.gtag('consent', 'update', {
@@ -183,6 +209,7 @@
     div.querySelector('.th-accept').addEventListener('click', function () {
       setConsent('granted');
       sluit();
+      herstelToestemming();
       activateTracking();
     });
     div.querySelector('.th-decline').addEventListener('click', function () {
@@ -202,6 +229,17 @@
       showBanner();
     }
   }
+
+  // Een keuze in het ene tabblad moet ook in de andere gelden.
+  window.addEventListener('storage', function (e) {
+    if (e.key !== STORAGE_KEY) return;
+    if (e.newValue === 'denied') {
+      trekToestemmingIn();
+    } else if (e.newValue === 'granted') {
+      herstelToestemming();
+      activateTracking();
+    }
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
