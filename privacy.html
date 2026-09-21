@@ -43,7 +43,13 @@
   <li><strong>Profielfoto's:</strong> optioneel, als je een avatar uploadt voor een gezinslid.</li>
   <li><strong>Push token:</strong> een technisch adres om meldingen naar je toestel te sturen, als je meldingen inschakelt.</li>
   <li><strong>Abonnementsgegevens:</strong> welk abonnement actief is, via welk platform (Apple/Google), en de geldigheidsperiode.</li>
-  <li><strong>Gebruiksgegevens:</strong> anonieme interactie-events (zoals "voorstel aangemaakt") worden lokaal op je toestel opgeslagen. Deze verlaten je toestel niet.</li>
+  <li><strong>Gebruiksgegevens:</strong> de meeste interactie-events blijven lokaal op je
+      toestel. Een korte, vaste lijst gebeurtenissen rond het opstarten sturen we wel naar onze
+      eigen server: het doorlopen van de kennismaking, het aanmaken van een gezin, het versturen
+      en inwisselen van een uitnodiging, het instellen van het rooster, en het starten van een
+      proef of abonnement. Daarbij slaan we op: welke gebeurtenis het was, een paar technische
+      kenmerken ervan, de app-versie, het moment, en je gebruikers-ID. Die gegevens zijn dus niet
+      anoniem.</li>
 </ul>
 
 <h2>3. Waarvoor gebruiken we je gegevens?</h2>
@@ -52,15 +58,25 @@
   <li>Om het zorgrooster en gezinsfuncties te laten werken.</li>
   <li>Om push-meldingen te sturen bij wisselmomenten (als je dat toestaat).</li>
   <li>Om je abonnementsstatus te controleren.</li>
-  <li>Om de app te verbeteren op basis van anonieme, lokale gebruiksstatistieken.</li>
+  <li>Om te zien waar mensen tijdens het opstarten vastlopen, zodat we die stappen kunnen
+      repareren. Dat doen we op grond van ons gerechtvaardigd belang om de app werkend te
+      houden. We bewaren deze gebeurtenissen maximaal twaalf maanden en gebruiken ze niet voor
+      reclame of profilering.</li>
 </ul>
 
 <h2>4. Delen we gegevens met derden?</h2>
 <p>We delen je persoonlijke gegevens niet met derden voor marketingdoeleinden. We gebruiken de volgende diensten:</p>
 <ul>
   <li><strong>Supabase:</strong> voor opslag van je account, gezinsgegevens en bestanden. Servers bevinden zich in de EU. <a href="https://supabase.com/privacy">Supabase Privacy Policy</a>.</li>
-  <li><strong>RevenueCat:</strong> voor het beheren van abonnementen via de App Store. RevenueCat ontvangt je aankoop-ID, geen persoonlijke gegevens. <a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a>.</li>
-  <li><strong>Expo:</strong> voor het versturen van push-meldingen. Expo ontvangt alleen je push token. <a href="https://expo.dev/privacy">Expo Privacy Policy</a>.</li>
+  <li><strong>RevenueCat:</strong> voor het beheren van abonnementen via de App Store.
+      RevenueCat ontvangt een intern gebruikersnummer van ons, en van Apple de gegevens over je
+      aankoop: welk product, wanneer gekocht, en tot wanneer het geldig is. Je naam en
+      e-mailadres geven wij er niet aan door.
+      <a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a>.</li>
+  <li><strong>Expo:</strong> voor het versturen van pushmeldingen. Expo ontvangt het technische
+      adres van je toestel en de melding zelf, dus ook de titel en de tekst. Daarin kan een naam
+      staan, bijvoorbeeld bij een wisselmoment of een voorstel.
+      <a href="https://expo.dev/privacy">Expo Privacy Policy</a>.</li>
 </ul>
 
 <h2>5. Hoe lang bewaren we gegevens?</h2>
@@ -95,7 +111,10 @@ automatisch overschreven; verwijderde gegevens verdwijnen daarmee ook uit de res
   <li>Bezwaar te maken tegen een verwerking die op ons gerechtvaardigd belang berust.</li>
   <li>Een klacht in te dienen bij de Autoriteit Persoonsgegevens.</li>
 </ul>
-<p>Account verwijderen kan direct in de app via <strong>Meer &gt; Account verwijderen</strong>. Voor andere vragen of verzoeken kun je contact opnemen via <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a>.</p>
+<p>Via <strong>Meer &gt; Account verwijderen</strong> beëindig je je gezinslidmaatschap. Je
+inlogaccount blijft daarna nog bestaan; voor verwijdering daarvan mail je
+<a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a>. Daar kun je ook terecht voor
+alle andere verzoeken.</p>
 
 <h2>8. Kinderen</h2>
 <p>Een kinderprofiel wordt aangemaakt en beheerd door een volwassen gezinslid. Daarin staan de
@@ -130,27 +149,42 @@ belang (artikel 6, lid 1, onder f van de AVG). Dat weegt zo:</p>
       weten op welke dagen het bij wie is, valt er geen rooster te maken en kan de app niet
       doen waarvoor het gezin hem gebruikt. Het belang van het kind zelf loopt hiermee gelijk
       op: minder gedoe tussen de ouders, en duidelijkheid over waar het die week is.</li>
-  <li><strong>Waarom het nodig is.</strong> We verwerken niet meer dan daarvoor nodig is. De
-      geboortedatum en de regio voor de schoolvakanties zijn optioneel en dienen alleen om de
-      vakantieplanning kloppend te krijgen. Een kindaccount bestaat alleen als een ouder dat
-      aanzet; zonder dat account slaan we geen e-mailadres of inloggegevens van een kind op. Een
-      pushtoken bewaren we alleen zolang meldingen aan staan. Er is geen manier om hetzelfde te
-      bereiken met minder gegevens.</li>
-  <li><strong>De afweging.</strong> De gegevens blijven binnen het eigen gezin en zijn voor
-      niemand daarbuiten zichtbaar. We koppelen ze niet aan andere bronnen, maken er geen
-      profielen mee, tonen geen advertenties en delen niets met derden voor hun eigen doelen.
-      Een ouder bepaalt of er een kindaccount komt, ziet precies welke gegevens er staan, en
-      kan ze op elk moment aanpassen of verwijderen. Kinderen verdienen extra bescherming
-      (overweging 38 van de AVG); daarom houden we het bij het minimum, sturen we een kind
-      alleen meldingen als daar bewust voor is gekozen, en gebruiken we deze gegevens nooit
-      commercieel. Daarmee wegen onze belangen en die van het gezin naar ons oordeel zwaarder
-      dan het nadeel voor het kind, dat in deze opzet beperkt is.</li>
+  <li><strong>Waarom het nodig is, per gegeven.</strong> Een rooster gaat over wie op welke dag
+      voor wie zorgt, dus we hebben per kind een herkenbare aanduiding nodig. Dat hoeft geen
+      volledige naam te zijn: een roepnaam of een afkorting volstaat, en die keuze is aan de
+      ouder. De geboortedatum en de profielfoto zijn optioneel. De geboortedatum gebruiken we
+      alleen om de juiste schoolvakanties te kunnen voorstellen; laat je hem leeg, dan werkt de
+      app verder gewoon. De foto dient alleen om kinderen in een vol rooster snel uit elkaar te
+      houden en heeft geen enkele andere functie. Een kindaccount bestaat alleen als een ouder
+      dat aanzet; zonder dat account slaan we van een kind geen e-mailadres of inloggegevens op.
+      Een pushtoken bewaren we alleen zolang meldingen aan staan.</li>
+  <li><strong>De afweging, inclusief de risico's.</strong> We doen niet alsof de belangen van
+      ouders en kind altijd samenvallen. Drie risico's zien we:
+      <ul>
+        <li>Ouders die het onderling oneens zijn, kunnen het rooster als strijdtoneel gebruiken.
+            Daarom legt de app alleen feitelijke afspraken vast, kan een wijziging pas in na
+            instemming van de andere ouder, en staat er in het gezinslogboek wie wat heeft
+            gedaan.</li>
+        <li>Een uitgenodigd gezinslid, bijvoorbeeld een stiefouder of grootouder, ziet daarmee
+            ook waar het kind is. Daarom nodigt alleen een beheerder mensen uit, bepaalt die per
+            persoon welke rechten erbij horen, en kan die iemand er weer uit halen.</li>
+        <li>Verblijfsgegevens van een kind zijn gevoelig. Daarom staan ze uitsluitend binnen het
+            eigen gezin, gaan ze niet naar adverteerders of dataverzamelaars, worden ze niet
+            gebruikt om profielen te bouwen, en staan de servers in de EU.</li>
+      </ul>
+      Een kind dat oud genoeg is om het te begrijpen, verwacht redelijkerwijs dat zijn ouders
+      samen een agenda bijhouden en dat opa of oma kan zien wanneer het langskomt. Wat een kind
+      niet verwacht, is dat die gegevens ergens anders opduiken; precies dat doen we niet. Met
+      die maatregelen wegen onze belangen en die van het gezin naar ons oordeel zwaarder dan het
+      resterende nadeel voor het kind. Vind jij van niet, dan hoor ik dat graag; zie het
+      bezwaarrecht hieronder.</li>
 </ul>
 
 <p>Omdat wij ons op een gerechtvaardigd belang baseren, kun je <strong>bezwaar maken</strong>
 tegen deze verwerking. Mail dan <a href="mailto:privacy@tweehuizen.com">privacy@tweehuizen.com</a>;
-we wegen je bezwaar en verwijderen de gegevens als er geen zwaarder wegende reden is om ze te
-bewaren. Meldingen berusten op je eigen keuze in de app en zet je daar ook weer uit.</p>
+we stoppen dan met deze verwerking, tenzij wij dwingende gerechtvaardigde gronden hebben die
+zwaarder wegen dan jouw belangen, rechten en vrijheden, of tenzij de gegevens nodig zijn voor
+een rechtsvordering. Zolang wij je bezwaar beoordelen, kun je vragen de verwerking te beperken. Meldingen berusten op je eigen keuze in de app en zet je daar ook weer uit.</p>
 
 <p><strong>Wie kan het zien.</strong> Alleen de leden van hetzelfde gezin. Naam, profielfoto en
 het rooster zijn zichtbaar voor alle gezinsleden; wie welke gegevens mag wijzigen hangt af van
@@ -166,9 +200,10 @@ dingen.</strong></p>
   <li><em>Ontkoppelen:</em> een ouder haalt het account los van het kinderprofiel. Het kind kan
       dan niet meer inloggen bij dit gezin. Het kinderprofiel en het rooster blijven bestaan,
       want die horen bij het gezin.</li>
-  <li><em>Het account verwijderen:</em> dat doet de eigenaar van het account via
-      <strong>Meer &gt; Account verwijderen</strong>. Daarmee vervallen het inlogaccount, de
-      weergavenaam, de profielfoto, het pushtoken en de meldingsvoorkeuren.</li>
+  <li><em>Het gezinslidmaatschap beëindigen:</em> dat doet de eigenaar van het account via
+      <strong>Meer &gt; Account verwijderen</strong>. Daarmee vervallen de weergavenaam, de
+      profielfoto, het pushtoken en de meldingsvoorkeuren binnen dat gezin. Het inlogaccount
+      zelf blijft bestaan tot wij het op verzoek verwijderen.</li>
   <li><em>Het kinderprofiel verwijderen:</em> dat doet een beheerder in het gezin. Daarmee
       verdwijnt het profiel met naam, geboortedatum en profielfoto.</li>
 </ul>
@@ -190,7 +225,11 @@ meldingen wilt. Je kunt altijd vragen wat er over jou is opgeslagen, of vragen o
 halen. Vraag dat aan je ouder, of laat je ouder ons mailen.</p>
 
 <h2>9. Tracking</h2>
-<p><strong>In de app:</strong> TweeHuizen gebruikt geen advertentie-tracking, geen cookies voor tracking, en geen externe analytics-diensten. Gebruiksstatistieken worden uitsluitend lokaal op je toestel opgeslagen.</p>
+<p><strong>In de app:</strong> TweeHuizen gebruikt geen advertentie-tracking, geen cookies voor
+tracking en geen externe analytics-diensten zoals Google Analytics. De meeste gebruiksstatistieken
+blijven lokaal op je toestel. Een korte, vaste lijst gebeurtenissen rond het opstarten gaat naar
+onze eigen server in de EU, gekoppeld aan je gebruikers-ID; zie punt 2 voor welke dat zijn en punt
+3 voor waarvoor we ze gebruiken.</p>
 <p><strong>Op deze website (tweehuizen.com):</strong> we gebruiken Meta Pixel en Google Analytics 4 om te begrijpen hoe bezoekers onze app vinden. Deze tracking wordt pas geactiveerd nadat je expliciet akkoord hebt gegeven via de cookiebanner. Weiger je, dan plaatsen we geen tracking-cookies. We verkopen geen gegevens aan derden en gebruiken geen retargeting-advertenties van externe partijen op deze site. Je keuze wordt lokaal in je browser bewaard. Je kunt hem op elk moment wijzigen via de link Cookievoorkeuren onderaan elke pagina.</p>
 
 <h2>10. Wijzigingen</h2>

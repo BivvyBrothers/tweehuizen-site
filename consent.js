@@ -114,8 +114,8 @@
   /**
    * Toestemming intrekken. Alleen de opgeslagen waarde wijzigen is niet
    * genoeg: Meta Pixel en GA4 zijn dan al geladen en blijven meten.
-   * Daarom: meetsignalen uitzetten, de eigen trackingcookies weggooien en
-   * de pagina opnieuw laden zodat er niets van blijft draaien.
+   * Daarom: de uitschakelvlag van Google zetten, de meetsignalen van Google
+   * en Meta op geweigerd zetten, en de eigen trackingcookies weggooien.
    * Codex-review 21 sep 2026.
    */
   function trekToestemmingIn() {
