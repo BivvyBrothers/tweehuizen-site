@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Je e-mailadres | TweeHuizen</title>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#36064D">
+<link rel="icon" type="image/png" href="/assets/favicon-180.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png?v=2">
+<link rel="stylesheet" href="/assets/stijl-v2.css?v=4">
+<!--
+  Terugkeerpagina na het bevestigen van een nieuw e-mailadres (app vanaf 2.1,
+  BEVESTIG_REDIRECT in app/account/email.tsx).
+
+  Waarom deze pagina bestaat: Supabase voert de wijziging door zodra iemand op
+  de link in de mail tikt, en stuurt daarna door naar deze pagina. Stuurde hij
+  meteen door naar tweehuizen://, dan kreeg iemand die de mail op een laptop
+  opent alleen een foutmelding van de browser, terwijl zijn inlogadres net was
+  veranderd. Codex-review 23 september 2026.
+
+  Wat de pagina doet:
+  - Geeft ALLEEN de foutvelden door aan de app (error, error_code,
+    error_description), altijd in de query. Tokens gaan nooit mee: de app negeert ze op dit pad
+    toch, en een tussenpagina hoort geen sessie door te geven.
+  - Haalt alles behalve die foutvelden uit de adresbalk.
+  - Opent op een iPhone of iPad meteen de app, die zelf bij de server nagaat
+    welk adres er nu staat. Elders legt de pagina uit wat er is gebeurd.
+  - Beweert geen succes en geen oorzaak: zonder de app weet deze pagina niet
+    of de wijziging rond is, en een foutcode kan ook een serverfout zijn. De
+    standaardtekst (ook zonder JavaScript) is daarom neutraal. Codex-tegenlezing
+    23 september 2026.
+
+  Bewust zonder consent.js en zonder andere scripts van buiten.
+-->
+<script>
+  (function () {
+    var TOEGESTAAN = ["error", "error_code", "error_description"];
+    function alleenFouten(tekst) {
+      var uit = [];
+      var p = new URLSearchParams(tekst);
+      TOEGESTAAN.forEach(function (k) {
+        p.getAll(k).forEach(function (v) {
+          uit.push(encodeURIComponent(k) + "=" + encodeURIComponent(v));
+        });
+      });
+      return uit.join("&");
+    }
+    // Supabase zet een fout in de query of in het fragment. Naar de app gaat
+    // alles in de QUERY: die geeft de router per scherm vers door. Het fragment
+    // van een app-link komt daar niet betrouwbaar aan.
+    var fouten = [alleenFouten(location.search.slice(1)), alleenFouten(location.hash.slice(1))]
+      .filter(function (d) { return d; }).join("&");
+    var staart = fouten ? "?" + fouten : "";
+    try { history.replaceState(null, "", location.pathname + staart); } catch (e) {}
+
+    var app = "tweehuizen://account/email-bevestigd" + staart;
+    window.TH_APP_LINK = app;
+
+    var html = document.documentElement;
+    var ua = navigator.userAgent || "";
+    // iPadOS meldt zich sinds versie 13 als een Mac; het aanraakscherm verraadt hem.
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (ios) html.className += " is-ios";
+    if (fouten) html.className += " is-fout";
+    var taal = (navigator.language || "nl").toLowerCase();
+    if (taal.indexOf("nl") !== 0) {
+      html.className += " is-en";
+      html.lang = "en";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var knoppen = document.querySelectorAll("a.open-app");
+      for (var i = 0; i < knoppen.length; i++) knoppen[i].href = app;
+      if (ios) location.href = app;
+    });
+  })();
+</script>
+<style>
+  .t-en, .alleen-ios, .alleen-fout { display: none; }
+  html.is-en .t-en { display: block; }
+  html.is-en .t-nl { display: none; }
+  html.is-ios .alleen-ios { display: block; }
+  html.is-ios a.alleen-ios { display: inline-block; }
+  html.is-ios .niet-ios { display: none; }
+  html.is-fout .alleen-fout { display: block; }
+  html.is-fout .geen-fout { display: none; }
+  .foutpagina .btn { margin: var(--ruimte-m) 0; }
+  .foutpagina .klein { font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main class="foutpagina">
+  <img src="/assets/TH_logo_dark.svg" alt="TweeHuizen" class="logo" width="440" height="181">
+
+  <div class="t-nl" lang="nl">
+    <div class="geen-fout">
+      <h1>Bekijk je e-mailadres in de app</h1>
+      <p class="niet-ios"><strong>Open TweeHuizen op je iPhone of iPad en kijk onder Meer,
+      E-mailadres wijzigen welk adres er nu bij je account staat.</strong></p>
+      <p class="alleen-ios"><strong>We openen TweeHuizen, zodat je ziet welk adres er nu bij je
+      account staat.</strong></p>
+      <p>Ben je uitgelogd? Probeer eerst je nieuwe adres, en gebruik je oude adres als dat niet
+      werkt.</p>
+    </div>
+    <div class="alleen-fout">
+      <h1>We konden deze bevestiging niet controleren</h1>
+      <p><strong>Misschien is de link verlopen of al gebruikt, misschien is je adres al
+      gewijzigd.</strong></p>
+      <p>Kijk in TweeHuizen onder <strong>Meer, E-mailadres wijzigen</strong> welk adres er nu
+      staat. Vraag de wijziging alleen opnieuw aan als daar nog je oude adres staat.</p>
+    </div>
+    <a class="btn btn-primary open-app alleen-ios" href="tweehuizen://account/email-bevestigd">Open TweeHuizen</a>
+    <p class="klein">Je account, je gezin en je agenda blijven gewoon bestaan. Je hoeft niets
+    opnieuw aan te maken. Vragen? Mail <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a>.</p>
+  </div>
+
+  <div class="t-en" lang="en">
+    <div class="geen-fout">
+      <h1>Check your email address in the app</h1>
+      <p class="niet-ios"><strong>Open TweeHuizen on your iPhone or iPad and go to More, Change
+      email address to see which address your account uses now.</strong></p>
+      <p class="alleen-ios"><strong>We are opening TweeHuizen, so you can see which address your
+      account uses now.</strong></p>
+      <p>Signed out? Try your new address first. If that does not work, use your old address.</p>
+    </div>
+    <div class="alleen-fout">
+      <h1>We could not check this confirmation</h1>
+      <p><strong>The link may have expired or been used already, or your address may already have
+      changed.</strong></p>
+      <p>In TweeHuizen, go to <strong>More, Change email address</strong> to see which address is
+      set now. Only request the change again if your old address is still there.</p>
+    </div>
+    <a class="btn btn-primary open-app alleen-ios" href="tweehuizen://account/email-bevestigd">Open TweeHuizen</a>
+    <p class="klein">Your account, your family and your calendar stay as they are. You do not need
+    to create anything again. Questions? Email <a href="mailto:support@tweehuizen.com">support@tweehuizen.com</a>.</p>
+  </div>
+</main>
+</body>
+</html>
