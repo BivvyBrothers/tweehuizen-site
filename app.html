@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TweeHuizen downloaden</title>
+<meta name="description" content="Download TweeHuizen, de app voor co-ouders.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#36064D">
+<link rel="icon" type="image/png" href="/assets/favicon-180.png?v=2">
+<link rel="apple-touch-icon" href="/assets/favicon-180.png?v=2">
+<link rel="stylesheet" href="/assets/stijl-v2.css?v=4">
+<!--
+  Doorstuurpagina voor de downloadlink in elke uitnodiging die een ouder deelt
+  (APP_DOWNLOAD_URL in de app, vanaf versie 2.1).
+
+  Waarom deze pagina bestaat: tot en met 2.0 bevatte die uitnodiging de App
+  Store-link, en die opent op een Android-telefoon niets. Een co-ouderapp heeft
+  twee ouders nodig. Hier kiest de pagina per toestel: een iPhone of iPad gaat
+  meteen door naar de App Store, een Android-telefoon krijgt uitleg.
+
+  Komt de Android-versie, pas dan ALLEEN deze pagina aan: de Android-tak stuurt
+  dan door naar Google Play. De app hoeft daarvoor niet opnieuw de winkel in.
+
+  Bewust zonder consent.js: deze pagina meet niets en plaatst niets.
+-->
+<script>
+  (function () {
+    var ua = navigator.userAgent || "";
+    // iPadOS meldt zich sinds versie 13 als een Mac; het aanraakscherm verraadt hem.
+    var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (ios) {
+      // Zonder landcode, zodat hij in de winkel van elk land opent.
+      location.replace("https://apps.apple.com/app/id6761052772");
+      return;
+    }
+    var html = document.documentElement;
+    if (/Android/i.test(ua)) html.className += " is-android";
+    var taal = (navigator.language || "nl").toLowerCase();
+    if (taal.indexOf("nl") !== 0) {
+      html.className += " is-en";
+      html.lang = "en";
+    }
+  })();
+</script>
+<style>
+  .t-en, .alleen-android { display: none; }
+  html.is-en .t-en { display: block; }
+  html.is-en .t-nl { display: none; }
+  html.is-android .alleen-android { display: block; }
+  html.is-android .niet-android { display: none; }
+  .foutpagina .btn { margin: var(--ruimte-m) 0; }
+  .foutpagina .klein { font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<main class="foutpagina">
+  <img src="/assets/TH_logo_dark.svg" alt="TweeHuizen" class="logo" width="440" height="181">
+
+  <div class="t-nl" lang="nl">
+    <div class="alleen-android">
+      <h1>Bijna voor Android</h1>
+      <p><strong>TweeHuizen is er nu voor iPhone. Aan de Android-versie wordt gewerkt.</strong></p>
+      <p>Heb je een uitnodigingscode gekregen? Bewaar die dan. Is hij verlopen tegen de tijd dat
+      de Android-versie er is, dan kan de ouder die jou uitnodigde een nieuwe code maken.</p>
+      <a class="btn btn-primary" href="mailto:support@tweehuizen.com?subject=Laat%20me%20weten%20wanneer%20TweeHuizen%20er%20is%20voor%20Android">Laat me weten als hij er is</a>
+    </div>
+    <div class="niet-android">
+      <h1>TweeHuizen downloaden</h1>
+      <p>Open deze link op je iPhone, of zoek TweeHuizen in de App Store.</p>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6761052772">Naar de App Store</a>
+      <p class="klein">Heb je Android? Die versie komt eraan.
+      <a href="mailto:support@tweehuizen.com?subject=Laat%20me%20weten%20wanneer%20TweeHuizen%20er%20is%20voor%20Android">Laat me weten als hij er is</a>.</p>
+    </div>
+    <p class="klein"><a href="/">Meer over TweeHuizen</a></p>
+  </div>
+
+  <div class="t-en" lang="en">
+    <div class="alleen-android">
+      <h1>Coming to Android</h1>
+      <p><strong>TweeHuizen is available for iPhone now. The Android version is on its way.</strong></p>
+      <p>Did you receive an invitation code? Keep it. If it has expired by the time the Android
+      version is out, the parent who invited you can create a new one.</p>
+      <a class="btn btn-primary" href="mailto:support@tweehuizen.com?subject=Let%20me%20know%20when%20TweeHuizen%20is%20on%20Android">Let me know when it is out</a>
+    </div>
+    <div class="niet-android">
+      <h1>Download TweeHuizen</h1>
+      <p>Open this link on your iPhone, or search for TweeHuizen in the App Store.</p>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6761052772">Go to the App Store</a>
+      <p class="klein">On Android? That version is on its way.
+      <a href="mailto:support@tweehuizen.com?subject=Let%20me%20know%20when%20TweeHuizen%20is%20on%20Android">Let me know when it is out</a>.</p>
+    </div>
+    <p class="klein"><a href="/support-en.html">More about TweeHuizen</a></p>
+  </div>
+</main>
+</body>
+</html>
