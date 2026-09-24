@@ -1,1 +1,16 @@
 .DS_Store
+
+# Werkbestanden van Patrick die niet op de site horen (24 sep 2026).
+# Letterlijk genoemd, geen brede patronen: nieuwe afbeeldingen voor de site
+# moeten gewoon zichtbaar blijven in git status. Zonder deze regels is de
+# werkmap nooit schoon en mag de dagelijkse website-check niets repareren.
+/Schermafbeelding 2017-05-16 om 10.26.30.png
+/Schermafbeelding 2017-05-16 om 10.30.41.png
+/foto 5 kids.png
+/logo-concept-gedeelde-agenda-v2.png
+/logo-concept-nieuw-v1.png
+/logo-meisje-concept-v2.png
+/logo-meisje-verfijnd-v3.png
+/app-store-assets/RELEASE-NOTES-2.0.md
+/app-store-assets/screenshots/2.0-upload-1284x2778/
+/app-store-assets/screenshots/2.0-upload-1320x2868/
