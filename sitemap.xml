@@ -5,11 +5,29 @@
     <loc>https://tweehuizen.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tweehuizen.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tweehuizen.com/index-en.html"/>
+  </url>
+  <url>
+    <loc>https://tweehuizen.com/index-en.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tweehuizen.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tweehuizen.com/index-en.html"/>
   </url>
   <url>
     <loc>https://tweehuizen.com/ons-verhaal.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tweehuizen.com/ons-verhaal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tweehuizen.com/ons-verhaal-en.html"/>
+  </url>
+  <url>
+    <loc>https://tweehuizen.com/ons-verhaal-en.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://tweehuizen.com/ons-verhaal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tweehuizen.com/ons-verhaal-en.html"/>
   </url>
   <url>
     <loc>https://tweehuizen.com/support.html</loc>

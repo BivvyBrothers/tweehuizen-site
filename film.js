@@ -12,13 +12,18 @@
   const speel = document.getElementById('film-speel');
   const geluid = document.getElementById('film-geluid');
   const rustig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Knopteksten volgen de taal van de pagina (index.html of index-en.html).
+  const en = (document.documentElement.lang || 'nl').slice(0, 2).toLowerCase() === 'en';
+  const T = en
+    ? { speel: 'Play', pauze: 'Pause', aan: 'Sound on', uit: 'Sound off' }
+    : { speel: 'Afspelen', pauze: 'Pauzeer', aan: 'Geluid aan', uit: 'Geluid uit' };
 
   // Op een smal scherm de staande versie: daar is de tekst in de liggende film te
   // klein. Dit gebeurt vóór het eerste laden (preload="none"), dus geen dubbele download.
   if (window.matchMedia && window.matchMedia('(max-width: 600px)').matches) {
     const bron = v.querySelector('source');
-    bron.src = 'film/uitlegfilm-1080x1920.mp4';
-    v.poster = 'film/uitlegfilm-poster-staand.jpg';
+    bron.src = v.dataset.srcStaand || 'film/uitlegfilm-1080x1920.mp4';
+    v.poster = v.dataset.posterStaand || 'film/uitlegfilm-poster-staand.jpg';
     v.setAttribute('width', '1080'); v.setAttribute('height', '1920');
     v.closest('.film-kader').classList.add('staand');
     v.load();
@@ -27,7 +32,7 @@
 
   const toonStand = () => {
     const loopt = !v.paused;
-    speel.textContent = loopt ? 'Pauzeer' : 'Afspelen';
+    speel.textContent = loopt ? T.pauze : T.speel;
     speel.setAttribute('aria-pressed', String(loopt));
   };
   const heeftGeluid = () => Boolean(
@@ -45,7 +50,7 @@
   });
   geluid.addEventListener('click', () => {
     v.muted = !v.muted;
-    geluid.textContent = v.muted ? 'Geluid aan' : 'Geluid uit';
+    geluid.textContent = v.muted ? T.aan : T.uit;
     geluid.setAttribute('aria-pressed', String(!v.muted));
     if (!v.muted && v.paused) start();
   });
