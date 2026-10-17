@@ -90,7 +90,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="assets/stijl-v2.css?v=4">
+<link rel="stylesheet" href="assets/stijl-v2.css?v=5">
 </head>
 <body>
 
@@ -147,6 +147,28 @@
         <p class="hero-phone-caption">De agenda: in één oogopslag wie wanneer zorgt</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─── Uitlegfilm ─────────────────────── -->
+<section class="section film-blok" id="film">
+  <div class="container">
+    <span class="section-kicker">In één minuut</span>
+    <h2 class="section-title">Zo werkt TweeHuizen</h2>
+    <div class="film-kader">
+      <video id="uitlegfilm" muted loop playsinline preload="none"
+        poster="film/uitlegfilm-poster.jpg" width="1920" height="1080"
+        aria-label="Uitlegfilm over TweeHuizen" aria-describedby="film-uitleg">
+        <source src="film/uitlegfilm-1920x1080.mp4" type="video/mp4">
+      </video>
+      <div class="film-knoppen">
+        <button type="button" class="film-knop" id="film-speel" aria-pressed="false">Afspelen</button>
+        <button type="button" class="film-knop" id="film-geluid" aria-pressed="false" hidden>Geluid aan</button>
+      </div>
+    </div>
+    <p class="film-uitleg" id="film-uitleg">Eén zorgrooster voor twee huizen, dagen ruilen met een
+    voorstel dat de ander met één tik goedkeurt, activiteiten met een meeneemlijst en een eerlijk
+    overzicht van hoeveel dagen de kinderen bij wie zijn.</p>
   </div>
 </section>
 
@@ -491,5 +513,6 @@
 })();
 </script>
 <script src="consent.js?v=3" defer></script>
+<script src="film.js" defer></script>
 </body>
 </html>
