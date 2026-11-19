@@ -35,8 +35,9 @@
   --ouder-b: var(--merk-aqua);
   --overlay: rgba(54, 6, 77, 0.55);
 
-  /* Eén plek voor het lettertype. Inter is dezelfde neutrale keuze als in de uitlegfilm;
-     valt het besluit A, B of C, dan veranderen alleen deze twee regels. */
+  /* Eén plek voor het lettertype. Besluit Patrick, 19 november 2026: keuze B, een vrij
+     lettertype overal. Dat is Inter (OFL), hetzelfde als in de uitlegfilm. Elza Round uit het
+     logo wordt niet aangeschaft. */
   --letter-kop: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --letter-tekst: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 

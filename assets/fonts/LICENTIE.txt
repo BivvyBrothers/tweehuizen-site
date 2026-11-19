@@ -3,6 +3,6 @@ Copyright The Inter Project Authors (https://github.com/rsms/inter).
 Uitgegeven onder de SIL Open Font License 1.1: vrij te gebruiken en zelf te hosten.
 Licentietekst: https://openfontlicense.org
 
-Inter is dezelfde neutrale keuze als in de uitlegfilm. Het besluit over het merklettertype
-(A, B of C, zie redesign-2026/PLAN-redesign.md) staat nog open; valt dat besluit, dan veranderen
-alleen de twee lettertyperegels bovenin assets/stijl-v3.css.
+Besluit Patrick, 19 november 2026: keuze B, een vrij lettertype overal. Inter is daarmee het
+lettertype van de site, net als in de uitlegfilm. Elza Round (het lettertype van het logo, via
+de licentie van de ontwerper) wordt niet aangeschaft.
