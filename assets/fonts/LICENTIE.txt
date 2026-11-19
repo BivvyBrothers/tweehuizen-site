@@ -1,0 +1,8 @@
+Lettertype in deze map: Inter (variabele versie, latin-subset via fontsource 5.3.0).
+Copyright The Inter Project Authors (https://github.com/rsms/inter).
+Uitgegeven onder de SIL Open Font License 1.1: vrij te gebruiken en zelf te hosten.
+Licentietekst: https://openfontlicense.org
+
+Inter is dezelfde neutrale keuze als in de uitlegfilm. Het besluit over het merklettertype
+(A, B of C, zie redesign-2026/PLAN-redesign.md) staat nog open; valt dat besluit, dan veranderen
+alleen de twee lettertyperegels bovenin assets/stijl-v3.css.

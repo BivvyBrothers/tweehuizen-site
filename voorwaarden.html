@@ -14,18 +14,28 @@
 <meta property="og:locale" content="nl_NL">
 <link rel="icon" type="image/png" href="assets/favicon-180.png?v=2">
 <link rel="apple-touch-icon" href="assets/favicon-180.png?v=2">
-<link rel="stylesheet" href="assets/stijl-v2.css?v=5">
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function(d){d.classList.add('js');setTimeout(function(){if(!window.thKlaar)d.classList.remove('js');},4000);})(document.documentElement);</script>
+<link rel="stylesheet" href="assets/stijl-v3.css?v=1">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
 
-<nav class="topnav" aria-label="Hoofdnavigatie">
-  <a class="nav-logo" href="index.html" aria-label="TweeHuizen, naar de homepagina"><img src="assets/TH_logo_dark.svg" alt="" width="140" height="57"></a>
-  <a href="index.html">Home</a>
-  <a href="ons-verhaal.html">Mijn verhaal</a>
-  <a href="support.html">Hulp &amp; Support</a>
-</nav>
+<header class="topnav">
+  <div class="topnav-in">
+    <a class="nav-logo" href="index.html" aria-label="TweeHuizen, naar de homepagina"><img src="assets/TH_logo_dark.svg" alt="" width="124" height="51"></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="hoofdmenu" aria-label="Menu"><span></span><span></span></button>
+    <nav class="nav-menu" id="hoofdmenu" aria-label="Hoofdnavigatie">
+      <a href="index.html">Home</a>
+      <a href="index.html#wat-kan-tweehuizen">Functies</a>
+      <a href="index.html#prijzen">Prijzen</a>
+      <a href="ons-verhaal.html">Mijn verhaal</a>
+      <a href="support.html">Hulp &amp; Support</a>
+      <a class="btn btn-primary btn-klein" href="index.html#download">Download de app</a>
+    </nav>
+  </div>
+</header>
 
 <main id="main" class="juridisch">
 
@@ -96,5 +106,37 @@ E-mail: <a href="mailto:info@tweehuizen.com">info@tweehuizen.com</a></p>
   <p class="voorkeuren"><button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookievoorkeuren</button></p>
 </main>
 
+<footer class="footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-top">
+      <a class="footer-brand" href="index.html" aria-label="TweeHuizen"><img src="assets/TH_logo_light.svg" alt="" width="260" height="107" loading="lazy"></a>
+      <p class="parent-colors footer-parent-colors"><span class="parent-text-a">Rust in</span> <span class="parent-text-b">co-ouderschap</span></p>
+    </div>
+    <div class="footer-midden">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="ons-verhaal.html">Mijn verhaal</a>
+        <a href="support.html">Hulp &amp; Support</a>
+        <a href="privacy.html">Privacybeleid</a>
+        <a href="voorwaarden.html">Voorwaarden</a>
+        <button type="button" class="cookie-link" onclick="window.tweeHuizenCookievoorkeuren &amp;&amp; window.tweeHuizenCookievoorkeuren();">Cookievoorkeuren</button>
+      </div>
+      <nav class="footer-social" aria-label="Volg TweeHuizen op social media">
+        <a href="https://www.instagram.com/twee.huizen" target="_blank" rel="noopener" aria-label="TweeHuizen op Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+        <a href="https://www.facebook.com/share/1awK8HkGwE/" target="_blank" rel="noopener" aria-label="TweeHuizen op Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+      </nav>
+    </div>
+    <div class="footer-onder">
+      <address class="footer-legal">
+        <span>Een product van</span> <a href="https://kemblinck.nl" class="footer-kemblinck"><img src="kemblinck-logo-64.png?v=1" alt="" class="footer-kemblinck__logo" width="22" height="22" loading="lazy"><strong>KemblincK</strong></a>
+        <span>KvK 42043399</span>
+        <a href="mailto:info@tweehuizen.com">info@tweehuizen.com</a>
+      </address>
+      <div class="footer-copy">&copy; <span id="year">2026</span> TweeHuizen</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js?v=1" defer></script>
 </body>
 </html>
